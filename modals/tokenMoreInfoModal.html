@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Copy Me</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="css/main.css">
+
+
+<style>
+    .token-content-wrapper .top-header .heading {
+        color: #212121;
+        font-family: Inter;
+        font-size: 48px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        letter-spacing: -2.4px;
+        width: 434px;
+    } 
+    .token-content-wrapper .top-header .sub-heading{
+        color: #565656;
+        font-family: Inter;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+    }
+    .token-content-wrapper .top-header .date-container{
+        color: #313131;
+        font-family: Reckless Neue;
+        font-size: 40px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 160%;
+        width: 165px;
+        transform: rotate(-90deg);
+        float: right;
+        position: relative;
+        top: 48px;
+}
+#tokenMoreInfoModal .img-fit-to-container {
+  margin: -45px 0px -5px -26px;
+    padding: 0;
+}
+#tokenMoreInfoModal .statistics-wrapper {
+  
+ }
+#tokenMoreInfoModal .statistics-wrapper .heading {
+  color: #565656;
+  font-family: Inter;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 160%; /* 22.4px */
+  letter-spacing: 0.14px;
+  margin-bottom: 0;
+}
+#tokenMoreInfoModal .statistics-wrapper .description {
+  color: #565656;
+  font-family: Inter;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 160%;
+  letter-spacing: 0.14px;
+  margin-bottom: 9px;
+}
+#tokenMoreInfoModal .perk-wrapper-box {
+  height: 206px;
+  overflow: auto;
+  border-radius: 10px;
+  border: 0.5px solid #959595;
+  background: #FFF;
+  padding: 17px 0px 17px 0px;
+  color: #565656;
+  font-family: Inter;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 160%; /* 19.2px */
+  letter-spacing: 0.12px;
+}
+</style>
+ 
+</head>
+
+<body>
+    <!-- The Modal -->
+    <div class="modal" id="tokenMoreInfoModal">
+      <div class="modal-dialog modal-xl">
+        <div class="modal-content" style="border-radius: 24px;">
+        
+          <!-- Modal Header -->
+          <div class="modal-header border-0 pb-0">    
+            <button type="button" class="close" data-dismiss="modal">
+              <img src="../svg/close-icon.svg" alt="close icon">
+            </button>
+          </div>
+          
+          <!-- Modal body -->
+          <div class="modal-body text center py-0">
+             <div class="container">
+              <div class="row">
+                  <div class="col-md-5 img-fit-to-container">
+                    <img src="../img/section-4-live-token-mobile.png" alt="toke image" style="width: 100%;">
+                  </div>
+                  <div class="col-md-7">
+                    <div class="token-content-wrapper">
+                        <div class="top-header row">
+                            <div class="col-md-6">
+                                <div class="heading">The Sound of Silence</div>
+                                <div class="d-inline-flex mt-2">
+                                    <img class="user-image" src="../svg/home/user-img.svg" alt="user-image">
+                                    <div class="sub-heading ml-2 description my-3">Dan Mace</div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <h5 class="date-container">02.05.23</h5>
+                            </div>
+                        </div>
+                        <div class="tab-section">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <ul id="tabs" class="nav nav-tabs">
+                                        <li class="nav-item"><a href="" data-target="#raised" data-toggle="tab" class="nav-link small active">Raised</a></li>
+                                        <li class="nav-item"><a href="" data-target="#performance" data-toggle="tab" class="nav-link small  ">Performance</a></li>
+                                        <li class="nav-item"><a href="" data-target="#information" data-toggle="tab" class="nav-link small">Information</a></li>
+                                    </ul>
+                                    <br>
+                                    <div id="tabsContent" class="tab-content">
+                                        <div id="raised" class="tab-pane fade active show">
+                                            <div class="row">
+                                                <div class="col-md-8">
+                                                  <div class="statistics-wrapper">
+                                                      <div class="row">
+                                                        <div class="col-md-6">
+                                                          <div class="border-bottom">
+                                                            <h3 class="heading">317</h3>
+                                                            <p class="description">Share Sold</p>
+                                                          </div>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                          <div class="border-bottom">
+                                                            <h3 class="heading">0</h3>
+                                                            <p class="description">Repetitive Buyers</p>
+                                                          </div>
+                                                        </div>
+                                                      </div>
+                                                      <div class="row my-3">
+                                                          <div class="col-md-6">
+                                                            <div class="border-bottom">
+                                                              <h3 class="heading">75%</h3>
+                                                              <p class="description">Ad revenue Shared</p>
+                                                            </div>
+                                                          </div>
+                                                          <div class="col-md-6">
+                                                            <div class="border-bottom">
+                                                              <h3 class="heading">317</h3>
+                                                              <p class="description">New Buyers</p>
+                                                            </div>
+                                                          </div>
+                                                      </div>
+                                                      <div class="row">
+                                                        <div class="col-md-6">
+                                                          <div class="border-bottom">
+                                                            <h3 class="heading">$9510</h3>
+                                                            <p class="description">Fund Raised</p>
+                                                          </div>
+                                                        </div>
+                                                      </div>
+                                                      </div>
+                                                  </div>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <div class="pie-chart">
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        <div id="performance" class="tab-pane fade">
+                                           <div class="row">
+                                                <div class="col-md-8">
+                                                  <div class="statistics-wrapper">
+                                                      <div class="row">
+                                                        <div class="col-md-6">
+                                                          <div class="border-bottom">
+                                                            <h3 class="heading">623k</h3>
+                                                            <p class="description">Views</p>
+                                                          </div>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                          <div class="border-bottom">
+                                                            <h3 class="heading">$5072</h3>
+                                                            <p class="description">Ad Revenue</p>
+                                                          </div>
+                                                        </div>
+                                                      </div>
+                                                      <div class="row my-3">
+                                                          <div class="col-md-6">
+                                                            <div class="border-bottom">
+                                                              <h3 class="heading">$3804</h3>
+                                                              <p class="description">Co-owner earning</p>
+                                                            </div>
+                                                          </div>
+                                                          <div class="col-md-6">
+                                                            <div class="border-bottom">
+                                                              <h3 class="heading">$12.17</h3>
+                                                              <p class="description">Earning per Co-owners</p>
+                                                            </div>
+                                                          </div>
+                                                      </div>
+                                                    </div>
+                                                  </div>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <div class="pie-chart">
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        <div id="information" class="tab-pane fade">
+                                          <div class="row">
+                                            <div class="col-md-8">
+                                              <div class="perk-wrapper-box">
+                                                <ul>
+                                                  <li>Polls to influence the Thumbnail of the videos and Title.</li>
+                                                  <li>Pitch your story idea for Dan’s Channel.</li>
+                                                  <li>Deep dive into ‘The sound of silence’ through the director’s analytical lens.</li>
+                                                  <li>Getting on a Video call with Dan and asking him anything. Instant Gratification</li>
+                                                  <li>One of you from US will get a studio tour and meet the JOE team (secret gift waiting for you in the studio, get excited BRU).</li>
+                                                  <li>You will get an opportunity to be a part of JOE Los Angles team.</li>
+                                                  <li>Own the sound track of the video.</li>
+                                                  <li>Also, understand it’s core reason. Co-Owners Discord Community.</li>
+                                                  <li>Polls to influence the Thumbnail of the videos and Title.</li>
+                                                  <li>Pitch your story idea for Dan’s Channel.</li>
+                                                 
+                                                </ul>
+                                              </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                              <div class="statistics-wrapper">
+                                                <div class="row">
+                                                  <div class="col-md-12">
+                                                    <div class="border-bottom">
+                                                      <h3 class="heading">Video</h3>
+                                                      <p class="description">View landing Page</p>
+                                                    </div>
+                                                  </div>
+                                                  <div class="col-md-12">
+                                                    <div class="border-bottom my-3">
+                                                      <h3 class="heading">Certificate</h3>
+                                                      <p class="description">View Certificate here</p>
+                                                    </div>
+                                                  </div>
+                                                  <div class="col-md-12">
+                                                    <div class="border-bottom">
+                                                      <h3 class="heading">Community</h3>
+                                                      <p class="description">link to Discord</p>
+                                                    </div>
+                                                  </div>
+                                                </div>
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                  </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Modal footer -->
+          <!-- <div class="modal-footer justify-content-center border-0 pt-0">
+            <button type="submit" class="btn neo-primary-btn abit-white abit-bg-purple f-20 f-weight-500" id="registerUser" style="letter-spacing: 1.3px;">Create Account</button>
+             <div class="col-md-12 text-center my-3">
+              <span class="mini-title-1 toggleRegisterLoginPopup" style="cursor: pointer;" which="creatorsignup">Are you Creator?</span><br>
+              <span class="mini-title-2">Already have an account? <a href="#" class="toggleRegisterLoginPopup" login="enable" which="login" style="color:#764CC2; cursor: pointer;">LogIn</a></span>
+             </div>
+          </div> -->
+        </div>
+      </div>
+    </div>
+  
+
+<script>
+
+
+function openLoginModal() {
+    $("#registerModal").modal("hide");
+    $("#loginModal").modal("show");
+}
+</script>
+  <!-- Scripts -->
+	<script src="js/detects.js"></script>
+	<script src="js/another-file.js"></script>
+	<script src="js/main.polyfills.js"></script>
+	
+</body>
+</html>

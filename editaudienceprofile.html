@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Edit Audience Profile</title>
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="shortcut icon" href="svg/favicon.svg" type="image/x-icon">
+	<!-- Google tag (gtag.js) -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-M2C1G7D2PW"></script>
+	<script>
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+
+	gtag('config', 'G-M2C1G7D2PW');
+	</script>
+</head>
+<body>
+	<header style="height: 67px;">
+		<nav class="navbar navbar-expand-lg navbar-light bg-light" style="height: 67px;">
+			<div class="container">
+			<a class="navbar-brand" href="index.html">aBit</a>
+			<!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button> -->
+			<div class="expand navbar-expand" id="navbarTogglerDemo02">
+				<ul class="navbar-nav ml-auto mt-lg-0 ">
+				<li class="nav-item active">
+					<a class="nav-link nav-item-creator" href="creatorpage.html">Are you a creator? <span class="sr-only">(current)</span></a>
+				</li>
+				</ul>
+				<!-- <button class="btn abit-outline-purple my-2 my-sm-0" data-toggle="modal" data-target="#registerModal">Login / Signup</button> -->
+			</div>
+			</div>	
+		</nav>
+	</header>
+	<div style="overflow: hidden;">
+        <section class="edit-audience-profile edit-profile-section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3 offset-md-3">
+                        <div class="audience-profile-img profile-img-wrapper">
+                            <img src="img/audience-profile-pic.png" alt="profile image" style="width: 400px;">                        </div>
+                    </div>
+                    <div class="col-md-4 offset-md-1">
+                        <div class="audience-profile-edit-fields edit-fields-wrapper">
+                            <div class="form-group">
+                                <label for="name">Bio</label>
+                                <input type="name" class="form-control border-top-0 border-left-0 border-right-0 border-bottom" id="editName" placeholder="Name">
+                            </div>
+                            <div class="form-group">
+                                <label for="editUsername">User Name</label>
+                                <input type="editUsername" class="form-control border-top-0 border-left-0 border-right-0 border-bottom" id="editUsername" placeholder="User Name">
+                            </div>
+                            <div class="form-group">
+                                <label for="updateEmail">Email</label>
+                                <input type="updateEmail" class="form-control border-top-0 border-left-0 border-right-0 border-bottom" id="updateEmail" placeholder="Email">
+                            </div>
+                            <div class="form-group">
+                                <label for="editPassword">Password</label>
+                                <input type="Password" class="form-control border-top-0 border-left-0 border-right-0 border-bottom" id="editPassword" placeholder="Password">
+                            </div>
+                            <div class="form-group">
+                                <label for="confirmPassword">Confirm Password</label>
+                                <input type="password" class="form-control border-top-0 border-left-0 border-right-0 border-bottom" id="confirmPassword" placeholder="Confirm Password">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <footer class="mt-4 section-footer">
+            <div class="container" style="margin-top: 76px;">
+                <div class="row">
+                    <div class="col-lg-6 col-md-6 col-xs-4 col-sm-5 col-6">
+                        <!-- <h3 class="heading">aBit</h3> -->
+                    <p class="description">Own <span class="heading">aBit</span> of your favourite videos.</p>
+                    </div> 
+                    <div class="col-lg-6 col-md-6 col-sm-7 col-6">
+                        <ul class="list-group border-left float-right">
+                            <a href="index.html"><li class="list-group-item border-0">Home</li></a>
+                            <a href="creatorpage.html"><li class="list-group-item border-0">Are you a creator?</li></a>
+                            <!-- <li class="list-group-item border-0">Support</li> -->
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
+	</div>
+	
+	<div w3-include-html="login.html"></div>
+	<div w3-include-html="register.html"></div>
+
+	<!-- Scripts -->
+	<script src="js/loadExtLibrary.js"></script>
+	<script src="js/main.js"></script> 
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+</body>
+</html>

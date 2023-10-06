@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Audience Earnings Calculator</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    .container {
+      margin-top: 50px;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    label {
+      font-weight: bold;
+    }
+
+    #videoViewsLabel,
+    #ownershipPercentageLabel {
+      font-weight: normal;
+    }
+
+    #audienceEarnings {
+      font-weight: bold;
+    }
+
+    /* Remove default styles */
+.slider {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 0px;
+  background: #d3d3d3;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+}
+
+/* Customize the track */
+.slider::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 0px;
+  background: #764CC2;
+  border: none;
+  border-radius: 0px;
+  border: 2.5px solid #764CC2;
+}
+
+.slider::-moz-range-track {
+  width: 100%;
+  height: 0px;
+  background: #764CC2;
+  border: none;
+  border-radius: 5px;
+}
+
+/* Customize the thumb (handle) */
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 30px;
+  height: 30px;
+  background: #764CC2;
+  border-radius: 50%;
+  cursor: pointer;
+  position: relative;
+  top: -15px;
+}
+
+.slider::-moz-range-thumb {
+  width: 30px;
+  height: 30px;
+  background: #764CC2;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+/* Change thumb color on hover */
+.slider:hover::-webkit-slider-thumb {
+  background: #764CC2;
+}
+
+.slider:hover::-moz-range-thumb {
+  background: #764CC2;
+}
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 offset-md-3">
+        <h3>Audience Earnings Calculator</h3>
+        <div class="form-group">
+          <label for="videoViews">Video Views:</label>
+          <input type="range" class="slider" id="videoViews" min="100000" max="3000000" step="100000" value="100000">
+          <span id="videoViewsLabel">100,000</span>
+        </div>
+        <div class="form-group">
+          <label for="ownershipPercentage">Co-owner Ownership Percentage:</label>
+          <input type="range" class="form-control-range" id="ownershipPercentage" min="0" max="100" step="0.01" value="0.24">
+          <span id="ownershipPercentageLabel">0.24%</span>
+        </div>
+        <div class="form-group">
+          <label for="earningsPerView">Earnings per Video View ($):</label>
+          <input type="number" class="form-control" id="earningsPerView" step="0.001" value="0.005">
+        </div>
+        <div class="form-group">
+          <label for="audienceEarnings">Audience Earnings:</label>
+          <input type="text" class="form-control" id="audienceEarnings" readonly>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+    $(document).ready(function() {
+      // Update video views label
+      $('#videoViews').on('input', function() {
+        var views = $(this).val();
+        $('#videoViewsLabel').text(formatNumber(views));
+        calculateAudienceEarnings();
+      });
+
+      // Update ownership percentage label
+      $('#ownershipPercentage').on('input', function() {
+        var percentage = $(this).val();
+        $('#ownershipPercentageLabel').text(percentage + "%");
+        calculateAudienceEarnings();
+      });
+
+      // Update audience earnings on input change
+      $('#earningsPerView, #videoViews, #ownershipPercentage').on('input', calculateAudienceEarnings);
+
+      // Calculate audience earnings
+      function calculateAudienceEarnings() {
+        var views = parseInt($('#videoViews').val());
+        var percentage = parseFloat($('#ownershipPercentage').val()) / 100;
+        var earningsPerView = parseFloat($('#earningsPerView').val());
+        var audienceEarnings = (views * earningsPerView) * percentage;
+        $('#audienceEarnings').val(audienceEarnings.toFixed(2));
+      }
+
+      // Format number with commas
+      function formatNumber(number) {
+        return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+      }
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Copy Me</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="css/main.css">
+
+ 
+</head>
+
+<body>
+    <!-- The Modal -->
+    <div class="modal" id="registerModal">
+      <div class="modal-dialog">
+        <div class="modal-content" style="border-radius: 24px;">
+        
+          <!-- Modal Header -->
+          <div class="modal-header border-0 pb-0">    
+            <button type="button" class="close" data-dismiss="modal">
+              <img src="../svg/close-icon.svg" alt="close icon">
+            </button>
+          </div>
+          
+          <!-- Modal body -->
+          <div class="modal-body text center py-0">
+             <div class="container" style="max-width: 382px;">
+              <div class="row">
+                  <div class="col-md-12">
+                    <h4 class="modal-title text-center f-40 f-weight-400">Sign up</h4>
+                      <div class="btn-group d-flex my-3">
+                        <button type="button" class="btn btn-outline-secondary cstm-extended-btn" style="margin-top: 20px; margin-bottom: 22px; height: 48px;">Sign Up with Gmail</button>
+                      </div>
+                      <div class="login-form">
+                        <form class="form register-form">
+                            <div class="form-group cstm-form-group">
+                                <label for="exampleInputUsername">Username<span class="err-cls">*</span></label>
+                                <input type="text" name="username" class="form-control border-top-0 border-left-0 border-right-0 border-bottom cstm-form-control " id="exampleInputUsername" aria-describedby="emailHelp" placeholder="Username" >
+                            </div>
+                            <div class="form-group cstm-form-group">
+                                <label for="registerEmail">Email<span class="err-cls">*</span></label>
+                                <input type="email" name="email" class="form-control border-top-0 border-left-0 border-right-0 border-bottom cstm-form-control" id="registerEmail" aria-describedby="emailHelp" placeholder="Email" >
+                            </div>
+                            <div class="form-group cstm-form-group">
+                                <label for="registerPassword">Password<span class="err-cls">*</span></label>
+                                <input type="password" name="password" class="form-control border-top-0 border-left-0 border-right-0 border-bottom cstm-form-control" id="registerPassword" placeholder="Password">
+                            </div>
+                        </form>
+                      </div>
+                  </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Modal footer -->
+          <div class="modal-footer justify-content-center border-0 pt-0">
+            <button type="submit" class="btn neo-primary-btn abit-white abit-bg-purple f-20 f-weight-500" id="registerUser" style="letter-spacing: 1.3px;">Create Account</button>
+             <div class="col-md-12 text-center my-3">
+              <span class="mini-title-1 toggleRegisterLoginPopup" style="cursor: pointer;" which="creatorsignup">Are you Creator?</span><br>
+              <span class="mini-title-2">Already have an account? <a href="#" class="toggleRegisterLoginPopup" login="enable" which="login" style="color:#764CC2; cursor: pointer;">LogIn</a></span>
+             </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+
+<script>
+
+
+function openLoginModal() {
+    $("#registerModal").modal("hide");
+    $("#loginModal").modal("show");
+}
+</script>
+  <!-- Scripts -->
+	<script src="js/detects.js"></script>
+	<script src="js/another-file.js"></script>
+	<script src="js/main.polyfills.js"></script>
+	
+</body>
+</html>

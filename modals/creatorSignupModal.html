@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Copy Me</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="css/main.css">
+
+ 
+</head>
+
+<body>
+    <!-- The Modal -->
+    <div class="modal" id="creatorSignupModal">
+      <div class="modal-dialog">
+        <div class="modal-content creator-signup-step-1" style="border-radius: 24px; padding-bottom: 20px;">
+        
+          <!-- Modal Header -->
+          <div class="modal-header border-0 pb-0">    
+            <button type="button" class="close" data-dismiss="modal">
+              <img src="../svg/close-icon.svg" alt="close icon">
+            </button>
+          </div>
+          
+          <!-- Modal body -->
+          <div class="modal-body text center py-0">
+             <div class="container" style="max-width: 382px;">
+              <div class="row">
+                  <div class="col-md-12">
+                    <h4 class="modal-title text-center f-40 f-weight-400" style="padding-bottom: 73px;">Creator Sign up</h4>
+                      <!-- <div class="btn-group d-flex my-3">
+                        <img src="../img/creator-signup-img.png" alt="pencil icon">
+                        <button type="button" class="btn btn-outline-secondary cstm-extended-btn" style="margin-top: 20px; margin-bottom: 22px; height: 48px;">Sign Up with Gmail</button> 
+                      </div> -->
+                      <div class="creater-signup-form text-center"  style="padding-bottom: 60px;">
+                        <img src="../img/creator-signup-gmail.png" alt="pencil icon"  style="padding-bottom: 37px;">
+                        <div class="text">Sign-up with the Gmail account that's linked to your YouTube channel.</div>
+                      </div>
+                  </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Modal footer -->
+          <div class="modal-footer justify-content-center border-0 pt-0">
+            <button type="submit" class="btn neo-primary-btn abit-black abit-bg-yellow f-20 f-weight-500 toggleRegisterLoginPopup" id="registerCreatorUser" which="creatorsignupcall" style="letter-spacing: 1.3px;">Sign Up with Gmail</button>
+             <div class="col-md-12 text-center my-3">
+              <span class="mini-title-2">Already have an account? <a href="#" class="toggleRegisterLoginPopup" login="enable" which="login" style="color:#764CC2; cursor: pointer;">LogIn</a></span>
+             </div>
+          </div>
+        </div>
+
+
+        <div class="modal-content creator-signup-step-2" style="border-radius: 24px; padding-bottom: 20px; display: none;">
+        
+            <!-- Modal Header -->
+            <div class="modal-header border-0 pb-0">    
+              <button type="button" class="close" data-dismiss="modal">
+                <img src="../svg/close-icon.svg" alt="close icon">
+              </button>
+            </div>
+            
+            <!-- Modal body -->
+            <div class="modal-body text center py-0">
+               <div class="container" style="max-width: 382px;">
+                <div class="row">
+                    <div class="col-md-12">
+                      <h4 class="modal-title text-center f-40 f-weight-400" style="padding-bottom: 73px;">Creator Sign up</h4>
+                        <!-- <div class="btn-group d-flex my-3">
+                          <img src="../img/creator-signup-img.png" alt="pencil icon">
+                          <button type="button" class="btn btn-outline-secondary cstm-extended-btn" style="margin-top: 20px; margin-bottom: 22px; height: 48px;">Sign Up with Gmail</button> 
+                        </div> -->
+                        <div class="creater-signup-form text-center"  style="padding-bottom: 60px;">
+                          <img src="../img/creator-signup-call.png" alt="pencil icon"  style="padding-bottom: 37px;">
+                          <div class="text">Thanks for signing up! Schedule a meeting by clicking below so we can take the discussion further..</div>
+                        </div>
+                    </div>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Modal footer -->
+            <div class="modal-footer justify-content-center border-0 pt-0">
+                <a href="creatordashboard.html"> <button type="submit" class="btn neo-primary-btn abit-black abit-bg-yellow f-20 f-weight-500" id="scheduleACall" style="letter-spacing: 1.3px;">
+                Schedule a Call
+               </button></a>
+               <div class="col-md-12 text-center my-3">
+                <span class="mini-title-2">Already have an account? <a href="#" class="toggleRegisterLoginPopup" login="enable" which="login" style="color:#764CC2; cursor: pointer;">LogIn</a></span>
+               </div>
+            </div>
+          </div>
+      </div>
+    </div>
+  
+
+<script>
+
+
+function openLoginModal() {
+    $("#registerModal").modal("hide");
+    $("#loginModal").modal("show");
+}
+</script>
+	
+</body>
+</html>

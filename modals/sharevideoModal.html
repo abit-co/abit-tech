@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Copy Me</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="css/main.css">
+
+ <style>
+  .share-video-form .form-group {
+    margin-bottom: 1.4rem;
+  } 
+  #shareVideoModal .modal-footer .text {
+    color: #292D32;
+    text-align: center;
+    font-family: Reckless Neue;
+    font-style: italic;
+    font-weight: 400;
+    line-height: 144%; /* 23.04px */
+    letter-spacing: 0.16px;
+    padding-bottom: 26px;
+  }
+ </style>
+</head>
+
+<body>
+    <!-- The Modal -->
+    <div class="modal" id="shareVideoModal">
+      <div class="modal-dialog">
+        <div class="modal-content" style="border-radius: 24px;">
+        
+          <!-- Modal Header -->
+          <div class="modal-header border-0 pb-0">    
+            <button type="button" class="close" data-dismiss="modal">
+              <img src="../svg/close-icon.svg" alt="close icon">
+            </button>
+          </div>
+          
+          <!-- Modal body -->
+          <div class="modal-body text center  py-0">
+             <div class="container">
+              <div class="row">
+                  <div class="col-md-12">
+                    <h4 class="modal-title text-center f-40 f-weight-400">Share New Video</h4>
+                      <div class="share-video-form mt-4">
+                        <form class="form">
+                          <div class="form-group ">
+                            <label for="videoTitle">Video Title</label>
+                            <input type="text" class="form-control" id="videoTitle" aria-describedby="emailHelp" placeholder="Video Title">
+                          </div>
+                          <div class="form-group" >
+                            <label for="videoLink">Video Link</label>
+                            <input type="text" class="form-control" id="videoLink" placeholder="Video Link">
+                          </div>
+
+                          <div class="form-group">
+                            <label for="videoDate">Date</label>
+                            <input type="date" class="form-control" id="videoDate" aria-describedby="emailHelp" placeholder="dd/mm/yy">
+                          </div>
+                          <div class="form-group">
+                            <label for="desiredFund">Desired Fund</label>
+                            <input type="text" class="form-control" id="desiredFund" placeholder="Desired Fund">
+                          </div>
+                          <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="sharePercentage">Ad Revenue Share(%) </label>
+                                    <input type="text" class="form-control" id="sharePercentage" placeholder="76%">
+                                </div>
+                            </div>
+                            <div class="col-md-6">  
+                                <div class="form-group">
+                                    <label for="totalShares">Total Shares Available</label>
+                                    <input type="text" class="form-control" id="totalShares" placeholder="210">
+                                </div>
+                            </div>
+                          </div>
+                          <div class="form-group">
+                            <label for="videoPerks">Perks</label>
+                            <input type="text" class="form-control" id="videoPerks" placeholder="You will get an opportunity to be a part of JOE Los Angles team.">
+                          </div>
+                        </form>
+                      </div>
+                  </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Modal footer -->
+          <div class="modal-footer justify-content-center border-0" style="padding-bottom: 50px">
+            <h5 class="text f-16"><i>Let's get into the details of the video!</i></h5>
+            <div><a href="creatordashboard.html"> 
+              <button type="submit" class="btn neo-primary-btn abit-black abit-bg-yellow f-20 f-weight-500" id="scheduleACall" style="letter-spacing: 1.3px;">
+                  Schedule a Call</button>
+            </a>         </div>
+         </div>
+        </div>
+      </div>
+    </div>
+    
+
+
+
+  <!-- Scripts -->
+
+	<script src="js/detects.js"></script>
+	<script src="js/another-file.js"></script>
+	<script src="js/main.polyfills.js"></script>
+	
+</body>
+</html>
+

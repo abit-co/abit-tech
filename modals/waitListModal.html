@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Copy Me</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="css/main.css">
+
+ 
+</head>
+
+<body>
+    <!-- The Modal -->
+    <div class="modal" id="waitListModal">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content waitlist-modal-content" style="height: 459px;">
+        
+          <!-- Modal Header -->
+          <div class="modal-header border-0">    
+            <button type="button " class="close waitlist-close-modal" >
+              <img src="../svg/close-icon.svg" alt="close icon">
+            </button>
+          </div>
+          
+          <!-- Modal body -->
+          <div class="modal-body text center">
+             <div class="container">
+              <div class="row">
+                  <div class="col-md-12">
+                    <h4 class="modal-title text-center">Join the <i>waitlist!</i></h4>
+                    <p class="text-center description mt-3">Be the First to Know</p>
+                      <div class="login-form">
+                        <form class="form">
+                          <div class="form-group">
+                            <!-- <label for="loginEmail">Email</label> -->
+                            <input type="email" class="form-control pl-2 waitlist-input" id="waitListEmail" aria-describedby="emailHelp" placeholder="Email" style="
+                            height: 66px; margin: 0 auto; margin-top: 60px !important;">
+                          </div>
+                        </form>
+                      </div>
+                  </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Modal footer -->
+          <div class="modal-footer justify-content-center border-0 mb-5">
+            <button class="btn neo-primary-btn abit-white abit-bg-purple cstm-btn-props waitlist-cta-btn" data-dismiss="modal">Join</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+
+
+
+  <!-- Scripts -->
+	<script src="js/waitlist.js"></script>
+	<script src="js/detects.js"></script>
+	<script src="js/another-file.js"></script>
+	<script src="js/main.polyfills.js"></script>
+  <script>
+    debugger;
+     $(".waitlist-cta-btn").off("click").on("click", function() {
+        debugger;
+        saveEmailInfo(this);
+    });
+  </script>
+	
+</body>
+</html>

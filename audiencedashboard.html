@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Audience Dashboard</title>
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="shortcut icon" href="svg/favicon.svg" type="image/x-icon">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/regular.min.css" integrity="sha512-WidMaWaNmZqjk3gDE6KBFCoDpBz9stTsTZZTeocfq/eDNkLfpakEd7qR0bPejvy/x0iT0dvzIq4IirnBtVer5A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+	<header style="height: 67px;">
+		<nav class="navbar navbar-expand-lg navbar-light bg-light" style="height: 67px;">
+			<div class="container">
+			<a class="navbar-brand" href="index.html">aBit</a>
+			<!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button> -->
+			<div class="expand navbar-expand" id="navbarTogglerDemo02">
+				<ul class="navbar-nav mt-2 mt-lg-0 ">
+					<li class="nav-item active">
+						<!-- <a class="nav-link" href="#">Are you a creator ? <span class="sr-only">(current)</span></a> -->
+						<img class="profile-img" src="../svg/icons/icon-wallet.svg" alt="audience-profile-img" data-toggle="modal" data-target="#perksModal">
+					</li>
+					<li class="nav-item px-3">
+						<!-- <a class="nav-link" href="#">Are you a creator ? <span class="sr-only">(current)</span></a> -->
+						<img class="profile-img" src="../svg/icons/icon-notification.svg" alt="audience-profile-img" data-toggle="modal" data-target="#shareVideoModal">
+					</li>
+					<li class="nav-item ">
+						<!-- <a class="nav-link" href="#">Are you a creator ? <span class="sr-only">(current)</span></a> -->
+						<img class="profile-img" src="../svg/icons/user-profile-pic.svg" alt="audience-profile-img" data-toggle="modal" data-target="#shareVideoModal" style="width: 24px; height: 24px;">
+						<img class="profile-img ml-2" src="../svg/icons/down-arrow-icon.svg" alt="down-arrow-icon" style="width: 18px; height: 18px;">
+					</li>
+	
+					</ul>
+				<!-- <button class="btn abit-outline-purple my-2 my-sm-0" data-toggle="modal" data-target="#registerModal">Login / Signup</button> -->
+			</div>
+			</div>	
+		</nav>
+	</header>
+	<div>
+	<section class="audi-section-1">
+		<div class="container">
+			<div class="row">
+			</div>
+			<!-- <div class="row my-info-card audi-section">
+				<div class="col-md-5">
+					<img class="profile-img" src="../svg/users-img-1.svg" alt="audience-profile-img">
+				</div>
+				<div class="col-md-7">
+					<div class="bio-wrapper">
+						<div class="users-name">JOHN DOE</div>
+						<ul class="list-group border-left float-right list-group-horizontal owner-type">
+							<li class="list-group-item"></li>
+							<li class="list-group-item p-0">Co-owner</li>
+						</ul>
+					</div>
+					
+				</div>
+			</div> -->
+		</div>
+	</section>
+	<section class="my-info-card audi-section">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-3">
+					<img class="profile-img" src="../svg/users-img-1.svg" alt="audience-profile-img">
+				</div>
+				<div class="col-md-9">
+					<div class="bio-wrapper">
+						<div class="users-name">JOHN DOE</div>
+						<ul class="list-group border-left float-right list-group-horizontal owner-type">
+							<li class="list-group-item"></li>
+							<li class="list-group-item p-0">Co-owner</li>
+						</ul>
+					</div>
+					
+				</div>
+			</div>
+		</div>
+	</section>
+    <section class="audi-section-2">
+		<p class="about-description">John Bill / Creator / Moved to NYC / 27.11.22 / Live now/John Bill / Creator / Moved to NYC / 27.11.22 / Live now / John Bill/ John Bill / Creator / Moved to NYC / 27.11.22 / Live now/John Bill / Creator / Moved to NYC / 27.11.22 / Live now / John Bill / John Bill / Creator / Moved to NYC / 27.11.22 / Live now/John Bill / Creator / Moved to NYC / 27.11.22 / Live now / John Bill  </p>
+    </section>
+    <section class="audi-section-3">
+        <div class="container collection-detail">
+			<div class="row">
+                <div class="col-md-6 order-lg-1 order-md-1 order-sm-1 order-2">
+					<div class="left-portion">
+						<h5 class="heading">Collections</h5>
+						<p class="description">Videos that you co-own with creators in aBit appear here.</p>
+					</div>
+				</div>
+				<div class="col-md-6 order-lg-2 order-md-2 order-sm-2 order-1">
+					<div class="right-portion float-right">
+						<ul class="list-group float-right list-group-horizontal">
+							<li class="list-group-item list-group-item border-top-0 border-bottom-0">
+								<div class="count">5</div>
+								<div class="type">Co-owned Videos</div>
+							</li>
+							<li class="list-group-item border-0">
+								<div class="count">1926</div>
+								<div class="type">Total Earnings</div>
+							</li>
+							<li class="list-group-item border-top-0 border-bottom-0 border-right-0 border-left">
+								<div class="count">$13, 578</div>
+								<div class="type">Top Earnings Video</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+    </section>
+	<section class="audi-section-4">
+		<div class="container">
+			<div class="row row-min-ht">
+				<div class="col-6 col-lg-3 col-sm-6 col-md-3">
+					<div class="about-creators position-absolute">
+						<img class="d-block slider-image cursor-pointer search-img-icon" src="../svg/audiencedash/search-token.svg" alt="First slide" style="height: 294px;
+						position: relative;
+						top: 10px;
+						cursor: pointer;">
+						<!-- <img class="d-block slider-image" src="../svg/common/Token 1.svg" alt="First slide">
+						<div class="top-left-part">
+							<div class="heading">Moved to NYC</div>
+							<div class="d-inline-flex mt-2">
+								<img class="user-image" src="../svg/home/user-img.svg" alt="user-image">
+								<h5 class="heading ml-2 description">Dan Mace</h5>
+							</div>
+						</div>
+						<div class="bottom-token-info">
+							<ul class="list-group list-group-horizontal token-info-content">
+								<li class="list-group-item border-0">
+									<p class="mb-1">Shares</p>
+									<p>1110</p>
+								</li>
+								<li class="list-group-item border-0 px-0">
+									<p class="mb-1">Offered</p>
+									<p>50%</p>
+								</li>
+								<li class="list-group-item border-0 px-0">
+									<p class="mb-1">Raised</p>
+									<p>$ 369k</p>
+								</li>
+								</ul>
+						</div> -->
+					</div>
+				</div>
+				<div class="col-6 col-lg-3 col-sm-6 col-md-3">
+					<div class="about-creators position-absolute">
+						<img class="d-block slider-image" src="../svg/common/Token 2.svg" alt="First slide">
+						<div class="top-left-part">
+							<div class="heading">Our trip to Mykonos</div>
+							<div class="d-inline-flex mt-2">
+								<img class="user-image" src="../svg/home/user-img.svg" alt="user-image">
+								<h5 class="heading ml-2 description">Stephen George</h5>
+							</div>
+						</div>
+						<div class="bottom-token-info">
+							<ul class="list-group list-group-horizontal token-info-content">
+								<li class="list-group-item border-0">
+									<p class="mb-1">Shares</p>
+									<p>1110</p>
+								</li>
+								<li class="list-group-item border-0 px-0">
+									<p class="mb-1">Offered</p>
+									<p>50%</p>
+								</li>
+								<li class="list-group-item border-0 px-0">
+									<p class="mb-1">Raised</p>
+									<p>$ 369k</p>
+								</li>
+								</ul>
+						</div>
+					</div>
+				</div>
+				<div class="col-6 col-lg-3 col-sm-6 col-md-3">
+					<div class="about-creators position-absolute">
+						<img class="d-block slider-image" src="../svg/common/Token 3.svg" alt="First slide">
+						<div class="top-left-part">
+							<div class="heading">Moved to NYC</div>
+							<div class="d-inline-flex mt-2">
+								<img class="user-image" src="../svg/home/user-img.svg" alt="user-image">
+								<h5 class="heading ml-2 description">Dan Mace</h5>
+							</div>
+						</div>
+						<div class="bottom-token-info">
+							<ul class="list-group list-group-horizontal token-info-content">
+								<li class="list-group-item border-0">
+									<p class="mb-1">Shares/p>
+									<p>1110</p>
+								</li>
+								<li class="list-group-item border-0 px-0">
+									<p class="mb-1">Offered</p>
+									<p>50%</p>
+								</li>
+								<li class="list-group-item border-0 px-0">
+									<p class="mb-1">Raised</p>
+									<p>$ 369k</p>
+								</li>
+								</ul>
+						</div>
+					</div>
+				</div>
+				<div class="col-6 col-lg-3 col-sm-6 col-md-3">
+					<div class="about-creators position-absolute">
+						<img class="d-block slider-image" src="../svg/common/Token 4.svg" alt="First slide">
+						<div class="top-left-part">
+							<div class="heading">Our trip to Mykonos</div>
+							<div class="d-inline-flex mt-2">
+								<img class="user-image" src="../svg/home/user-img.svg" alt="user-image">
+								<h5 class="heading ml-2 description">Stephen George</h5>
+							</div>
+						</div>
+						<div class="bottom-token-info">
+							<ul class="list-group list-group-horizontal token-info-content">
+								<li class="list-group-item border-0">
+									<p class="mb-1">Shares</p>
+									<p>1110</p>
+								</li>
+								<li class="list-group-item border-0 px-0">
+									<p class="mb-1">Offered</p>
+									<p>50%</p>
+								</li>
+								<li class="list-group-item border-0 px-0">
+									<p class="mb-1">Raised</p>
+									<p>$ 369k</p>
+								</li>
+								</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+				<div class="row tokens-wrapper row-min-ht" style="margin-top: 36px;">
+					<div class="col-6 col-lg-3 col-sm-6 col-md-3">
+						<div class="about-creators position-absolute">
+							<img class="d-block slider-image" src="../svg/common/Token 5.svg" alt="First slide">
+							<div class="top-left-part">
+								<div class="heading">Moved to NYC</div>
+								<div class="d-inline-flex mt-2">
+									<img class="user-image" src="../svg/home/user-img.svg" alt="user-image">
+									<h5 class="heading ml-2 description">Dan Mace</h5>
+								</div>
+							</div>
+							<div class="bottom-token-info">
+								<ul class="list-group list-group-horizontal token-info-content">
+									<li class="list-group-item border-0">
+										<p class="mb-1">Shares</p>
+										<p>1110</p>
+									</li>
+									<li class="list-group-item border-0 px-0">
+										<p class="mb-1">Offered</p>
+										<p>50%</p>
+									</li>
+									<li class="list-group-item border-0 px-0">
+										<p class="mb-1">Raised</p>
+										<p>$ 369k</p>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="col-6 col-lg-3 col-sm-6 col-md-3">
+						<div class="about-creators position-absolute">
+							<img class="d-block slider-image" src="../svg/common/token 6.svg" alt="First slide">
+							<div class="top-left-part">
+								<div class="heading">Our trip to Mykonos</div>
+								<div class="d-inline-flex mt-2">
+									<img class="user-image" src="../svg/home/user-img.svg" alt="user-image">
+									<h5 class="heading ml-2 description">Stephen George</h5>
+								</div>
+							</div>
+							<div class="bottom-token-info">
+								<ul class="list-group list-group-horizontal token-info-content">
+									<li class="list-group-item border-0">
+										<p class="mb-1">Shares</p>
+										<p>1110</p>
+									</li>
+									<li class="list-group-item border-0 px-0">
+										<p class="mb-1">Offered</p>
+										<p>50%</p>
+									</li>
+									<li class="list-group-item border-0 px-0">
+										<p class="mb-1">Raised</p>
+										<p>$ 369k</p>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="col-6 col-lg-3 col-sm-6 col-md-3">
+						<div class="about-creators position-absolute">
+							<img class="d-block slider-image" src="../svg/common/Token 7.svg" alt="First slide">
+							<div class="top-left-part">
+								<div class="heading">Moved to NYC</div>
+								<div class="d-inline-flex mt-2">
+									<img class="user-image" src="../svg/home/user-img.svg" alt="user-image">
+									<h5 class="heading ml-2 description">Dan Mace</h5>
+								</div>
+							</div>
+							<div class="bottom-token-info">
+								<ul class="list-group list-group-horizontal token-info-content">
+									<li class="list-group-item border-0">
+										<p class="mb-1">Shares</p>
+										<p>1110</p>
+									</li>
+									<li class="list-group-item border-0 px-0">
+										<p class="mb-1">Offered</p>
+										<p>50%</p>
+									</li>
+									<li class="list-group-item border-0 px-0">
+										<p class="mb-1">Raised</p>
+										<p>$ 369k</p>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="col-6 col-lg-3 col-sm-6 col-md-3">
+						<div class="about-creators position-absolute">
+							<img class="d-block slider-image" src="../svg/common/token 8.svg" alt="First slide">
+							<div class="top-left-part">
+								<div class="heading">Our trip to Mykonos</div>
+								<div class="d-inline-flex mt-2">
+									<img class="user-image" src="../svg/home/user-img.svg" alt="user-image">
+									<h5 class="heading ml-2 description">Stephen George</h5>
+								</div>
+							</div>
+							<div class="bottom-token-info">
+								<ul class="list-group list-group-horizontal token-info-content">
+									<li class="list-group-item border-0">
+										<p class="mb-1">Shares</p>
+										<p>1110</p>
+									</li>
+									<li class="list-group-item border-0 px-0">
+										<p class="mb-1">Offered</p>
+										<p>50%</p>
+									</li>
+									<li class="list-group-item border-0 px-0">
+										<p class="mb-1">Raised</p>
+										<p>$ 369k</p>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="row tokens-wrapper row-min-ht" style="margin-top: 36px;">
+					<div class="col-6 col-lg-3 col-sm-6 col-md-3">
+						<div class="about-creators position-absolute">
+							<img class="d-block slider-image" src="../svg/common/token 9.svg" alt="First slide">
+							<div class="top-left-part">
+								<div class="heading">Moved to NYC</div>
+								<div class="d-inline-flex mt-2">
+									<img class="user-image" src="../svg/home/user-img.svg" alt="user-image">
+									<h5 class="heading ml-2 description">Dan Mace</h5>
+								</div>
+							</div>
+							<div class="bottom-token-info">
+								<ul class="list-group list-group-horizontal token-info-content">
+									<li class="list-group-item border-0">
+										<p class="mb-1">Shares</p>
+										<p>1110</p>
+									</li>
+									<li class="list-group-item border-0 px-0">
+										<p class="mb-1">Offered</p>
+										<p>50%</p>
+									</li>
+									<li class="list-group-item border-0 px-0">
+										<p class="mb-1">Raised</p>
+										<p>$ 369k</p>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="col-6 col-lg-3 col-sm-6 col-md-3">
+						<div class="about-creators position-absolute">
+							<img class="d-block slider-image" src="../svg/common/token 10.svg" alt="First slide">
+							<div class="top-left-part">
+								<div class="heading">Our trip to Mykonos</div>
+								<div class="d-inline-flex mt-2">
+									<img class="user-image" src="../svg/home/user-img.svg" alt="user-image">
+									<h5 class="heading ml-2 description">Stephen George</h5>
+								</div>
+							</div>
+							<div class="bottom-token-info">
+								<ul class="list-group list-group-horizontal token-info-content">
+									<li class="list-group-item border-0">
+										<p class="mb-1">Shares</p>
+										<p>1110</p>
+									</li>
+									<li class="list-group-item border-0 px-0">
+										<p class="mb-1">Offered</p>
+										<p>50%</p>
+									</li>
+									<li class="list-group-item border-0 px-0">
+										<p class="mb-1">Raised</p>
+										<p>$ 369k</p>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="col-6 col-lg-3 col-sm-6 col-md-3">
+						<div class="about-creators position-absolute">
+							<img class="d-block slider-image" src="../svg/common/Token 11.svg" alt="First slide">
+							<div class="top-left-part">
+								<div class="heading">Moved to NYC</div>
+								<div class="d-inline-flex mt-2">
+									<img class="user-image" src="../svg/home/user-img.svg" alt="user-image">
+									<h5 class="heading ml-2 description">Dan Mace</h5>
+								</div>
+							</div>
+							<div class="bottom-token-info">
+								<ul class="list-group list-group-horizontal token-info-content">
+									<li class="list-group-item border-0">
+										<p class="mb-1">Shares</p>
+										<p>1110</p>
+									</li>
+									<li class="list-group-item border-0 px-0">
+										<p class="mb-1">Offered</p>
+										<p>50%</p>
+									</li>
+									<li class="list-group-item border-0 px-0">
+										<p class="mb-1">Raised</p>
+										<p>$ 369k</p>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="col-6 col-lg-3 col-sm-6 col-md-3">
+						<div class="about-creators position-absolute">
+							<img class="d-block slider-image" src="../svg/common/token 12.svg" alt="First slide">
+							<div class="top-left-part">
+								<div class="heading">Our trip to Mykonos</div>
+								<div class="d-inline-flex mt-2">
+									<img class="user-image" src="../svg/home/user-img.svg" alt="user-image">
+									<h5 class="heading ml-2 description">Stephen George</h5>
+								</div>
+							</div>
+							<div class="bottom-token-info">
+								<ul class="list-group list-group-horizontal token-info-content">
+									<li class="list-group-item border-0">
+										<p class="mb-1">Shares</p>
+										<p>1110</p>
+									</li>
+									<li class="list-group-item border-0 px-0">
+										<p class="mb-1">Offered</p>
+										<p>50%</p>
+									</li>
+									<li class="list-group-item border-0 px-0">
+										<p class="mb-1">Raised</p>
+										<p>$ 369k</p>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+	
+<footer class="mt-4 section-footer">
+	<div class="container" style="margin-top: 76px;">
+		<div class="row">
+			<div class="col-lg-6 col-md-6 col-xs-4 col-sm-5 col-6">
+				<!-- <h3 class="heading">aBit</h3> -->
+				<p class="description">Own <span class="heading">aBit</span> of your favourite videos.</p>
+			</div> 
+			<div class="col-lg-6 col-md-6 col-sm-7 col-6">
+				<ul class="list-group border-left float-right">
+					<a href="index.html"><li class="list-group-item border-0">Home</li></a>
+					<a href="creatorpage.html"><li class="list-group-item border-0">Are you a creator?</li></a>
+					<!-- <li class="list-group-item border-0">Support</li> -->
+				</ul>
+			</div>
+		</div>
+	</div>
+</footer>
+	</div>
+</div>
+	
+	<div w3-include-html="login.html"></div>
+	<div w3-include-html="register.html"></div>
+
+	<!-- Scripts -->
+	<script src="js/loadExtLibrary.js"></script>
+	<!-- <script src="js/header.js"></script>-->
+	<script src="js/main.js"></script> 
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+	<script src="../../node_modules/silkrouter/dist/umd/silkrouter.min.js"></script>	
+	<script src="https://cdn.jsdelivr.net/npm/jqueryrouter@2.2.12/dist/js/jquery.router.min.js"></script>
+
+	
+	
+	<script src="js/detects.js"></script>
+	<script src="js/another-file.js"></script>
+	<script src="js/main.polyfills.js"></script>
+</body>
+</html>

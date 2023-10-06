@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Creator Earnings Calculator</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    /* Add some additional custom styling */
+    body {
+      padding: 20px;
+    }
+   
+
+
+
+
+
+
+
+    .range-slider {
+  position: relative;
+  width: 300px;
+}
+
+.slider {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 10px;
+  background: #d3d3d3;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+  position: relative;
+  z-index: 2;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  background: #4CAF50;
+  border-radius: 50%;
+  cursor: pointer;
+  position: relative;
+  z-index: 3;
+}
+
+.slider::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  background: #4CAF50;
+  border-radius: 50%;
+  cursor: pointer;
+  position: relative;
+  z-index: 3;
+}
+
+.scale {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -25px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.scale-marker {
+  width: 2px;
+  height: 10px;
+  background: #000000;
+}
+
+.scale-value {
+  font-size: 12px;
+}
+
+
+
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2 class="mt-4">Creator Earnings Calculator</h2>
+    <div class="range-slider">
+        <input type="range" class="slider" min="0" max="100" step="5" />
+        <div class="scale">
+          <div class="scale-marker"></div>
+          <div class="scale-marker"></div>
+          <div class="scale-marker"></div>
+          <div class="scale-marker"></div>
+          <div class="scale-marker"></div>
+          <div class="scale-marker"></div>
+          <div class="scale-marker"></div>
+          <div class="scale-marker"></div>
+          <div class="scale-marker"></div>
+          <div class="scale-marker"></div>
+          <div class="scale-value">0</div>
+          <div class="scale-value">1</div>
+          <div class="scale-value">2</div>
+          <div class="scale-value">3</div>
+          <div class="scale-value">4</div>
+          <div class="scale-value">5</div>
+          <div class="scale-value">6</div>
+          <div class="scale-value">7</div>
+          <div class="scale-value">8</div>
+          <div class="scale-value">9</div>
+          <div class="scale-value">10</div>
+        </div>
+      </div>
+      
+      
+    <div class="form-group">
+        <label for="videoViews">Video Views:</label>
+        <input type="range" class="slider" id="videoViews" min="100000" max="3000000" step="100000" value="100000">
+        <span id="videoViewsLabel">100,000</span>
+      </div>
+    <div class="row mt-4">
+      <div class="col-md-6">
+        <div class="form-group">
+          <label for="ad-revenue">Avg Ad Revenue per Video:</label>
+          <input type="number" class="form-control" id="ad-revenue" step="0.01" min="0" required>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-group">
+          <label for="video-count">Number of Videos Uploaded:</label>
+          <input type="number" class="form-control" id="video-count" step="1" min="0" required>
+          <div class="invalid-feedback">Maximum 4 videos allowed.</div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <button class="btn btn-primary" onclick="calculateEarnings()">Calculate</button>
+      </div>
+    </div>
+    <div class="row mt-4">
+      <div class="col-md-6">
+        <div class="alert alert-success" role="alert" id="earnings"></div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    var videoCountInput = document.getElementById('video-count');
+    videoCountInput.addEventListener('keyup', function () {
+      validateVideoCount();
+    });
+
+    function validateVideoCount() {
+      var videoCount = parseInt(videoCountInput.value);
+
+      if (videoCount > 4) {
+        videoCountInput.classList.add('is-invalid');
+      } else {
+        videoCountInput.classList.remove('is-invalid');
+      }
+    }
+
+    function calculateEarnings() {
+      validateVideoCount();
+
+      var adRevenue = parseFloat(document.getElementById('ad-revenue').value);
+      var videoCount = parseInt(document.getElementById('video-count').value);
+
+      if (videoCount <= 4) {
+        var earnings = (adRevenue * videoCount * 3).toFixed(2);
+        document.getElementById('earnings').textContent = 'Creator Earnings: $' + earnings;
+      }
+    }
+
+
+    const slider = document.querySelector('.slider');
+    const interval = 10; // Adjust the interval based on your requirements
+
+for (let i = interval; i <= slider.max; i += interval) {
+  const percent = (i / slider.max) * 100;
+  const line = document.createElement('div');
+  line.classList.add('slider-line');
+  line.style.left = `${percent}%`;
+  slider.parentNode.appendChild(line);
+}
+
+
+  </script>
+</body>
+</html>

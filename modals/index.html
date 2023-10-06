@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Scroll to Page End Modal</title>
+  <!-- Add your CSS and jQuery library links here -->
+</head>
+<body>
+  <!-- Your website content goes here -->
+
+  <!-- Modal HTML structure -->
+  <div id="myModal" style="display: none;">
+    <div id="modalContent">
+      <!-- Your modal content goes here -->
+      <h2>Modal Content</h2>
+      <p>This is the content of the modal.</p>
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+    // JavaScript code to show modal when scroll reaches the page end
+    $(window).scroll(function() {
+      const modal = $('#myModal');
+      const scrollableHeight = $(document).height() - $(window).height();
+      const scrollPosition = $(window).scrollTop();
+
+      // Show the modal when scroll reaches the bottom of the page
+      if (scrollPosition >= scrollableHeight) {
+        modal.show();
+        // Optionally, you can add a class to the modal to style it, e.g., modal.addClass('show');
+      } else {
+        modal.hide();
+        // Optionally, you can remove the class from the modal, e.g., modal.removeClass('show');
+      }
+    });
+  </script>
+</body>
+</html>
