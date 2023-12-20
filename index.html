@@ -4,18 +4,24 @@
 	<title>Home</title>
 	<link rel="stylesheet" type="text/css" href="css/main.css">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+		<!-- <meta name="google-signin-client_id" content="280264346590-vjg6cqponliotfqn32pt2mna2jnqmmtu.apps.googleusercontent.com"> -->
+
 	<link rel="shortcut icon" href="svg/favicon.svg" type="image/x-icon">
+	<link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+
 	<!-- Google tag (gtag.js) -->
-	<script async src="https://www.googletagmanager.com/gtag/js?id=G-M2C1G7D2PW"></script>
 	<script>
 	window.dataLayer = window.dataLayer || [];
 	function gtag(){dataLayer.push(arguments);}
 	gtag('js', new Date());
 
 	gtag('config', 'G-M2C1G7D2PW');
+
+
 	</script>
 
-<script type="text/javascript">
+
+<!-- <script type="text/javascript">
 	
     (function(c,l,a,r,i,t,y){
         c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
@@ -23,6 +29,8 @@
         y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
     })(window, document, "clarity", "script", "i796yyjdnr");
 </script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-M2C1G7D2PW"></script> -->
+
 </head>
 <body>
 	<header style="height: 67px;">
@@ -32,15 +40,33 @@
 			<!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
 				<span class="navbar-toggler-icon"></span>
 			</button> -->
+			<!-- <div id="buttonDiv"></div> -->
+			<!-- <div id="g_id_onload"
+				data-client_id="280264346590-vjg6cqponliotfqn32pt2mna2jnqmmtu.apps.googleusercontent.com"
+				data-context="signin"
+				data-ux_mode="popup"
+				data-callback="handleCredentialResponse"
+				data-auto_prompt="false">
+			</div>
+
+			<div class="g_id_signin"
+				data-type="standard"
+				data-shape="rectangular"
+				data-theme="outline"
+				data-text="signin_with"
+				data-size="large"
+				data-logo_alignment="left">
+			</div> -->
 			<div class="expand navbar-expand" id="navbarTogglerDemo02">
 				<ul class="navbar-nav ml-auto mt-lg-0 ">
 				<li class="nav-item active">
-					<a class="nav-link nav-item-creator" href="creatorpage.html">Are you a creator? <span class="sr-only">(current)</span></a>
+					<a class="nav-link nav-item-creator border-0" href="creatorpage.html">Are you a creator? <span class="sr-only">(current)</span></a>
 				</li>
 				<li>
 					<button class="btn abit-outline-purple my-2 my-sm-0" data-toggle="modal" data-target="#registerModal">Login / Signup</button>
 				</li>
 				</ul>
+				
 			</div>
 			</div>	
 		</nav>
@@ -68,6 +94,7 @@
 						<img src="img/section-1-infographics.png" class="mt-3" alt="">
 					</div>
 				</div>
+				<div id="SAMPLEdivID"></div>
 			</div>
 		</div>
 	</section>
@@ -417,21 +444,185 @@
 	
 	<div w3-include-html="login.html"></div>
 	<div w3-include-html="register.html"></div>
-	<div w3-include-html="modals/waitListModal.html"></div>
 	<div w3-include-html="modals/creatorSignupModal.html"></div>
+	<!-- <div w3-include-html="modals/waitListModal.html"></div> -->
 
 
 	<!-- Scripts -->
 	
+	<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> -->
 	<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.2/js/bootstrap.min.js" integrity="sha512-7rusk8kGPFynZWu26OKbTeI+QPoYchtxsmPeBqkHIEXJxeun4yJ4ISYe7C6sz9wdxeE1Gk3VxsIWgCZTc+vX3g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
-	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
-	<script src="js/main.js"></script> 
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.2/js/bootstrap.min.js" integrity="sha512-7rusk8kGPFynZWu26OKbTeI+QPoYchtxsmPeBqkHIEXJxeun4yJ4ISYe7C6sz9wdxeE1Gk3VxsIWgCZTc+vX3g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script> -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-M2C1G7D2PW"></script>
 
 	<script src="js/loadExtLibrary.js"></script>
-	<script src="js/waitlistModal.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
+	
+	
+
+	<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous"></script>
+	<script src="js/main.js"></script> 
+	<!-- <script src="js/waitlistModal.js"></script> -->
 	<script src="js/detects.js"></script>
 	<script src="js/another-file.js"></script>
 	<script src="js/main.polyfills.js"></script>
+	<script src="https://accounts.google.com/gsi/client" async></script>
+	<script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+
+
+
+	
+
 </body>
+<script>
+	  let USER_CONSTANT = {type: "USER", isLogin : false};
+	//  let {loggedUserType, isLogin} = USER_CONSTANT;
+	 
+      window.onload = function () {
+        google.accounts.id.initialize({
+          client_id: "280264346590-vjg6cqponliotfqn32pt2mna2jnqmmtu.apps.googleusercontent.com",
+          callback: handleCredentialResponse,
+		  auto_select: true,
+		  itp_support: true,
+		  use_fedcm_for_prompt: false,
+		  cancel_on_tap_outside: false,
+		  shape: "circle",
+		  select_by: 'auto',
+        });
+		setTimeout(function() {
+			google.accounts.id.renderButton(
+          document.getElementById("creatorLoginBtn"),
+          { 
+			theme: "outline",
+		  	 size: "large",
+			 shape: "circle",
+			 width: "352px",
+			 text: "signup_with",
+			 click_listener: function() {
+				onGoogleBtnClickHandler({userType: "CREATOR", isLogin : true} );
+			 }
+		}  // customization attributes
+		);
+		google.accounts.id.renderButton(
+          document.getElementById("creatorSignupBtn"),
+          { 
+			theme: "outline",
+		  	 size: "large",
+			 shape: "circle",
+			 width: "352px",
+			 text: "signup_with",
+			 click_listener: function() {
+				onGoogleBtnClickHandler({userType: "CREATOR", isLogin : false} );
+			 }
+		}  // customization attributes
+		);
+		google.accounts.id.renderButton(
+          document.getElementById("userLoginBtn"),
+          { 
+			theme: "outline",
+		  	 size: "large",
+			 shape: "circle",
+			 width: "352px",
+			 text: "continue_with",
+			 click_listener: function() {
+				onGoogleBtnClickHandler({userType: "USER", isLogin : true} );
+			 }
+		}  // customization attributes
+        );
+		google.accounts.id.renderButton(
+          document.getElementById("userSignupBtn"),
+          { 
+			theme: "outline",
+		  	 size: "large",
+			 shape: "circle",
+			 width: "352px",
+			 text: "signup_with",
+			 click_listener: function() {
+				onGoogleBtnClickHandler({userType: "USER", isLogin : false} );
+			 }
+		}  // customization attributes
+        );
+		}, 200)
+       
+		//google.accounts.id.prompt(); // also display the One Tap dialog
+      }
+	  function onGoogleBtnClickHandler(USER_CONSTANT_OBJ) {
+		Object.assign(USER_CONSTANT, USER_CONSTANT_OBJ);
+	  }
+
+	  function handleCredentialResponse(response) {
+		debugger;
+
+        console.log("Encoded JWT ID token: " + response.credential);
+		let loggedInUserInfo = parseJwt(response.credential);
+		console.log(loggedInUserInfo);
+		registerOrLoginViaGoogle(response, USER_CONSTANT);
+      }
+	  function parseJwt (token) {
+		var base64Url = token.split('.')[1];
+		var base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
+		var jsonPayload = decodeURIComponent(window.atob(base64).split('').map(function(c) {
+			return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
+		}).join(''));
+
+		return JSON.parse(jsonPayload);
+	}
+	function registerOrLoginViaGoogle(response, USER_CONSTANT) {
+		let {userType, isLogin} = USER_CONSTANT;
+		$.ajax({
+			url: `https://api-abit.onrender.com/v1/${userType.toLowerCase()}/loginOrSignupWithGoogle`,
+			type: 'POST',
+			data:  JSON.stringify({
+				'token': response.credential
+			}),
+			xhrFields: {
+				withCredentials: true
+			},
+			contentType: "application/json; charset=utf-8",
+			success: function (data, status, xhr) {
+				if(!isLogin && userType.toLowerCase() !== "creator") {
+					aBit_UTIL.displaySuccessDialog('Success!', "Thank you! Our team will reach out soon.");
+				} else if(isLogin && userType.toLowerCase() !== "creator") {
+					let loggedInUserInfo = parseJwt(response.credential);
+					console.log(loggedInUserInfo);
+				} else if(!isLogin && userType.toLowerCase() === "creator") {
+					$("#loginModal, #registerModal").modal("hide");
+					$("#creatorSignupModal").modal("show");
+					$("#creatorSignupModal .creator-signup-step-1").hide();
+					$("#creatorSignupModal .creator-signup-step-2").show();
+				} else {
+					window.location.href = "creatordashboard.html";
+				}
+			},
+			error: function (XMLHttpRequest, textStatus, errorThrown) {
+				aBit_UTIL.displayErrorDialog('ERROR!', "SOME ERORR");
+			}
+		});
+	}
+	
+	function signOut() {
+		$.ajax({
+			url: "https://api-abit.onrender.com/user/logout",
+			type: 'POST',
+			data:  JSON.stringify({
+				'token': response.credential
+			}),
+			xhrFields: {
+				withCredentials: true
+			},
+			contentType: "application/json; charset=utf-8",
+			success: function (data, status, xhr) {
+				//aBit_UTIL.displaySuccessDialog('Success!', "Thank you! Our team will reach out soon.");
+			},
+			error: function (XMLHttpRequest, textStatus, errorThrown) {
+				aBit_UTIL.displayErrorDialog('ERROR!', "SOME ERORR");
+			}
+		});
+		//google.accounts.id.disableAutoSelect();
+  }
+		
+  </script>
 </html>

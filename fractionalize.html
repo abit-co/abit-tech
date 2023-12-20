@@ -8,18 +8,38 @@
 </head>
 <body>
 	<header style="height: 67px;">
-		<nav class="navbar navbar-expand-lg navbar-light bg-light" style="height: 67px;">
+		<nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom-0" style="height: 67px;">
 			<div class="container">
 			<a class="navbar-brand" href="index.html">aBit</a>
 			<!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
 				<span class="navbar-toggler-icon"></span>
 			</button> -->
 			<div class="expand navbar-expand" id="navbarTogglerDemo02">
-				<ul class="navbar-nav ml-auto mt-lg-0 ">
-				<li class="nav-item active">
-					<a class="nav-link nav-item-creator" href="creatorpage.html">Are you a creator? <span class="sr-only">(current)</span></a>
-				</li>
-				</ul>
+				<ul class="navbar-nav mt-2 mt-lg-0 ">
+					<li class="nav-item active">
+						<!-- <a class="nav-link" href="#">Are you a creator ? <span class="sr-only">(current)</span></a> -->
+						<img class="profile-img" src="../svg/icons/icon-wallet.svg" alt="audience-profile-img" data-toggle="modal" data-target="#perksModal">
+					</li>
+					<li class="nav-item px-3">
+						<!-- <a class="nav-link" href="#">Are you a creator ? <span class="sr-only">(current)</span></a> -->
+						<img class="profile-img" src="../svg/icons/icon-notification.svg" alt="audience-profile-img" data-toggle="modal" data-target="#shareVideoModal">
+					</li>
+					<!-- <li class="nav-item ">
+						<img class="profile-img" src="../svg/icons/user-profile-pic.svg" alt="audience-profile-img" data-toggle="modal" data-target="#shareVideoModal" style="width: 24px; height: 24px;">
+						<img class="profile-img ml-2" src="../svg/icons/down-arrow-icon.svg" alt="down-arrow-icon" style="width: 18px; height: 18px;">
+					</li> -->
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle border-0" href="#" role="button" data-toggle="dropdown" aria-expanded="false" style="margin-top: -6px;">
+							<img class="profile-img" src="../svg/icons/user-profile-pic.svg" alt="audience-profile-img" data-toggle="modal" data-target="#shareVideoModal" style="width: 24px; height: 24px;">
+						</a>
+						<div class="dropdown-menu" style="border-radius: 24px; width: 170px; height: 145px; padding: 20px 2px;">
+						  <a class="dropdown-item" href="editcreatorprofile.html">Edit Profile</a>
+						  <a class="dropdown-item" href="#">Account</a>
+						  <a class="dropdown-item" href="#">Logout</a>
+						</div>
+					  </li>
+	
+					</ul>
 				<!-- <button class="btn abit-outline-purple my-2 my-sm-0" data-toggle="modal" data-target="#registerModal">Login / Signup</button> -->
 			</div>
 			</div>	
@@ -28,9 +48,28 @@
 	<div style="overflow: hidden;">
 		<section class="fr-section-1">
 			<div class="container">
-				<div class="row">
-					<div class="col-md-4">
-						<img src="svg/Fractionalize/fr-section-1-bg.png">
+				<div class="row header-info d-flex">
+					<div class="col-md-6"> <!-- px-0 removing it as of now-->
+						<div class="creator-bio d-inline-flex">
+							<div class="creator-profile-img">
+								<img src="svg/icons/profile-pic.svg" alt="creator profile image">
+							</div>
+							<div class="heading pl-2">
+								<span class="name">DAN MACE</span>
+								<div class="profile">Creator</div>
+							</div>
+						</div>
+						<div class="creator-tag-line">
+							Earn with Dan Mace by becoming a co-owner.
+						</div>
+						<div class="description">
+							Invest in his upcoming video <strong class="text-decoration-underline">‘The Sound of Silence’</strong> and get a share in the ownership and revenue.
+						</div>
+						<div class="cta-group">
+							<button type="button" class="btn neo-primary-btn abit-black abit-bg-yellow d-inline-flex cstm-btn-props-1" data-toggle="modal" data-target="#waitListModal">Buy Now</button>
+							<button type="button" class="btn neo-primary-btn abit-white abit-transparent-btn d-inline-flex border border-white cstm-btn-props-2 ml-2" data-dismiss="modal" style="
+							 box-shadow: 2px 4px #433d40, 2px 4px 0 1px #FFFFFF">View Trailer</button>						
+						</div>
 					</div>
 					<div class="col-md-6">
 					</div>
@@ -39,34 +78,169 @@
 		</section>
 		<section class="fr-section-2">
 			<div class="container">
-				<div class="row">
+				<div class="row trailer-video">
 					<div class="col-md-4">
-						<h3><span class="text-center">Play</span><br>Trailer Now</h3>
-						<img src="svg/Fractionalize/arrow-icon.svg">
-
-						<div class="description">
-							“Raise your words not your voice. Rain grows flowers, not thunder.”
+						<div class="left-portion">
+							<h3 class="heading">
+								<div class="text-center abit-purple play-trailer-text">Play</div>
+								<div class="">Trailer Now</div>
+							</h3>
+							<img class="trailer-video-img" src="svg/Fractionalize/arrow-icon.svg" style="margin-left: 85px;">
+	
+							<div class="description">
+								“Raise your words not your voice. Rain grows flowers, not thunder.”
+							</div>
 						</div>
+						
 					</div>
-					<div class="col-md-6">
-						<img src="svg/Fractionalize/video-1.svg">
+					<div class="col-md-7 offset-md-1">
+						<img src="svg/Fractionalize/video-1.svg" class="trailer-video-img">
 					</div>
 				</div>
-				<div class="row">
-					<div class="col-md-12">
-						<div class="ops-wrapper">
-							<div class="img-wrappesr">
+					<div class="row ownership-card">
+						<div class="col-md-4">
+							<div class="img-wrapperr">
 								<img src="svg/Fractionalize/fr-img-7.svg">
 							</div>
-							<div class="f">
-								<div class="header">
-									<h3>
-										<span>0.24%</span>
-										<span>Ownership Per Share</span>
-										<span>$30</span>
-									</h3>
-									<br>
-									<p>Gain access to exclusive perks & community experiences.</p>
+						</div>
+						<div class="col-md-8">
+							<div class="ownership-card-info">
+								<div class="ops-heading border-bottom pb-3">
+									<span class="percentage-ops">0.24%</span>
+									<span class="ops-text pl-2">Ownership Per Share</span>
+									<span class="ops-amount">$30</span>			
+								</div>
+								<div class="perk-section">
+									<p class="perk-heading">Gain access to exclusive perks & community experiences.</p>
+									<div class="perks-type text-center">
+										<div class="row">
+											<div class="col-md-4 col-6 pb-3">
+												<div class="perk-item">
+													<img src="svg/icons/perk-1-icon.svg" alt="">
+													<p class="perk-description">Pitch Your Idea</p>
+												</div>
+											</div>
+											<div class="col-md-4 col-6 pb-3">
+												<div class=" perk-item">
+													<img src="svg/icons/perk-2-icon.svg" alt="">
+													<p class="perk-description">Analytical Exploration</p>
+												</div>
+											</div>
+											<div class="col-md-4 col-6 pb-3">
+												<div class="perk-item">
+													<img src="svg/icons/perk-3-icon.svg" alt="">
+													<p class="perk-description">Viral Meetup</p>
+												</div>
+											</div>
+											<div class="col-md-4 col-6 pb-3">
+												<div class="perk-item">
+													<img src="svg/icons/perk-4-icon.svg" alt="">
+													<p class="perk-description">Joe Studio Tour</p>
+												</div>
+											</div>
+											<div class="col-md-4 col-6 pb-3">
+												<div class="perk-item">
+													<img src="svg/icons/perk-5-icon.svg" alt="">
+													<p class="perk-description">Work with Dan</p>
+												</div>
+											</div>
+											<div class="col-md-4 col-6 pb-3">
+												<div class="perk-item">
+													<img src="svg/icons/perk-6-icon.svg" alt="">
+													<p class="perk-description">Co-owner Community</p>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="cstm-btn-props-buynow">
+							<button type="button" class="btn neo-primary-btn abit-white abit-bg-purple d-inline-flex" data-toggle="modal" data-target="#paymentInfoModal">Buy Now</button>
+						</div>
+					</div>
+			</div>
+		</section>
+		<section class="fr-section-3 cr-common-section">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-10 offset-md-1">
+						<div class="text-center">
+							<h3 class="heading">Not Patreon, <br><i>Just way better!</i></h3>
+							<div class="row">
+								<div class="col-md-4">
+									<div class="box-wrapper">
+										<img src="svg/icons/icon-1.svg">
+										<div class="sub-heading py-2">Own stake as a co-owner.</div>
+										<p class="sub-description">Unlike other fans, you’re truly involved in Jacob’s journey.</p>
+									</div>
+								</div>
+								<div class="col-md-4">
+									<div class="box-wrapper">
+										<img src="svg/icons/icon-3.svg">
+										<div class="sub-heading py-2">Earn on every view.</div>
+										<p class="sub-description">For every view the video gets, a % of the revenue is rightfully yours.</p>
+									</div>
+								</div>
+								<div class="col-md-4">
+									<div class="box-wrapper">
+										<img src="svg/icons/icon-2.svg">
+										<div class="sub-heading py-2">More than just money.</div>
+										<p class="sub-description">This video is associated with unique perks and experiences, accessible to the co-owners exclusively.</p>
+									</div>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-12">
+									<div id="accordion1" class="mt-5 cstm-accordian">
+										<div class="card mb-4 cstm-card" style="width: 100%;">
+										  <div class="card-header text-left" id="headingOne">
+											<h5 class="mb-0">
+											  <button class="btn p-0 shadow-none" data-toggle="collapse" data-target="#collapseOne1f" aria-expanded="true" aria-controls="collapseOne">
+												View ownership certification
+											  </button>
+											  <img src="svg/icons/plus-circle-icon.svg" alt="plusicon" class="float-right plus-icon toggle-icon  d-none">
+											  <img src="svg/icons/minus-icon.svg" alt="minuscon" class="float-right minus-icon toggle-icon">
+			
+											</h5>
+										  </div>
+									  
+										  <div id="collapseOne1" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion1">
+											<div class="card-body pt-0 ownership-certification-accordian-body">
+												<div class="row">
+													<div class="col-md-3">
+														<img src="img/empty-rectangle.png" alt="pdf">
+													</div>
+													<div class="col-md-9 border-left">
+														<div class="description">
+															Just like any other official partnership, your stake in Dan’s video is legally certified. Take a long long look at it, not everyone gets the chance :)
+															<p class="abit-purple text-decoration-underline sub-description">VIEW PDF</p>
+														</div>
+													</div>
+												</div>
+										  </div>
+										</div>
+									</div>
+										<div class="card cstm-card" style="width: 100%;">
+										  <div class="card-header text-left" id="headingTwo">
+											<h5 class="mb-0">
+											  <button class="btn collapsed p-0 shadow-none" data-toggle="collapse" data-target="#collapseTwo1f" aria-expanded="false" aria-controls="collapseTwo">
+												How much revenue will I make?
+											  </button>
+											  <img src="svg/icons/plus-circle-icon.svg" alt="plusicon" class="float-right plus-icon toggle-icon">
+											  <img src="svg/icons/minus-icon.svg" alt="minuscon" class="float-right minus-icon d-none toggle-icon">
+			
+											</h5>
+										  </div>
+										  <div id="collapseTwo1" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion1">
+											<div class="card-body pt-0">
+												Bingo! Unlike Patreon, aBit is an investment platform. For the first time ever, your audience isn't simply consuming content. Instead, they'll own a share of your video and expect returns too. This creates a community that is truly invested in your growth.
+											</div>
+										  </div>
+										</div>
+									  </div>
 								</div>
 							</div>
 						</div>
@@ -74,6 +248,31 @@
 				</div>
 			</div>
 		</section>
+		<section class="fr-section-4">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12">
+						<div class="text-center">
+							<h3 class="heading">Before you commit, Dan has something to say:</h3>
+							<img class="cursor-pointer creator-quick-video" alt="creator-quick-video" src="img/creator-quick-video.png">
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="fr-section-5">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12">
+						<div class="text-center">
+							<div class="heading">The Sound Of Silence</div>
+							<p class="description">In this Video <a href="https://www.youtube.com/channel/UCtinbF-Q-fVthA0qrFQTgXQ" class="text-reset text-decoration-underline">@casey</a>  introduces me to <a href="https://www.youtube.com/channel/UCX6OQ3DkcsbYNE6H8uQQuVA" class="text-reset text-decoration-underline">@MrBeast</a> who then offers me a Job. I take you on the journey with me from Cape Town South Africa to the USA to reveal it all.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
 		<section class="fr-section-7">
 			<div class="container">
 				<div class="row">
@@ -85,18 +284,18 @@
 					<div class="col-md-6">
 						<div class="right-portion">
 							<h3 class="heading">And lastly,</br> become a <i>co-owner now! </i></h3>
-							<button type="button" class="btn neo-primary-btn abit-white abit-transparent-btn d-inline-flex border border-white buy-now-additional-prop mt-2 showWaitListModal" data-dismiss="modal" data-target="#waitListModal">Buy Now</button>
+							<button type="button" class="btn neo-primary-btn abit-white abit-transparent-btn d-inline-flex border border-white buy-now-additional-prop mt-2 showWaitListModal" data-dismiss="modal" data-target="#paymentInfoModal">Buy Now</button>
 						</div>
 					</div>
 				</div>
 			</div>
 		</section>
 		<footer class="mt-4 section-footer">
-			<div class="container" style="margin-top: 76px;">
+			<div class="container" style="margin-top: 76px;" >
 				<div class="row">
 					<div class="col-lg-6 col-md-6 col-xs-4 col-sm-5 col-6">
-						<h3 class="heading">aBit</h3>
-						<p class="description">Own <span class="heading">aBit</span> of your favourite videos. </p>
+						<!-- <h3 class="heading">aBit</h3> -->
+					<p class="description">Own <span class="heading">aBit</span> of your favourite videos.</p>
 					</div> 
 					<div class="col-lg-6 col-md-6 col-sm-7 col-6">
 						<ul class="list-group border-left float-right">
@@ -112,19 +311,24 @@
 	
 	<div w3-include-html="login.html"></div>
 	<div w3-include-html="register.html"></div>
-	<div w3-include-html="modals/waitListModal.html"></div>
+	<div w3-include-html="modals/congratsModal.html"></div> 
+	<div w3-include-html="modals/paymentInfoModal.html"></div> 
+	<div w3-include-html="modals/perksModal.html"></div> 
+
 
 	<!-- Scripts -->
-	<script src="js/loadExtLibrary.js"></script>
-	<script src="js/waitlistModal.js"></script>
-	<script src="js/main.js"></script> 
-	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
-	<script src="../../node_modules/silkrouter/dist/umd/silkrouter.min.js"></script>	
-	<script src="https://cdn.jsdelivr.net/npm/jqueryrouter@2.2.12/dist/js/jquery.router.min.js"></script>
 	
-	<script src="js/detects.js"></script>
-	<script src="js/another-file.js"></script>
-	<script src="js/main.polyfills.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
+	
+	
+
+	<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous"></script>
+	
+	<script src="js/loadExtLibrary.js"></script>
+	<!-- <script src="js/waitlistModal.js"></script> -->
+	<script src="js/main.js"></script> 
 
 	<script>
 		// setTimeout(function() {

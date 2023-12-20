@@ -42,16 +42,15 @@
           
           <!-- Modal footer -->
           <div class="modal-footer justify-content-center border-0 pt-0">
-            <button type="submit" class="btn neo-primary-btn abit-black abit-bg-yellow f-20 f-weight-500 toggleRegisterLoginPopup" id="registerCreatorUser" which="creatorsignupcall" style="letter-spacing: 1.3px;">Sign Up with Gmail</button>
-             <div class="col-md-12 text-center my-3">
-              <span class="mini-title-2">Already have an account? <a href="#" class="toggleRegisterLoginPopup" login="enable" which="login" style="color:#764CC2; cursor: pointer;">LogIn</a></span>
+            <!-- <button type="submit" class="btn neo-primary-btn abit-black abit-bg-yellow f-20 f-weight-500 toggleRegisterLoginPopup" id="registerCreatorUser" which="creatorsignupcall" style="letter-spacing: 1.3px;">Sign Up with Gmail</button> -->
+             <div id="creatorSignupBtn"></div> 
+            <div class="col-md-12 text-center my-3">
+              <span class="mini-title-2">Already have an account? <a href="#" class="toggleRegisterLoginPopup" login="enable" which="creatorlogin" style="color:#764CC2; cursor: pointer;">LogIn</a></span>
              </div>
           </div>
         </div>
 
-
         <div class="modal-content creator-signup-step-2" style="border-radius: 24px; padding-bottom: 20px; display: none;">
-        
             <!-- Modal Header -->
             <div class="modal-header border-0 pb-0">    
               <button type="button" class="close" data-dismiss="modal">
@@ -80,18 +79,61 @@
             
             <!-- Modal footer -->
             <div class="modal-footer justify-content-center border-0 pt-0">
-                <a href="creatordashboard.html"> <button type="submit" class="btn neo-primary-btn abit-black abit-bg-yellow f-20 f-weight-500" id="scheduleACall" style="letter-spacing: 1.3px;">
+                <!-- <a href="creatordashboard.html">  -->
+                  <a href="" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/abit-tech/calendly-testing'});return false;">
+                  <button type="submit" class="btn neo-primary-btn abit-black abit-bg-yellow f-20 f-weight-500" id="scheduleACall" style="letter-spacing: 1.3px;">
                 Schedule a Call
-               </button></a>
-               <div class="col-md-12 text-center my-3">
+               </button>
+               <div id="SAMPLEdivID"></div>
+              </a>
+              <!-- </a> -->
+               <!-- <div class="col-md-12 text-center my-3">
                 <span class="mini-title-2">Already have an account? <a href="#" class="toggleRegisterLoginPopup" login="enable" which="login" style="color:#764CC2; cursor: pointer;">LogIn</a></span>
+               </div> -->
+            </div>
+          </div>
+
+
+          <!-- Modal Creator Login with Google-->
+          <div class="modal-content creator-login-step" style="border-radius: 24px; padding-bottom: 20px; display: none;">
+        
+            <!-- Modal Header -->
+            <div class="modal-header border-0 pb-0">    
+              <button type="button" class="close" data-dismiss="modal">
+                <img src="../svg/close-icon.svg" alt="close icon">
+              </button>
+            </div>
+            
+            <!-- Modal body -->
+            <div class="modal-body text center py-0">
+               <div class="container" style="max-width: 382px;">
+                <div class="row">
+                    <div class="col-md-12">
+                      <h4 class="modal-title text-center f-40 f-weight-400" style="padding-bottom: 73px;">Creator Login with Google</h4>
+                        <div class="creater-signup-form text-center"  style="padding-bottom: 60px;">
+                          <img src="../img/creator-signup-gmail.png" alt="pencil icon"  style="padding-bottom: 37px;">
+                          <div class="text">Login with the Gmail account that's linked to your YouTube channel.</div>
+                        </div>
+                    </div>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Modal footer -->
+            <div class="modal-footer justify-content-center border-0 pt-0">
+              <!-- <button type="submit" class="btn neo-primary-btn abit-black abit-bg-yellow f-20 f-weight-500 toggleRegisterLoginPopup" id="registerCreatorUser" which="creatorsignupcall" style="letter-spacing: 1.3px;">Sign Up with Gmail</button> -->
+               <div id="creatorLoginBtn"></div> 
+              <div class="col-md-12 text-center my-3">
+                <span class="mini-title-1 toggleRegisterLoginPopup" style="cursor: pointer;" which="register">Are you Fan?</span><br>
+                <span class="mini-title-2">Still didn't signed up? <a href="#" class="toggleRegisterLoginPopup" login="enable" which="creatorsignup" style="color:#764CC2; cursor: pointer;">Signup</a></span>
                </div>
             </div>
           </div>
+
+
+          
       </div>
     </div>
-  
-
 <script>
 
 

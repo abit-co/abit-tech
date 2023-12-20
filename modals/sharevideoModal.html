@@ -42,41 +42,41 @@
                   <div class="col-md-12">
                     <h4 class="modal-title text-center f-40 f-weight-400">Share New Video</h4>
                       <div class="share-video-form mt-4">
-                        <form class="form">
+                        <form class="form upload-video-form">
                           <div class="form-group ">
                             <label for="videoTitle">Video Title</label>
-                            <input type="text" class="form-control" id="videoTitle" aria-describedby="emailHelp" placeholder="Video Title">
+                            <input type="text" class="form-control" id="videoTitle" key="title" aria-describedby="emailHelp" placeholder="Video Title">
                           </div>
                           <div class="form-group" >
                             <label for="videoLink">Video Link</label>
-                            <input type="text" class="form-control" id="videoLink" placeholder="Video Link">
+                            <input type="text" class="form-control" id="videoLink" key="link" placeholder="Video Link">
                           </div>
 
-                          <div class="form-group">
+                          <!-- <div class="form-group">
                             <label for="videoDate">Date</label>
-                            <input type="date" class="form-control" id="videoDate" aria-describedby="emailHelp" placeholder="dd/mm/yy">
-                          </div>
+                            <input type="date" class="form-control" id="videoDate" key="date" aria-describedby="emailHelp" placeholder="dd/mm/yy">
+                          </div> -->
                           <div class="form-group">
                             <label for="desiredFund">Desired Fund</label>
-                            <input type="text" class="form-control" id="desiredFund" placeholder="Desired Fund">
+                            <input type="text" class="form-control" id="desiredFund" key="desiredFund" placeholder="Desired Fund">
                           </div>
                           <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="sharePercentage">Ad Revenue Share(%) </label>
-                                    <input type="text" class="form-control" id="sharePercentage" placeholder="76%">
+                                    <input type="text" class="form-control" id="sharePercentage" key="adRevenueShare" placeholder="76%">
                                 </div>
                             </div>
                             <div class="col-md-6">  
                                 <div class="form-group">
                                     <label for="totalShares">Total Shares Available</label>
-                                    <input type="text" class="form-control" id="totalShares" placeholder="210">
+                                    <input type="text" class="form-control" id="totalShares" key="totalShares" placeholder="210">
                                 </div>
                             </div>
                           </div>
                           <div class="form-group">
                             <label for="videoPerks">Perks</label>
-                            <input type="text" class="form-control" id="videoPerks" placeholder="You will get an opportunity to be a part of JOE Los Angles team.">
+                            <input type="text" class="form-control" id="videoPerks" key="perks" placeholder="You will get an opportunity to be a part of JOE Los Angles team.">
                           </div>
                         </form>
                       </div>
@@ -88,23 +88,16 @@
           <!-- Modal footer -->
           <div class="modal-footer justify-content-center border-0" style="padding-bottom: 50px">
             <h5 class="text f-16"><i>Let's get into the details of the video!</i></h5>
-            <div><a href="creatordashboard.html"> 
-              <button type="submit" class="btn neo-primary-btn abit-black abit-bg-yellow f-20 f-weight-500" id="scheduleACall" style="letter-spacing: 1.3px;">
+            <div>
+              <!-- <a href="creatordashboard.html">  -->
+              <button type="button" class="btn neo-primary-btn abit-black abit-bg-yellow f-20 f-weight-500" id="scheduleACall" style="letter-spacing: 1.3px;" onclick="uploadVideo(this);">
                   Schedule a Call</button>
-            </a>         </div>
+            <!-- </a>          -->
+          </div>
          </div>
         </div>
       </div>
     </div>
-    
-
-
-
-  <!-- Scripts -->
-
-	<script src="js/detects.js"></script>
-	<script src="js/another-file.js"></script>
-	<script src="js/main.polyfills.js"></script>
 	
 </body>
 </html>

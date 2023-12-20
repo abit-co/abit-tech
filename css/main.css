@@ -10398,6 +10398,10 @@ nav .navbar-brand {
 	line-height: normal;
 }
 
+.text-decoration-underline {
+	text-decoration: underline;
+}
+
 .f-14 {
 	font-size: 14px;
 }
@@ -12328,6 +12332,11 @@ body {
 }
 
 @media only screen and (max-width: 600px) {
+	.dropdown-menu {
+		left: unset;
+		right: 0;
+	}
+
 	.audi-section-3 .right-portion {
 		width: 100%;
 		padding-bottom: 35px;
@@ -12536,6 +12545,51 @@ body {
 	backdrop-filter: blur(0px);
 }
 
+@media only screen and (max-width: 600px) {
+	.my-info-card.creator-section .bio-wrapper {
+		width: 180px;
+		height: 140px;
+		position: absolute;
+		top: 40px;
+		left: 160px;
+		padding: 14px;
+	}
+
+	.my-info-card.creator-section .bio-wrapper .users-name {
+		font-weight: 500;
+		font-size: 12px;
+		line-height: 125.47%;
+	}
+
+	.my-info-card.creator-section .bio-info {
+		padding-top: 4px;
+	}
+
+	.my-info-card.creator-section .bio-info .bio-label {
+		font-size: 11px;
+	}
+
+	.my-info-card.creator-section .bio-info .description {
+		font-size: 10px;
+	}
+
+	.my-info-card.creator-section .bio-wrapper .list-group {
+		top: -8px;
+	}
+
+	.my-info-card.creator-section .bio-wrapper .list-group-item {
+		font-size: 10px;
+	}
+
+	.my-info-card.creator-section .bio-wrapper .list-group-item:nth-child(2) {
+		padding: 0;
+	}
+
+	.dropdown-menu {
+		left: unset;
+		right: 0;
+	}
+}
 @media only screen and (min-width: 601px) and (max-width: 1199px) {
 	.audi-section-4 .slider-image.search-img-icon {
 		height: 190px !important;
@@ -12548,9 +12602,83 @@ body {
 	}
 }
 .fr-section-1 {
-	min-height: 520px;
+	min-height: 806px;
 	height: 100%;
-	background-image: url(../svg/Fractionalize/fr-section-1-bg.png);
+	background-image: url(../img/fr-section-1-bg.png);
+}
+
+.fr-section-1 .header-info {
+	padding-top: 180px;
+}
+
+.fr-section-1 .creator-profile-img {
+	height: 38px;
+}
+
+.fr-section-1 .heading {
+	color: #FFF;
+	font-family: Reckless Neue;
+	font-size: 15px;
+	font-weight: 400;
+	line-height: normal;
+	text-transform: capitalize;
+}
+
+.fr-section-1 .heading .name {
+	line-height: normal;
+}
+
+.fr-section-1 .heading .profile {
+	font-style: italic;
+}
+
+.fr-section-1 .header-info .creator-tag-line {
+	color: #FFF;
+	font-family: Inter;
+	font-size: 48px;
+	font-style: normal;
+	font-weight: 700;
+	line-height: normal;
+	letter-spacing: -2.4px;
+	padding-top: 40px;
+}
+
+.fr-section-1 .header-info .description {
+	color: #FFF;
+	font-family: Inter;
+	font-size: 17px;
+	font-style: normal;
+	font-weight: 500;
+	line-height: 160%;
+	/* 27.2px */
+	letter-spacing: 0.17px;
+	padding-top: 18px;
+	width: 448px;
+}
+
+.fr-section-1 .header-info .cta-group .cstm-btn-props-1 {
+	color: #000;
+	font-family: Inter;
+	font-size: 20px;
+	font-style: normal;
+	font-weight: 500;
+	line-height: normal;
+	letter-spacing: 1.3px;
+}
+
+.fr-section-1 .header-info .cta-group .cstm-btn-props-2 {
+	color: #FFF;
+	color: #FFF;
+	font-family: Inter;
+	font-size: 20px;
+	font-style: normal;
+	font-weight: 500;
+	line-height: normal;
+	letter-spacing: 1.3px;
+}
+
+.fr-section-1 .header-info .cta-group {
+	padding-top: 66px;
 }
 
 .fr-section-7 {
@@ -12576,6 +12704,7 @@ body {
 	transform: matrix(0.99, -0.14, 0.14, 0.99, 0, 0);
 	width: 410.73px;
 	height: 117px;
+	padding-top: 58px;
 }
 
 .fr-section-7 .heading {
@@ -12614,6 +12743,370 @@ body {
 	top: 167px;
 }
 
+.fr-section-5 {
+	background-image: url(../img/fr-section-5-bg.png);
+	height: 247px;
+	padding-top: 72px;
+	border-top: 1px solid #717171;
+	border-bottom: 1px solid #717171;
+	background-repeat: repeat;
+}
+
+.fr-section-5 .heading {
+	color: #764CC2;
+	text-align: center;
+	font-family: Inter;
+	font-size: 20px;
+	font-style: normal;
+	font-weight: 700;
+	line-height: normal;
+	text-transform: capitalize;
+	padding-bottom: 32px;
+}
+
+.fr-section-5 .description {
+	color: #565656;
+	text-align: center;
+	font-family: Inter;
+	font-size: 16px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: 140.5%;
+	/* 22.48px */
+	letter-spacing: 0.48px;
+}
+
+.fr-section-4 {
+	height: 818px;
+	padding-top: 98px;
+}
+
+.fr-section-4 .heading {
+	color: #000;
+	text-align: center;
+	font-family: Reckless Neue;
+	font-size: 24px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: normal;
+	padding-bottom: 61px;
+}
+
+.fr-section-3 {
+	height: 900px;
+	padding-top: 125px;
+	border-top: 1px solid #000;
+	border-bottom: 1px solid #000;
+}
+
+.fr-section-3 .heading {
+	color: #000;
+	text-align: center;
+	font-family: Reckless Neue;
+	font-size: 40px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: normal;
+	padding-bottom: 74px;
+}
+
+.fr-section-3 .heading {
+	padding-bottom: 72px;
+}
+
+.fr-section-3 .ownership-certification-accordian-body .sub-description {
+	height: 75px;
+	justify-content: flex-end;
+	display: flex;
+	flex-direction: column;
+	font-family: Inter;
+	font-size: 16px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: 140.5%;
+	/* 22.48px */
+	text-decoration-line: underline;
+}
+
+.fr-section-3 .ownership-certification-accordian-body .description {
+	position: relative;
+	top: 10px;
+	color: #565656;
+	font-family: Inter;
+	font-size: 16px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: 140.5%;
+}
+
+.fr-section-3 .ownership-certification-accordian-body img {
+	margin-top: 10px;
+}
+
+.fr-section-3 .box-wrapper .sub-heading {
+	color: #000;
+	text-align: center;
+	font-family: Inter;
+	font-size: 20px;
+	font-style: normal;
+	font-weight: 700;
+	line-height: normal;
+}
+
+.fr-section-3 .box-wrapper .sub-description {
+	color: #696969;
+	text-align: center;
+	font-family: Inter;
+	font-size: 16px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: 160%;
+}
+
+.fr-section-2 .trailer-video {
+	padding-top: 102px;
+}
+
+.fr-section-2 .heading {
+	color: #000;
+	text-align: center;
+	font-family: Reckless Neue;
+	font-size: 32px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: normal;
+	width: 176px;
+}
+
+.fr-section-2 .heading .play-trailer-text {
+	text-align: center;
+	font-size: 48px;
+	font-style: italic;
+	font-weight: 300;
+}
+
+.fr-section-2 .ownership-card {
+	padding-top: 110px;
+}
+
+.fr-section-2 .ownership-card-info {
+	background-color: #FFFFFF;
+	height: 462px;
+	position: relative;
+	z-index: 0;
+	padding: 105px;
+}
+
+.fr-section-2 .ownership-card .img-wrapperr {
+	position: relative;
+	z-index: 1;
+}
+
+.fr-section-2 .ownership-card-info .ops-heading {
+	color: #444343;
+	font-family: Inter;
+	font-style: normal;
+	font-weight: 700;
+	line-height: 160%;
+	/* 64px */
+}
+
+.fr-section-2 .ownership-card-info .ops-heading .percentage-ops {
+	font-size: 40px;
+}
+
+.fr-section-2 .ownership-card-info .ops-heading .ops-text {
+	font-size: 16px;
+	line-height: 129%;
+	/* 20.64px */
+	text-transform: uppercase;
+	width: 125.825px;
+	display: inline-block;
+}
+
+.fr-section-2 .ownership-card-info .ops-heading .ops-amount {
+	color: #764CC2;
+	font-size: 16px;
+	line-height: normal;
+	float: right;
+}
+
+.fr-section-2 .ownership-card-info .perk-section {
+	padding-top: 30px;
+}
+
+.fr-section-2 .ownership-card-info .perk-section .perk-heading {
+	color: #575656;
+	font-family: Inter;
+	font-size: 14px;
+	font-style: italic;
+	font-weight: 500;
+	line-height: 160%;
+}
+
+.fr-section-2 .ownership-card-info .perk-section .perks-type .perk-item {
+	border-radius: 8px;
+	border: 1px solid rgba(149, 149, 149, 0.65);
+	background: rgba(217, 217, 217, 0.25);
+	width: 145px;
+	height: 89px;
+	padding-top: 20px;
+}
+
+.fr-section-2 .ownership-card-info .perk-section .perks-type .perk-item .perk-description {
+	font-size: 12px;
+	font-style: normal;
+	font-weight: 300;
+	line-height: 160%;
+}
+
+.fr-section-2 .cstm-btn-props-buynow {
+	padding-top: 50px;
+	margin: 0 auto;
+}
+
+.fr-section-2 .cstm-btn-props-buynow .btn {
+	color: #FFF;
+	font-family: Inter;
+	font-size: 20px;
+	font-style: normal;
+	font-weight: 500;
+	line-height: normal;
+	letter-spacing: 1.3px;
+	width: 280.61px;
+	height: 56px;
+}
+
+@media only screen and (max-width: 600px) {
+	.fr-section-7 .left-portion img {
+		width: 100%;
+	}
+
+	.fr-section-4 .creator-quick-video {
+		width: 100%;
+	}
+
+	.fr-section-2 .trailer-video .trailer-video-img {
+		width: 100%;
+	}
+
+	.fr-section-7 .right-portion {
+		top: 80px;
+	}
+
+	.fr-section-7 .right-portion .heading {
+		font-size: 20px !important;
+		width: 100%;
+	}
+
+	.fr-section-7 .right-portion .buy-now-additional-prop {
+		width: 100%;
+	}
+
+	.fr-section-1 .header-info .creator-tag-line {
+		font-size: 30px;
+	}
+
+	.fr-section-1 .header-info .description {
+		width: 100%;
+	}
+
+	.fr-section-1 .header-info .cta-group .btn {
+		font-size: 14px;
+	}
+
+	.fr-section-5 {
+		height: 100%;
+		padding-top: 32px;
+		padding-bottom: 32px;
+	}
+
+	.fr-section-5 .heading {
+		padding-bottom: 16px;
+		font-size: 16px;
+	}
+
+	.fr-section-5 .description {
+		font-size: 12px;
+	}
+
+	.fr-section-4 {
+		height: auto;
+		padding: 98px 0;
+	}
+
+	.fr-section-3 {
+		height: auto;
+		padding: 98px 0;
+	}
+
+	.fr-section-3 .heading {
+		padding-bottom: 48px;
+		font-size: 24px;
+	}
+
+	.fr-section-3 .box-wrapper .sub-heading {
+		font-size: 12px;
+	}
+
+	.fr-section-3 .box-wrapper .sub-description {
+		font-size: 12px;
+	}
+
+	.fr-section-3 .ownership-certification-accordian-body .description {
+		font-size: 12px;
+	}
+
+	.fr-section-3 .ownership-certification-accordian-body .sub-description {
+		font-size: 12px;
+	}
+
+	.fr-section-1 {
+		min-height: auto;
+		padding-bottom: 98px;
+	}
+
+	.fr-section-1 .header-info {
+		padding-top: 98px;
+	}
+
+	.fr-section-7 {
+		height: auto;
+		background-image: url(../svg/Fractionalize/fr-section-7.svg);
+		padding: 0 0 164px 0;
+	}
+
+	.fr-section-2 .ownership-card-info {
+		padding: 24px;
+	}
+
+	.fr-section-2 {
+		height: auto;
+		padding: 98px 0;
+	}
+
+	.fr-section-2 .ownership-card-info {
+		height: auto;
+	}
+
+	.fr-section-2 .ownership-card .img-wrapperr img {
+		width: 100%;
+	}
+
+	.fr-section-2 .description {
+		font-size: 16px;
+		padding: 18px;
+	}
+
+	.fr-section-2 .trailer-video .left-portion .trailer-video-img {
+		width: 80%;
+		margin-left: 24px !important;
+	}
+
+	.fr-section-2 .trailer-video {
+		padding-top: 0;
+	}
+}
 .rs-container * {
 	box-sizing: border-box;
 	-webkit-touch-callout: none;
@@ -12901,6 +13394,93 @@ span.activePointer::before {
 
 /* x    
     --------------------------------------------- PERKS MODAL CSS ENDS HERE ---------------------------------------------
+*/
+/* 
+    --------------------------------------------- PAYEMENT INFO MODAL CSS GOES HERE ---------------------------------------------
+*/
+#paymentInfoModal .payment-content .heading {
+	color: #444343;
+	font-family: Inter;
+	font-size: 40px;
+	font-style: normal;
+	font-weight: 700;
+	line-height: 160%;
+}
+
+#paymentInfoModal .payment-content .description {
+	color: #565656;
+	text-align: center;
+	font-family: Inter;
+	font-size: 16px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: 160%;
+}
+
+#paymentInfoModal .payment-content .pricing-section {
+	color: #565656;
+	font-family: Inter;
+	font-size: 16px;
+	font-style: normal;
+	font-weight: 500;
+	line-height: normal;
+	display: flex;
+	flex-direction: column;
+}
+
+#paymentInfoModal .pay-with-options {
+	color: #292D32;
+	text-align: center;
+	font-family: Inter;
+	font-size: 20px;
+	font-style: normal;
+	font-weight: 700;
+	line-height: normal;
+	display: flex;
+}
+
+#paymentInfoModal .modal-title {
+	color: #000;
+	text-align: center;
+	font-family: Reckless Neue;
+	font-size: 40px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: normal;
+}
+
+#paymentInfoModal .pricing {
+	justify-content: flex-end;
+	display: flex;
+}
+
+#paymentInfoModal .payment-mode {
+	border-radius: 10px;
+	border: 0.5px solid #DEDEDE;
+	background: #F2F2F2;
+	width: 76px;
+	height: 45px;
+}
+
+#paymentInfoModal .cstm-btn-props-buynow {
+	padding-top: 10px;
+	margin: 0 auto;
+}
+
+#paymentInfoModal .cstm-btn-props-buynow .btn {
+	color: #FFF;
+	font-family: Inter;
+	font-size: 20px;
+	font-style: normal;
+	font-weight: 500;
+	line-height: normal;
+	letter-spacing: 1.3px;
+	width: 100%;
+	height: 56px;
+}
+
+/* x    
+    --------------------------------------------- PAYEMENT INFO MODAL CSS ENDS HERE ---------------------------------------------
 */
 /* 
     --------------------------------------------- SHARE VIDEO MODAL CSS GOES HERE ---------------------------------------------
@@ -13380,7 +13960,7 @@ span.activePointer::before {
 	font-size: 16px;
 	font-style: normal;
 	font-weight: 500;
-	border-radius: 0px;
+	border-radius: 0px !important;
 	line-height: 11px;
 	border: 1px solid #000;
 	height: 29px;
@@ -13391,11 +13971,14 @@ span.activePointer::before {
 	border-radius: 4px;
 	background: #B497EA;
 	backdrop-filter: blur(25px);
+	border: 1px solid #000;
+	border-radius: 4px !important;
 }
 
 .nav-tabs .nav-link:hover, .nav-tabs .nav-link:focus {
 	/* isolation: isolate; */
 	border-color: #fff;
+	border: 1px solid #000;
 }
 
 .form-group {

@@ -14,6 +14,30 @@
 
 	gtag('config', 'G-M2C1G7D2PW');
 	</script>
+    <style>
+        .creator-profile-update-form {
+            padding-top: 6px;
+        }
+        .creator-profile-update-form .form-group {
+            padding-top: 1.2rem;
+        }
+        .creator-profile-update-form .form-group input {
+            width: 90%;
+        }
+        .creator-profile-img img {
+            height: calc(100% - 200px);
+        }
+        .creator-profile-update-form .group-btn {
+            margin-top: 61px;
+        }
+        .creator-profile-update-form .group-btn .cstm-btn-props {
+           height: 46px;
+           width: 212px;;
+        }
+        .creator-profile-update-form .group-btn .cstm-btn-props:nth-child(2) {
+            margin-left: 18px;
+        }
+    </style>
 </head>
 <body>
 	<header style="height: 67px;">
@@ -26,7 +50,7 @@
 			<div class="expand navbar-expand" id="navbarTogglerDemo02">
 				<ul class="navbar-nav ml-auto mt-lg-0 ">
 				<li class="nav-item active">
-					<a class="nav-link nav-item-creator" href="creatorpage.html">Are you a creator? <span class="sr-only">(current)</span></a>
+					<a class="nav-link nav-item-creator border-0" href="creatorpage.html">Are you a creator? <span class="sr-only">(current)</span></a>
 				</li>
 				</ul>
 				<!-- <button class="btn abit-outline-purple my-2 my-sm-0" data-toggle="modal" data-target="#registerModal">Login / Signup</button> -->
@@ -39,42 +63,46 @@
             <!-- <div class="container"> -->
                 <div class="row">
                     <div class="creator-profile-img profile-img-wrapper">
-                        <img src="img/creator-profile-pic.png" alt="profile image" style="width: 800px;">
+                        <img src="img/creator-profile-pic.png" alt="profile image" style="width: 50vw;">
                     </div>
-                    <div class="col-md-4">
+                    <div class="col-md-5">
                         <div class="creator-profile-edit-fields edit-fields-wrapper">
                             <h3>Basic Information</h3>
-                            <div class="form-group">
-                                <label for="username">User Name</label>
-                                <input type="username" class="form-control" id="userName" aria-describedby="emailHelp" placeholder="User Name">
-                            </div>
-                            <div class="form-group">
-                                <label for="bio">Bio</label>
-                                <input type="bio" class="form-control" id="bioData" placeholder="Bio">
-                            </div>
-                            <div class="form-group">
-                                <label for="updateEmail">Email</label>
-                                <input type="updateEmail" class="form-control" id="updateEmail" aria-describedby="updateEmailHelp" placeholder="Email">
-                            </div>
-                            <div class="form-group">
-                                <label for="updateContact">Contact</label>
-                                <input type="updateContact" class="form-control" id="updateContact" placeholder="Contact">
-                            </div>
-                            <div class="form-group">
-                                <label for="ytChannel">Youtube Channel</label>
-                                <input type="ytChannel" class="form-control" id="ytChannel" aria-describedby="emailHelp" placeholder="Link">
-                            </div>
-                            <div class="form-group">
-                                <label for="editPassword">Password</label>
-                                <input type="Password" class="form-control" id="editPassword" placeholder="Password">
-                            </div>
-                            <div class="form-group">
-                                <label for="confirmPassword">Confirm Password</label>
-                                <input type="password" class="form-control" id="confirmPassword" placeholder="Confirm Password">
-                            </div>
+                            <form class="form creator-profile-update-form">
+                                <div class="form-group">
+                                    <label for="username">User Name</label>
+                                    <input type="username" class="form-control" id="userName" key="username" aria-describedby="emailHelp" placeholder="User Name">
+                                </div>
+                                <div class="form-group">
+                                    <label for="bio">Bio</label>
+                                    <input type="bio" class="form-control" id="bioData" key="bio" placeholder="Bio">
+                                </div>
+                                <div class="form-group">
+                                    <label for="updateEmail">Email</label>
+                                    <input type="updateEmail" class="form-control" key="email" id="updateEmail" aria-describedby="updateEmailHelp" placeholder="Email">
+                                </div>
+                                <div class="form-group">
+                                    <label for="updateContact">Contact</label>
+                                    <input type="updateContact" class="form-control" key="contact" id="updateContact" placeholder="Contact">
+                                </div>
+                                <div class="form-group">
+                                    <label for="ytChannel">Youtube Channel</label>
+                                    <input type="ytChannel" class="form-control" id="ytChannel" key="link" aria-describedby="emailHelp" placeholder="Link">
+                                </div>
+                                <!-- <div class="form-group">
+                                    <label for="editPassword">Password</label>
+                                    <input type="Password" class="form-control" id="editPassword" key="password" placeholder="Password">
+                                </div>
+                                <div class="form-group">
+                                    <label for="confirmPassword">Confirm Password</label>
+                                    <input type="password" class="form-control" id="confirmPassword" key="cpassword" placeholder="Confirm Password">
+                                </div> -->
+                                <div class="group-btn">
+                                    <button type="button" class="btn neo-primary-btn abit-black abit-bg-yellow d-inline-flex cstm-btn-props" onclick="updateCreatorProfileInfo();">Save Changes</button>
+						            <button type="button" class="btn neo-primary-btn abit-black abit-bg-gray d-inline-flex cstm-btn-props"><a class="text-muted abit-black" href="creatordashboard.html">Go Back</a></button>
+                                </div>
+                            </form>
                         </div>
-                        <button type="submit" class="btn neo-primary-btn abit-black abit-bg-yellow d-inline-flex cstm-btn-props">Save Changes</button>
-						<button type="submit" class="btn neo-primary-btn abit-black abit-bg-gray d-inline-flex cstm-btn-props">Go Back</button>
                     </div>
                 </div>
             <!-- </div> -->
@@ -102,11 +130,58 @@
 	<div w3-include-html="register.html"></div>
 
 	<!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+
 	<script src="js/loadExtLibrary.js"></script>
 	<script src="js/waitlistModal.js"></script>
 	<script src="js/main.js"></script> 
 	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
-	<script src="../../node_modules/silkrouter/dist/umd/silkrouter.min.js"></script>	
-	<script src="https://cdn.jsdelivr.net/npm/jqueryrouter@2.2.12/dist/js/jquery.router.min.js"></script>
+    <script>
+        $(function() {
+            getCreatorProfileInfo();
+        });
+        function getCreatorProfileInfo() {
+            $.ajax({
+                url: "https://api-abit.onrender.com/v1/creator/653ea60d94bfda4950596647",
+                type: 'GET',
+                success: function (data) {
+                    aBit_UTIL.displaySuccessDialog('Success!', "Thank you! Our team will reach out soon.");
+                },
+                error: function (XMLHttpRequest, textStatus, errorThrown) {
+                    aBit_UTIL.displayErrorDialog('ERROR!', "SOME ERORR");
+                }
+            });
+        }
+        function updateCreatorProfileInfo() {
+            const payloadOptions = getPayLoadInputsForUpdatingCreatorProfile();
+            $.ajax({
+                url: "https://api-abit.onrender.com/v1/creator/updateProfile",
+                type: 'PATCH',
+                data:  JSON.stringify(payloadOptions),
+                contentType: "application/json; charset=utf-8",
+                success: function (data) {
+                    aBit_UTIL.displaySuccessDialog('Success!', "Thank you! Our team will reach out soon.");
+                },
+                error: function (XMLHttpRequest, textStatus, errorThrown) {
+                    aBit_UTIL.displayErrorDialog('ERROR!', "SOME ERORR");
+                }
+            });
+        }
+        function getPayLoadInputsForUpdatingCreatorProfile() {
+            const form = document.querySelector('.creator-profile-update-form');
+            const formElemArray = Array.from(form.elements);
+            let storeformInputs = {'cover': "", "profilePic": ""};
+            formElemArray.filter((element, index) => {
+                let objectKeys = element.getAttribute("key");
+                const value = element.value;
+                let formInput = {
+                    [objectKeys] : value
+                }
+                Object.assign(storeformInputs, formInput);
+            });
+            console.log(storeformInputs);
+            return storeformInputs;
+        }
+    </script>
 </body>
 </html>
