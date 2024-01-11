@@ -1,4 +1,4 @@
-/*! BuildToolsCookbook v2.0.0 | (c) 2023 R A H U L J A I S W A L (RJ) | MIT License |  */
+/*! BuildToolsCookbook v2.0.0 | (c) 2024 R A H U L J A I S W A L (RJ) | MIT License |  */
 'use strict';
 
 require('silkrouter');
