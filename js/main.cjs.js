@@ -11171,7 +11171,16 @@ $(function() {
 			});
       $(".buySharesOfVideo").off("click").on("click", function() {
         buySharesOfCreatorVideo(this);
-    });
+      });
+      $(".close").off("click").on("click", function() {
+        if($(this).closest("#congratsModal").length === 1) {
+          redirectOnCloseOfCongratsModal();
+          $(".modal-backdrop").remove();
+
+        } else {
+          $(".modal-backdrop").remove();
+        }
+      });
 
       prepareRegistrationPayloadAndCallApi();
       prepareLoginPayloadAndCallApi();
@@ -11554,8 +11563,11 @@ function buySharesOfCreatorVideo(elem) {
   $(elem).closest("#paymentInfoModal").modal("hide");
   $("#congratsModal").modal("show");
 
+
+
+}
+function redirectOnCloseOfCongratsModal() {
   setTimeout(function() {
     window.location.href = "audiencedashboard.html";
-}, 2000);
-
+}, 500);
 }

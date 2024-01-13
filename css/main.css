@@ -12072,6 +12072,7 @@ body {
 	background-size: cover;
 	background-repeat: no-repeat;
 	height: 548px;
+	margin-top: -100px;
 }
 
 .creator-section-1 {
@@ -12079,6 +12080,7 @@ body {
 	background-size: cover;
 	background-repeat: no-repeat;
 	height: 548px;
+	margin-top: -100px;
 }
 
 .audi-section-2 {
@@ -12262,6 +12264,7 @@ body {
 	height: 100%;
 	border-bottom: 1px solid #000000;
 	padding-bottom: 120px;
+	min-height: 630px;
 }
 
 .about-creators .top-left-part {
@@ -12793,7 +12796,7 @@ body {
 }
 
 .fr-section-3 {
-	height: 900px;
+	min-height: 900px;
 	padding-top: 125px;
 	border-top: 1px solid #000;
 	border-bottom: 1px solid #000;
@@ -13107,6 +13110,10 @@ body {
 		padding-top: 0;
 	}
 }
+.cursor-poitner {
+	cursor: pointer;
+}
+
 .rs-container * {
 	box-sizing: border-box;
 	-webkit-touch-callout: none;
@@ -13365,6 +13372,21 @@ span.activePointer::before {
 /* 
     PERKS MODAL CSS GOES HERE
 */
+#perksModal .modal-title {
+	color: #000;
+	text-align: center;
+	font-family: Reckless Neue;
+	font-size: 40px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: normal;
+}
+
+#perksModal .modal-body {
+	margin-top: -10px;
+	padding: 0 10px 20px 10px;
+}
+
 #perksModal .perks-content .vip-ticket-box {
 	width: 253px;
 	height: 156px;
@@ -13380,6 +13402,10 @@ span.activePointer::before {
 	font-size: 20px;
 	line-height: 24px;
 	color: #000000;
+}
+
+#perksModal .vip-ticket-box .description {
+	margin-top: -8px;
 }
 
 #perksModal .vip-ticket-box .description, #perksModal .perk-msg .description {
