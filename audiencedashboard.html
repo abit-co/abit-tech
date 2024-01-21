@@ -8,21 +8,23 @@
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/regular.min.css" integrity="sha512-WidMaWaNmZqjk3gDE6KBFCoDpBz9stTsTZZTeocfq/eDNkLfpakEd7qR0bPejvy/x0iT0dvzIq4IirnBtVer5A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
-	<header style="height: 67px;">
-		<nav class="navbar navbar-expand-lg navbar-light bg-light" style="height: 67px;">
+	<header style="height: 110px;">
+		<nav class="navbar navbar-expand-lg navbar-light bg-light" style="height: 110px;">
 			<div class="container">
 				<a class="navbar-brand" href="index.html">aBit</a>
 				<div class="expand navbar-expand" id="navbarTogglerDemo02">
 					<ul class="navbar-nav mt-2 mt-lg-0 ">
-						<li class="nav-item active">
-							<img class="profile-img" src="svg/icons/icon-wallet.svg" alt="audience-profile-img" data-toggle="modal" data-target="#perksModal">
+						<li class="nav-item pt-1">
+							<img class="profile-img" src="svg/icons/icon-wallet.svg" alt="audience-profile-img" style="height: 28px; width: 28px; margin-top: 2px;">
 						</li>
-						<li class="nav-item px-3">
-							<img class="profile-img" src="svg/icons/icon-notification.svg" alt="audience-profile-img" data-toggle="modal" data-target="#shareVideoModal">
+						<li class="nav-item pt-1">
+							<img class="profile-img" src="svg/icons/icon-notification.svg" alt="audience-profile-img" style="height: 28px; width: 28px; margin-top: 2px;">
 						</li>
-						<li class="nav-item dropdown">
-							<a class="nav-link dropdown-toggle border-0" href="#" role="button" data-toggle="dropdown" aria-expanded="false" style="margin-top: -6px;">
-								<img class="profile-img" src="svg/icons/fan-profile-pic.svg" alt="audience-profile-img" data-toggle="modal" data-target="#shareVideoModal" style="width: 24px; height: 24px;"></a>
+						<li class="nav-item dropdown pt-1">
+							<a href="audiencedahshboard.html">
+								<img class="profile-img" src="svg/icons/fan-profile-pic.svg" alt="audience-profile-img" data-toggle="modal" data-target="#shareVideoModal" style="width: 32px; height: 32px;" >
+							</a>
+							<a class="nav-link dropdown-toggle border-0 d-inline" href="#" role="button" data-toggle="dropdown" aria-expanded="false" style="margin-top: -6px;"></a>
 							<div class="dropdown-menu" style="border-radius: 24px; width: 170px; height: 145px; padding: 20px 2px;">
 							  <a class="dropdown-item" href="editaudienceprofile.html">Edit Profile</a>
 							  <a class="dropdown-item" href="#">Account</a>
@@ -144,28 +146,28 @@
 					</div>
 				</div>
 				<div class="col-6 col-lg-3 col-sm-6 col-md-3">
-					<div class="about-creators position-absolute" onclick="getMoreInfoOfToken('fan')">
+					<div class="about-creators position-absolute cursor-pointer" onclick="getMoreInfoOfToken('fan')">
 						<img class="d-block slider-image" src="svg/common/Token 11.svg" alt="First slide">
 						<div class="top-left-part">
-							<div class="heading">Our trip to Mykonos</div>
+							<div class="heading">The Sound Of Silence</div>
 							<div class="d-inline-flex mt-2">
 								<img class="user-image" src="svg/home/user-img.svg" alt="user-image">
-								<h5 class="heading ml-2 description">Stephen George</h5>
+								<h5 class="ml-2 description">Dan Mace</h5>
 							</div>
 						</div>
 						<div class="bottom-token-info">
 							<ul class="list-group list-group-horizontal token-info-content">
 								<li class="list-group-item border-0">
-									<p class="mb-1">Shares</p>
-									<p>1110</p>
+									<p class="mb-1">Co-owner</p>
+									<p>#34</p>
 								</li>
 								<li class="list-group-item border-0 px-0">
-									<p class="mb-1">Offered</p>
-									<p>50%</p>
+									<p class="mb-1">Ownership</p>
+									<p>0.24%</p>
 								</li>
 								<li class="list-group-item border-0 px-0">
-									<p class="mb-1">Raised</p>
-									<p>$ 369k</p>
+									<p class="mb-1">Earnings</p>
+									<p>$12.17</p>
 								</li>
 								</ul>
 						</div>
@@ -483,6 +485,7 @@
 	
 	<div w3-include-html="login.html"></div>
 	<div w3-include-html="register.html"></div>
+	<div w3-include-html="modals/congratsModal.html"></div> 
 	<div w3-include-html="modals/tokenMoreInfoModal.html"></div>
 
 
@@ -498,6 +501,19 @@
 	<script src="js/main.js"></script> 
 
 	<script>
+		$(function() {
+			debugger
+			if(sessionStorage.getItem("isPurchashedSuccessfull") === "true") {
+				loadCongratsModalWhenPurchasedSucessfull();
+			}
+		});
+
+		let loadCongratsModalWhenPurchasedSucessfull = () => {
+			setTimeout(function() {
+				$("#congratsModal").modal("show");
+				sessionStorage.setItem("isPurchashedSuccessfull", false);
+			}, 500);
+		}
 		let getMoreInfoOfToken = (userType = "fan") => {
 			$(`#${userType}TokenMoreInfoModal`).modal("show");
 		}

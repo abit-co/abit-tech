@@ -25,7 +25,7 @@
             width: 90%;
         }
         .creator-profile-img img {
-            height: calc(100% - 200px);
+            height: calc(100%);
         }
         .creator-profile-update-form .group-btn {
             margin-top: 61px;
@@ -37,22 +37,43 @@
         .creator-profile-update-form .group-btn .cstm-btn-props:nth-child(2) {
             margin-left: 18px;
         }
+        .edit-creator-profile {
+            max-height: 865px;
+            min-height: 600px;
+        }
     </style>
 </head>
 <body>
-	<header style="height: 67px;">
-		<nav class="navbar navbar-expand-lg navbar-light bg-light" style="height: 67px;">
+	<header style="height: 110px;">
+		<nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom-0" style="height: 110px;">
 			<div class="container">
 			<a class="navbar-brand" href="index.html">aBit</a>
 			<!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
 				<span class="navbar-toggler-icon"></span>
 			</button> -->
 			<div class="expand navbar-expand" id="navbarTogglerDemo02">
-				<ul class="navbar-nav ml-auto mt-lg-0 ">
-				<li class="nav-item active">
-					<a class="nav-link nav-item-creator border-0" href="creatorpage.html">Are you a creator? <span class="sr-only">(current)</span></a>
-				</li>
-				</ul>
+				<ul class="navbar-nav mt-2 mt-lg-0 ">
+					<li class="nav-item pt-1">
+						<img class="profile-img" src="svg/icons/icon-wallet.svg" alt="audience-profile-img" style="height: 28px; width: 28px; margin-top: 2px;">
+					</li>
+					<li class="nav-item pt-1">
+						<img class="profile-img" src="svg/icons/icon-notification.svg" alt="audience-profile-img" style="height: 28px; width: 28px; margin-top: 2px;">
+					</li>
+					<li class="nav-item dropdown pt-1">
+						<a href="creatordashboard.html">
+							<img class="profile-img" src="svg/icons/user-profile-pic.svg" alt="audience-profile-img" style="width: 32px; height: 32px;">
+						</a>
+						<a class="nav-link dropdown-toggle border-0 d-inline" href="#" role="button" data-toggle="dropdown" aria-expanded="false" style="margin-top: -6px;">
+						
+						</a>
+						<div class="dropdown-menu" style="border-radius: 24px; width: 170px; height: 145px; padding: 20px 2px;">
+						  <a class="dropdown-item" href="editcreatorprofile.html">Edit Profile</a>
+						  <a class="dropdown-item" href="#">Account</a>
+						  <a class="dropdown-item" href="#">Logout</a>
+						</div>
+					  </li>
+	
+					</ul>
 				<!-- <button class="btn abit-outline-purple my-2 my-sm-0" data-toggle="modal" data-target="#registerModal">Login / Signup</button> -->
 			</div>
 			</div>	
@@ -99,7 +120,7 @@
                                 </div> -->
                                 <div class="group-btn">
                                     <button type="button" class="btn neo-primary-btn abit-black abit-bg-yellow d-inline-flex cstm-btn-props" onclick="updateCreatorProfileInfo();">Save Changes</button>
-						            <button type="button" class="btn neo-primary-btn abit-black abit-bg-gray d-inline-flex cstm-btn-props"><a class="text-muted abit-black" href="creatordashboard.html">Go Back</a></button>
+						            <button type="button" class="btn neo-primary-btn abit-black abit-bg-gray d-inline-flex cstm-btn-props"><a class="text-muted abit-black" onclick="history.back()">Go Back</a></button>
                                 </div>
                             </form>
                         </div>

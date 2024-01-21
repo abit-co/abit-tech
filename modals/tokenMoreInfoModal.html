@@ -17,9 +17,12 @@
     letter-spacing: -2.4px;
     width: 434px;
 } 
+.token-content-wrapper .top-header {
+  margin-top: 20px;
+}
 .token-content-wrapper .tab-section {
   position: relative;
-  top:42px;
+  top:28px;
 } 
 .token-content-wrapper .top-header .sub-heading{
     color: #565656;
@@ -40,16 +43,21 @@
     transform: rotate(-90deg);
     float: right;
     position: relative;
-    top: 42px;
+    top: 25px;
     right: -60px;
 }
 
 #creatorTokenMoreInfoModal .img-fit-to-container, #fanTokenMoreInfoModal .img-fit-to-container {
-  margin: -45px 0px -5px -26px;
+  margin: -46px 14px -5px -26px;
     padding: 0;
+    height: 632px;
+    max-width: 575px;
+  }
+#creatorTokenMoreInfoModal .img-fit-to-container img, #fanTokenMoreInfoModal .img-fit-to-container img {
+  height: 100%;
 }
 #creatorTokenMoreInfoModal .statistics-wrapper, #fanTokenMoreInfoModal .statistics-wrapper {
-  
+  margin-top: 15px;
  }
 #creatorTokenMoreInfoModal .statistics-wrapper .heading, #fanTokenMoreInfoModal .statistics-wrapper .heading {
   color: #565656;
@@ -67,12 +75,12 @@
   font-size: 14px;
   font-style: normal;
   font-weight: 400;
-  line-height: 160%;
+  line-height: 200%;
   letter-spacing: 0.14px;
   margin-bottom: 9px;
 }
 #creatorTokenMoreInfoModal .perk-wrapper-box, #fanTokenMoreInfoModal .perk-wrapper-box   {
-  height: 206px;
+  height: 245px;
   overflow: auto;
   border-radius: 10px;
   border: 0.5px solid #959595;
@@ -86,6 +94,28 @@
   line-height: 160%; /* 19.2px */
   letter-spacing: 0.12px;
 }
+#creatorTokenMoreInfoModal .bottom-token-info, #fanTokenMoreInfoModal .bottom-token-info  {
+    width: calc(100% - 80px);
+    left: 40px;
+    bottom: 45px;
+    height: 87px;
+    top: auto;
+} 
+#creatorTokenMoreInfoModal .bottom-token-info .token-info-content, #fanTokenMoreInfoModal .bottom-token-info .token-info-content  {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: flex-end;
+    flex-direction: row;
+}
+#creatorTokenMoreInfoModal .bottom-token-info .token-info-content .list-group-item, #fanTokenMoreInfoModal .bottom-token-info .token-info-content .list-group-item {
+    color: #FFF;
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
 </style>
  
 </head>
@@ -94,7 +124,7 @@
     <!-- The Creator More Info Modal -->
     <div class="modal" id="creatorTokenMoreInfoModal" style="display: none;">
       <div class="modal-dialog modal-xl">
-        <div class="modal-content" style="border-radius: 24px;">
+        <div class="modal-content" style="border-radius: 24px; height: 621px;">
         
           <!-- Modal Header -->
           <div class="modal-header border-0 pb-0">    
@@ -105,19 +135,19 @@
           
           <!-- Modal body -->
           <div class="modal-body text center py-0">
-             <div class="container">
+             <div class="container container-xxl">
               <div class="row">
-                  <div class="col-md-5 img-fit-to-container">
+                  <div class="col-lg-5 col-md-6 img-fit-to-container">
                     <img src="img/section-4-live-token-mobile.png" alt="toke image" style="width: 100%;">
                   </div>
-                  <div class="col-md-7">
+                  <div class="col-lg-7 col-md-6">
                     <div class="token-content-wrapper">
                         <div class="top-header row">
                             <div class="col-md-6">
                                 <div class="heading">The Sound of Silence</div>
                                 <div class="d-inline-flex mt-2">
-                                    <img class="user-image" src="svg/home/user-img.svg" alt="user-image">
-                                    <div class="sub-heading ml-2 description my-3">Dan Mace</div>
+                                    <img class="user-image" src="svg/home/user-img.svg" alt="user-image" style="width: 20px; " >
+                                    <div class="sub-heading ml-2 description my-2">Dan Mace</div>
                                 </div>
                             </div>
                             <div class="col-md-6">
@@ -283,8 +313,8 @@
     </div>
      <!-- The Audience More Info Modal -->
      <div class="modal" id="fanTokenMoreInfoModal" style="display: none;">
-      <div class="modal-dialog modal-xl">
-        <div class="modal-content" style="border-radius: 24px;">
+      <div class="modal-dialog modal-xxl modal-xl modal-lg modal-md">
+        <div class="modal-content" style="border-radius: 24px; height: 621px;;">
         
           <!-- Modal Header -->
           <div class="modal-header border-0 pb-0">    
@@ -295,19 +325,35 @@
           
           <!-- Modal body -->
           <div class="modal-body text center py-0">
-             <div class="container">
+             <div class="container container-xxl">
               <div class="row">
-                  <div class="col-md-5 img-fit-to-container">
-                    <img src="img/section-4-live-token-mobile.png" alt="toke image" style="width: 100%;">
+                  <div class="col-md-6 col-lg-5 img-fit-to-container">
+                    <img src="img/live-tokeinfo.png" alt="toke image" style="width: 100%;">
+                    <div class="bottom-token-info">
+                      <ul class="list-group list-group-horizontal token-info-content">
+                        <li class="list-group-item border-0">
+                          <p class="mb-1 heading">Co-owner</p>
+                          <p>#34</p>
+                        </li>
+                        <li class="list-group-item border-0 px-0">
+                          <p class="mb-1 heading">Ownership</p>
+                          <p>1%</p>
+                        </li>
+                        <li class="list-group-item border-0 px-0">
+                          <p class="mb-1 heading">Earnings</p>
+                          <p>$12.17</p>
+                        </li>
+                        </ul>
+                    </div>
                   </div>
-                  <div class="col-md-7">
+                  <div class="col-lg-7 col-md-6">
                     <div class="token-content-wrapper">
                         <div class="top-header row">
                             <div class="col-md-6">
                                 <div class="heading">The Sound of Silence</div>
                                 <div class="d-inline-flex mt-2">
-                                    <img class="user-image" src="svg/home/user-img.svg" alt="user-image">
-                                    <div class="sub-heading ml-2 description my-3">Dan Mace</div>
+                                    <img class="user-image" src="svg/home/user-img.svg" alt="user-image" style="width: 20px;">
+                                    <div class="sub-heading ml-2 description my-2">Dan Mace</div>
                                 </div>
                             </div>
                             <div class="col-md-6">
@@ -318,7 +364,7 @@
                             <div class="row">
                                 <div class="col-md-12">
                                     <ul id="tabs" class="nav nav-tabs">
-                                        <li class="nav-item"><a href="" data-target="#audiPerformance" data-toggle="tab" class="nav-link small active">Performance</a></li>
+                                        <li class="nav-item"><a href="" data-target="#audiPerformance" data-toggle="tab" class="nav-link small active border-left-0">Performance</a></li>
                                         <li class="nav-item"><a href="" data-target="#assets" data-toggle="tab" class="nav-link small">Assets</a></li>
                                         <li class="nav-item"><a href="" data-target="#audiInformation" data-toggle="tab" class="nav-link small">Information</a></li>
                                     </ul>
@@ -329,13 +375,13 @@
                                                 <div class="col-md-8">
                                                   <div class="statistics-wrapper">
                                                       <div class="row">
-                                                        <div class="col-md-6">
+                                                        <div class="col-md-4">
                                                           <div class="border-bottom">
                                                             <h3 class="heading">$12.17</h3>
                                                             <p class="description">Earnings</p>
                                                           </div>
                                                         </div>
-                                                        <div class="col-md-6">
+                                                        <div class="col-md-4 offset-md-1">
                                                           <div class="border-bottom">
                                                             <h3 class="heading">623k</h3>
                                                             <p class="description">Views</p>
@@ -343,13 +389,13 @@
                                                         </div>
                                                       </div>
                                                       <div class="row my-3">
-                                                          <div class="col-md-6">
+                                                          <div class="col-md-4">
                                                             <div class="border-bottom">
                                                               <h3 class="heading">$30</h3>
                                                               <p class="description">Invested</p>
                                                             </div>
                                                           </div>
-                                                          <div class="col-md-6">
+                                                          <div class="col-md-4 offset-md-1">
                                                             <div class="border-bottom">
                                                               <h3 class="heading">$5072</h3>
                                                               <p class="description">Video Revenue</p>
@@ -357,7 +403,7 @@
                                                           </div>
                                                       </div>
                                                       <div class="row">
-                                                        <div class="col-md-6">
+                                                        <div class="col-md-4">
                                                           <div class="border-bottom">
                                                             <h3 class="heading">$0.24%</h3>
                                                             <p class="description">Ownership</p>

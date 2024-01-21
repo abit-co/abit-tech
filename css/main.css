@@ -10114,6 +10114,29 @@ button {
 	font: inherit;
 }
 
+.cursor-pointer {
+	cursor: pointer;
+}
+
+.modal {
+	background: linear-gradient(0deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.2) 100%), rgba(255, 255, 255, 0.2);
+}
+
+.modal-content {
+	border-radius: 24px;
+	background: #FFF;
+	box-shadow: 4px 7px 7px 0px rgba(0, 0, 0, 0.15), -4px 0px 7px 0px rgba(0, 0, 0, 0.25);
+}
+
+@media (min-width: 1440px) {
+	.modal-xxl {
+		max-width: 1340px;
+	}
+
+	.container-xxl {
+		max-width: 1340px;
+	}
+}
 .neo-primary-btn {
 	box-sizing: border-box;
 	display: flex;
@@ -10131,6 +10154,10 @@ button {
 
 a:hover {
 	text-decoration: none;
+}
+
+.neo-primary-btn:focus {
+	box-shadow: none;
 }
 
 .neo-primary-btn:active {
@@ -10174,6 +10201,14 @@ a:hover {
 	height: 39px;
 }
 
+.abit-outline-purple:hover {
+	color: #764CC2;
+}
+
+.abit-transparent-btn:focus {
+	box-shadow: none;
+}
+
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
 	.neo-primary-btn {
@@ -10191,6 +10226,10 @@ a:hover {
 
 .abit-purple {
 	color: #b497ea !important;
+}
+
+.abit-purple-100 {
+	color: #764CC2 !important;
 }
 
 .abit-bg-purple {
@@ -12195,6 +12234,13 @@ body {
 .my-info-card .owner-type li:first-child {
 	background: linear-gradient(0deg, rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), rgba(255, 255, 255, 0.2);
 	backdrop-filter: blur(25px);
+	color: #313131;
+	text-align: center;
+	font-family: Reckless Neue;
+	font-size: 14px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: 160%;
 }
 
 .my-info-card .owner-type li:last-child {
@@ -12260,11 +12306,15 @@ body {
 	color: #696969;
 }
 
+.audi-section-3 .right-portion.creator-stats .type {
+	width: 80px;
+}
+
 .audi-section-4 {
 	height: 100%;
 	border-bottom: 1px solid #000000;
 	padding-bottom: 120px;
-	min-height: 630px;
+	min-height: 730px;
 }
 
 .about-creators .top-left-part {
@@ -12273,7 +12323,7 @@ body {
 	color: #FFFFFF;
 	position: relative;
 	left: 30px;
-	top: 20px;
+	top: 26px;
 }
 
 .about-creators .top-left-part .user-image {
@@ -12292,7 +12342,11 @@ body {
 .about-creators .top-left-part .description {
 	font-weight: 700;
 	font-size: 14px;
-	line-height: 17px;
+	color: #FFF;
+	font-family: Inter;
+	font-style: normal;
+	line-height: normal;
+	margin-top: 0.2rem !important;
 }
 
 .bottom-token-info {
@@ -13335,13 +13389,19 @@ span.activePointer::before {
 	height: 85px;
 }
 
+#congratsModal .modal-content {
+	border-radius: 24px;
+	background: #FFF;
+	box-shadow: 4px 7px 12px 0px rgba(0, 0, 0, 0.1), -4px 0px 12px 0px rgba(0, 0, 0, 0.1);
+}
+
 #congratsModal .congrats-content .creator-img {
 	left: 30%;
 	top: 35%;
 }
 
 #congratsModal .congrats-content .audience-img {
-	left: 52%;
+	left: 48%;
 	top: 35%;
 }
 
@@ -13433,6 +13493,10 @@ span.activePointer::before {
 	line-height: 160%;
 }
 
+#paymentInfoModal .modal-header {
+	padding: 0.6rem 1rem;
+}
+
 #paymentInfoModal .payment-content .description {
 	color: #565656;
 	text-align: center;
@@ -13452,6 +13516,7 @@ span.activePointer::before {
 	line-height: normal;
 	display: flex;
 	flex-direction: column;
+	border-color: #9F9D9D !important;
 }
 
 #paymentInfoModal .pay-with-options {
@@ -13502,7 +13567,7 @@ span.activePointer::before {
 	line-height: normal;
 	letter-spacing: 1.3px;
 	width: 100%;
-	height: 56px;
+	height: 64px;
 }
 
 /* x    
@@ -13988,7 +14053,7 @@ span.activePointer::before {
 	font-weight: 500;
 	border-radius: 0px !important;
 	line-height: 11px;
-	border: 1px solid #000;
+	border-left: 1px solid #000;
 	height: 29px;
 }
 
@@ -13997,14 +14062,36 @@ span.activePointer::before {
 	border-radius: 4px;
 	background: #B497EA;
 	backdrop-filter: blur(25px);
-	border: 1px solid #000;
 	border-radius: 4px !important;
+	border-color: transparent;
+	border-bottom: 1px solid #000;
 }
 
 .nav-tabs .nav-link:hover, .nav-tabs .nav-link:focus {
 	/* isolation: isolate; */
-	border-color: #fff;
-	border: 1px solid #000;
+	border-color: transparent;
+	border-left-color: #000;
+}
+
+ul.navbar-nav li {
+	padding-right: 22px;
+}
+
+ul.navbar-nav li:last-child {
+	padding-right: 0;
+}
+
+ul.navbar-nav li a.text {
+	color: #3D3D3D;
+	text-align: center;
+	font-family: Inter;
+	font-size: 16px;
+	font-style: normal;
+	font-weight: 500;
+	line-height: 138.5%;
+	/* 22.16px */
+	letter-spacing: 0.48px;
+	text-decoration-line: underline;
 }
 
 .form-group {
