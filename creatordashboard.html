@@ -26,9 +26,9 @@
 					<li class="nav-item pt-1">
 						<img class="profile-img" src="svg/icons/icon-notification.svg" alt="audience-profile-img" style="height: 28px; width: 28px; margin-top: 2px;">
 					</li>
-					<li class="nav-item dropdown pt-1">
+					<li class="nav-item dropdown pt-1" id="userProfileTempl">
 						<a href="creatordashboard.html">
-							<img class="profile-img" src="svg/icons/user-profile-pic.svg" alt="audience-profile-img" style="width: 32px; height: 32px;">
+							<img class="user-profile-pic" src="svg/icons/user-profile-pic.svg" alt="creator-profile-img" style="width: 32px; height: 32px; border-radius: 24px;">
 						</a>
 						<a class="nav-link dropdown-toggle border-0 d-inline" href="#" role="button" data-toggle="dropdown" aria-expanded="false" style="margin-top: -6px;">
 						
@@ -36,7 +36,7 @@
 						<div class="dropdown-menu" style="border-radius: 24px; width: 170px; height: 145px; padding: 20px 2px;">
 						  <a class="dropdown-item" href="editcreatorprofile.html">Edit Profile</a>
 						  <a class="dropdown-item" href="#">Account</a>
-						  <a class="dropdown-item" href="#">Logout</a>
+						  <a class="dropdown-item" href="#" id="logOutCreator">Logout</a>
 						</div>
 					  </li>
 	
@@ -94,7 +94,7 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-md-4 col-lg-3">
-					<img class="profile-img" src="svg/creator-profile-img.svg" alt="audience-profile-img">
+					<img class="profile-img" src="svg/creator-profile-img.svg" alt="audience-profile-img" style="width:82%">
 				</div>
 				<div class="col-md-8 col-lg-9">
 					<div class="bio-wrapper">
@@ -506,8 +506,8 @@
 	<div class="container" style="margin-top: 76px;">
 		<div class="row">
 			<div class="col-lg-6 col-md-6 col-xs-4 col-sm-5 col-6">
-				<h3 class="heading">aBit</h3>
-				<p class="description">Own aBit of your favourite videos.</p>
+				<!-- <h3 class="heading">aBit</h3> -->
+				<p class="description">Own <span class="heading">aBit</span> of your favourite videos.</p>
 			</div> 
 			<div class="col-lg-6 col-md-6 col-sm-7 col-6">
 				<ul class="list-group border-left float-right">
@@ -534,206 +534,120 @@
 
 
 	<!-- Scripts -->
-
-	 <script src="js/loadExtLibrary.js"></script> 
-	 <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
 	
+	 <!-- <script src="js/loadExtLibrary.js"></script>  -->
+	 <script>
+		console.log("3");
+	 </script>
+	 <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.3/dist/jquery.min.js"></script>	
+
 	
 
-	 <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+	 <!-- <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script> -->
 	 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
 	 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous"></script>
-	<!-- <script src="js/header.js"></script>-->
-	<script src="js/main.js"></script> 
+	 <script src="https://accounts.google.com/gsi/client" async></script>
+	 <script src="js/main.js"></script> 
+
+	<script src="js/creatordashboard.js"></script>
 
 	<script>
 		jQuery(function() {
-			getAllApprovedVideos();
-
-			getallCreators();
+	
 			
 		});
 		
 		// Upload Video api call
-		function uploadVideo(elem) {
-			loadBlurImageAfterCallScheduled();
-			$(elem).closest("#shareVideoModal").modal("hide");
-			const payloadOptions = getPayLoadOptions();
-			jQuery.ajax({
-			url: "https://api-abit.onrender.com/v1/videos/upload",
-			type: 'POST',
-			data:  JSON.stringify(payloadOptions),
-			xhrFields: {
-       			withCredentials: true
-   			 },
-    		crossDomain: true,
-			contentType: "application/json; charset=utf-8",
-			success: function (data) {
-				$(elem).closest("#shareVideoModal").modal("hide");
-				loadBlurImageAfterCallScheduled();
-				aBit_UTIL.displaySuccessDialog('Success!', "Thank you! Our team will reach out soon.");
-			},
-			error: function (XMLHttpRequest, textStatus, errorThrown) {
-				loadBlurImageAfterCallScheduled();
-				$(elem).closest("#shareVideoModal").modal('hide').data('bs.modal', null);
-				$('.modal-backdrop').remove();
-				aBit_UTIL.displayErrorDialog('ERROR!', "SOME ERORR");
-			}
-		});
-	}
-	function getPayLoadOptions() {
-		const form = document.querySelector('.upload-video-form');
-		const formElemArray = Array.from(form.elements);
-		let storeformInputs = {'coverPic': ""};
-		formElemArray.filter((element, index) => {
-			let objectKeys = element.getAttribute("key");
-			const value = element.value;
-			let formInput = {
-				[objectKeys] : value
-			}
-			Object.assign(storeformInputs, formInput);
-		});
-		return storeformInputs;
-	}
-	// End Of Upload Videos logic //
 
-	function getAllApprovedVideos() {
-			//const payloadOptions = getPayLoadOptions();
-			$.ajax({
-			url: "https://api-abit.onrender.com/v1/videos/653ea60d94bfda4950596647", 
-			type: 'GET',
-			xhrFields: {
-       			withCredentials: true
-   			 },
-    		crossDomain: true,
-			//data:  JSON.stringify(payloadOptions),
-			//contentType: "application/json; charset=utf-8",
-			success: function (data) {
-				aBit_UTIL.displaySuccessDialog('Success!', "Thank you! Our team will reach out soon.");
-			},
-			error: function (XMLHttpRequest, textStatus, errorThrown) {
-				aBit_UTIL.displayErrorDialog('ERROR!', "SOME ERORR");
-			}
-		});
-	}
-	function getallCreators() {
-			//const payloadOptions = getPayLoadOptions();
-			$.ajax({
-			url: "https://api-abit.onrender.com/v1/creator/approved", 
-			type: 'GET',
-			xhrFields: {
-       			withCredentials: true
-   			 },
-    		crossDomain: true,
-			
-			//data:  JSON.stringify(payloadOptions),
-			//contentType: "application/json; charset=utf-8",
-			success: function (data) {
-				aBit_UTIL.displaySuccessDialog('Success!', "Thank you! Our team will reach out soon.");
-			},
-			error: function (XMLHttpRequest, textStatus, errorThrown) {
-				aBit_UTIL.displayErrorDialog('ERROR!', "SOME ERORR");
-			}
-		});
-	}
-	function loadBlurImageAfterCallScheduled() {
-		tokenTempl = `<div class="col-6 col-lg-3 col-sm-6 col-md-3 pb-3"  onclick="replaceBlurImageWithActualAfterUpload(this);">
-						<div class="about-creators position-relative hlaf-uploaded-blur-img cursor-pointer top-20">
-							<img class="d-block slider-image" src="img/blur-img.png" alt="First slide">
-							<div class="top-left-part">
-								<div class="heading">36 Hours of Shooting</div>
-								<div class="d-inline-flex mt-2">
-									<img class="user-image" src="svg/home/user-img.svg" alt="user-image">
-									<h5 class="ml-2 description">John Bill</h5>
-								</div>
-							</div>
-							<div class="bottom-token-info">
-								<ul class="list-group list-group-horizontal token-info-content">
-									<li class="list-group-item border-0">
-										<p class="mb-1">Shares</p>
-										<p>1110</p>
-									</li>
-									<li class="list-group-item border-0 px-0">
-										<p class="mb-1">Offered</p>
-										<p>50%</p>
-									</li>
-									<li class="list-group-item border-0 px-0">
-										<p class="mb-1">Raised</p>
-										<p>$ 369k</p>
-									</li>
-									</ul>
-							</div>
-						</div>
-					</div>`;
-
-		$("#uploadedVideos .upload-videos-plus-icon:first-child").after(tokenTempl);
-	}
-
-	function replaceBlurImageWithActualAfterUpload(elem) {
-		//$(elem).remove();
-		window.location.href = "fractionalize.html"
-		//buildTokenCardForUploadedVideos();
-	}
-	function buildTokenCardForUploadedVideos() {
-		let templ = `<div class="col-6 col-lg-3 col-sm-6 col-md-3">
-					<div class="about-creators position-absolute" onclick="getMoreInfoOfToken('creator');">
-						<img class="d-block slider-image" src="svg/common/Token 11.svg" alt="First slide">
-						<div class="top-left-part">
-							<div class="heading">Press, Play, Smile</div>
-							<div class="d-inline-flex mt-2">
-								<img class="user-image" src="svg/home/user-img.svg" alt="user-image">
-								<h5 class="ml-2 description">Joy Harton</h5>
-							</div>
-						</div>
-						<div class="bottom-token-info">
-							<ul class="list-group list-group-horizontal token-info-content">
-								<li class="list-group-item border-0">
-									<p class="mb-1">Shares</p>
-									<p>1110</p>
-								</li>
-								<li class="list-group-item border-0 px-0">
-									<p class="mb-1">Offered</p>
-									<p>50%</p>
-								</li>
-								<li class="list-group-item border-0 px-0">
-									<p class="mb-1">Raised</p>
-									<p>$ 369k</p>
-								</li>
-								</ul>
-						</div>
-					</div>
-				</div>`;
-
-		$("#uploadedVideos").append(templ);	
-	}
-		
-	
-	let getMoreInfoOfToken = (userType = "creator") => {
-      $(`#${userType}TokenMoreInfoModal`).modal("show");
+function uploadVideo(elem) {
+    //loadBlurImageAfterCallScheduled();
+    $(elem).closest("#shareVideoModal").modal("hide");
+    const payloadOptions = getPayLoadOptions();
+    jQuery.ajax({
+    url: "https://api-abit.onrender.com/v1/videos/upload",
+    type: 'POST',
+    data:  JSON.stringify(payloadOptions),
+    xhrFields: {
+           withCredentials: true
+        },
+    crossDomain: true,
+    contentType: "application/json; charset=utf-8",
+    success: function (data) {
+        $(elem).closest("#shareVideoModal").modal("hide");
+        loadBlurImageAfterCallScheduled();
+        aBit_UTIL.displaySuccessDialog('Success!', "Thank you! Our team will reach out soon.");
+    },
+    error: function (XMLHttpRequest, textStatus, errorThrown) {
+        loadBlurImageAfterCallScheduled();
+        $(elem).closest("#shareVideoModal").modal('hide').data('bs.modal', null);
+        $('.modal-backdrop').remove();
+        aBit_UTIL.displayErrorDialog('ERROR!', "SOME ERORR");
     }
+});
+}
+function getPayLoadOptions() {
+    const form = document.querySelector('.upload-video-form');
+    const formElemArray = Array.from(form.elements);
+    let storeformInputs = {'date': "10/12/23", "perks": ["Exclusive community access.","Virtual 1:1 call."]};
+    formElemArray.filter((element, index) => {
+        let objectKeys = element.getAttribute("key");
+        const value = element.value;
+        let formInput = {
+            [objectKeys] : value
+        }
+        Object.assign(storeformInputs, formInput);
+    });
+    return storeformInputs;
+}
+// End Of Upload Videos logic //
 
-	let logOutCreator = (elem) => {
-		$.ajax({
-			url: "https://api-abit.onrender.com/v1/creator/logout", 
-			type: 'POST',
-			data: {
-				'email': ""
-			},
-			xhrFields: {
-       			withCredentials: true
-   			 },
-    		crossDomain: true,
-			
-			//data:  JSON.stringify(payloadOptions),
-			//contentType: "application/json; charset=utf-8",
-			success: function (data) {
-				aBit_UTIL.displaySuccessDialog('Success!', "Thank you! Our team will reach out soon.");
-			},
-			error: function (XMLHttpRequest, textStatus, errorThrown) {
-				aBit_UTIL.displayErrorDialog('ERROR!', "SOME ERORR");
-			}
-		});	
-	}
+
+
+function loadBlurImageAfterCallScheduled() {
+const tokenTempl = `<div class="col-6 col-lg-3 col-sm-6 col-md-3 pb-3"  onClick="replaceBlurImageWithActualAfterUpload(this);">
+                <div class="about-creators position-relative hlaf-uploaded-blur-img cursor-pointer top-20">
+                    <img class="d-block slider-image" src="img/blur-img.png" alt="First slide">
+                    <div class="top-left-part">
+                        <div class="heading">36 Hours of Shooting</div>
+                        <div class="d-inline-flex mt-2">
+                            <img class="user-image" src="svg/home/user-img.svg" alt="user-image">
+                            <h5 class="ml-2 description">John Bill</h5>
+                        </div>
+                    </div>
+                    <div class="bottom-token-info">
+                        <ul class="list-group list-group-horizontal token-info-content">
+                            <li class="list-group-item border-0">
+                                <p class="mb-1">Shares</p>
+                                <p>1110</p>
+                            </li>
+                            <li class="list-group-item border-0 px-0">
+                                <p class="mb-1">Offered</p>
+                                <p>50%</p>
+                            </li>
+                            <li class="list-group-item border-0 px-0">
+                                <p class="mb-1">Raised</p>
+                                <p>$ 369k</p>
+                            </li>
+                            </ul>
+                    </div>
+                </div>
+            </div>`;
+
+    $("#uploadedVideos .upload-videos-plus-icon:first-child").after(tokenTempl);
+}
+
+function replaceBlurImageWithActualAfterUpload(elem) {
+//$(elem).remove();
+    window.location.href = "fractionalize.html"
+//buildTokenCardForUploadedVideos();
+}
+
+		
+
+	
+
+	
+
 	</script>
 	
 </body>

@@ -34,40 +34,19 @@
 </head>
 <body>
 	<header style="height: 110px;">
-		<nav class="navbar navbar-expand-lg navbar-light bg-light" style="height: 110px;">
+		<nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom-0" style="height: 110px;">
 			<div class="container">
 			<a class="navbar-brand" href="index.html">aBit</a>
-			<!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
-				<span class="navbar-toggler-icon"></span>
-			</button> -->
-			<!-- <div id="buttonDiv"></div> -->
-			<!-- <div id="g_id_onload"
-				data-client_id="280264346590-vjg6cqponliotfqn32pt2mna2jnqmmtu.apps.googleusercontent.com"
-				data-context="signin"
-				data-ux_mode="popup"
-				data-callback="handleCredentialResponse"
-				data-auto_prompt="false">
-			</div>
-
-			<div class="g_id_signin"
-				data-type="standard"
-				data-shape="rectangular"
-				data-theme="outline"
-				data-text="signin_with"
-				data-size="large"
-				data-logo_alignment="left">
-			</div> -->
-			<div class="expand navbar-expand" id="navbarTogglerDemo02">
-				<ul class="navbar-nav ml-auto mt-lg-0 ">
-				<li class="nav-item active">
-					<a class="nav-link nav-item-creator border-0 pr-4 text" href="creatorpage.html">Are you a creator? <span class="sr-only">(current)</span></a>
-				</li>
-				<li>
-					<button class="btn abit-outline-purple my-2 my-sm-0" data-toggle="modal" data-target="#registerModal">Login / Signup</button>
-				</li>
-				</ul>
-				
-			</div>
+				<div class="expand navbar-expand" id="homePageNavbar">
+					<ul class="navbar-nav ml-auto mt-lg-0 ">
+						<li class="nav-item active">
+							<a class="nav-link nav-item-creator border-0 pr-4 text" href="creatorpage.html">Are you a creator? <span class="sr-only">(current)</span></a>
+						</li>
+						<li>
+							<button class="btn abit-outline-purple my-2 my-sm-0" id="registerLoginBtn" data-toggle="modal" data-target="#registerModal">Login / Signup</button>
+						</li>
+					</ul>
+				</div>
 			</div>	
 		</nav>
 	</header>
@@ -81,7 +60,8 @@
 						<p class="text-para">Invest in their videos and 
 							earn on every view.
 						</p>
-						<button type="button" class="btn neo-primary-btn abit-white abit-bg-purple d-inline-flex cstm-btn-props" data-toggle="modal" data-target="#registerModal">Sign me up!</button>
+						<button type="button" class="btn neo-primary-btn abit-white abit-bg-purple d-inline-flex cstm-btn-props signup-btn" data-toggle="modal" data-target="#registerModal">Sign me up!</button>
+
 					</div>
 				</div>
 				<div class="col-md-11 offset-md-1 col-lg-11 offset-lg-1 col-sm-12 col-xs-12">
@@ -352,7 +332,7 @@
 					<div class="content-wrapper">
 						<h3 class="heading">Become <i>closer</i> to your favourite creator!</h3>
 						<p class="description mt-2 mb-4">Notify yourself with latest release from the Creator</p>
-						<button type="submit" class="btn neo-primary-btn abit-black abit-bg-yellow d-inline-flex cstm-btn-props" data-toggle="modal" data-target="#registerModal">Sign me up!</button>
+						<button type="submit" class="btn neo-primary-btn abit-black abit-bg-yellow d-inline-flex cstm-btn-props signup-btn" data-toggle="modal" data-target="#registerModal">Sign me up!</button>
 					</div>
 				</div>
 			</div>
@@ -377,7 +357,7 @@
 							</div>
 							<p class="description">The Sound of Silence</p>
 							<a href="fractionalize.html">
-								<button type="button" class="btn neo-primary-btn abit-white abit-transparent-btn d-inline-flex border border-white cstm-btn-props" data-dismiss="modal" style=" width: 150px;
+								<button type="button" class="btn neo-primary-btn abit-white abit-transparent-btn d-inline-flex border border-white cstm-btn-prop " data-dismiss="modal" style=" width: 150px;
 														height: 50px; box-shadow: 2px 4px #000000, 2px 4px 0 1px #FFFFFF;">Buy Now</button>
 							</a>
 						</div>
@@ -413,7 +393,7 @@
 							<div class="heading-text-2">Are you a Creator?</div>
 						</h3>
 						<p class="description">Set yourself free. Check out our creator’s program.</p>
-						<button type="button" class="btn neo-primary-btn abit-white abit-bg-purple d-inline-flex cstm-btn-props" data-toggle="modal" data-target="#creatorSignupModal">Join Now</button>
+						<button type="button" class="btn neo-primary-btn abit-white abit-bg-purple d-inline-flex cstm-btn-props signup-btn" data-toggle="modal" data-target="#creatorSignupModal">Join Now</button>
 					</div>
 				</div>
 				<div class="col-md-6 col-lg-6 col-sm-12 col-12 order-lg-2 order-md-2 order-1">
@@ -450,20 +430,14 @@
 	<!-- <div w3-include-html="modals/waitListModal.html"></div> -->
 
 
-	<!-- Scripts -->
-	
-	<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> -->
-	<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.2/js/bootstrap.min.js" integrity="sha512-7rusk8kGPFynZWu26OKbTeI+QPoYchtxsmPeBqkHIEXJxeun4yJ4ISYe7C6sz9wdxeE1Gk3VxsIWgCZTc+vX3g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script> -->
 	<script async src="https://www.googletagmanager.com/gtag/js?id=G-M2C1G7D2PW"></script>
 
-	<script src="js/loadExtLibrary.js"></script>
+	<!-- <script src="js/loadExtLibrary.js"></script> -->
 	<script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
 	
 	
 
-	<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+	<!-- <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script> -->
 	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous"></script>
 	<script src="js/main.js"></script> 
@@ -480,9 +454,17 @@
 
 </body>
 <script>
-	  let USER_CONSTANT = {type: "USER", isLogin : false};
+	let isUserLoggedIn = checkIfTokenExist();
+
+	$(function() {
+		//isUserLoggedIn = checkIfTokenExist();
+		if(isUserLoggedIn) getUserProfileInfo(isUserLoggedIn);
+	});
+
+
+	let USER_CONSTANT = {type: "USER", isLogin : false};
 	//  let {loggedUserType, isLogin} = USER_CONSTANT;
-	 
+	 if(!isUserLoggedIn) {
       window.onload = function () {
         google.accounts.id.initialize({
           client_id: "280264346590-vjg6cqponliotfqn32pt2mna2jnqmmtu.apps.googleusercontent.com",
@@ -530,7 +512,7 @@
 			 width: "352px",
 			 text: "continue_with",
 			 click_listener: function() {
-				onGoogleBtnClickHandler({userType: "USER", isLogin : true} );
+				onGoogleBtnClickHandler({userType: "FAN", isLogin : true} );
 			 }
 		}  // customization attributes
         );
@@ -543,7 +525,7 @@
 			 width: "352px",
 			 text: "signup_with",
 			 click_listener: function() {
-				onGoogleBtnClickHandler({userType: "USER", isLogin : false} );
+				onGoogleBtnClickHandler({userType: "FAN", isLogin : false} );
 			 }
 		}  // customization attributes
         );
@@ -551,6 +533,7 @@
        
 		//google.accounts.id.prompt(); // also display the One Tap dialog
       }
+	}
 	  function onGoogleBtnClickHandler(USER_CONSTANT_OBJ) {
 		Object.assign(USER_CONSTANT, USER_CONSTANT_OBJ);
 	  }
@@ -584,9 +567,25 @@
 				withCredentials: true
 			},
 			contentType: "application/json; charset=utf-8",
-			success: function (data, status, xhr) {
+			success: function (data, status, jqXHR) {
+				
+				debugger
+				const {id, email} = data?.user;
+				data.user = {...data?.user, ...USER_CONSTANT}
+				localStorage.setItem("userInfo",  JSON.stringify(data?.user));
+				// const tokenHeader = jqXHR.getResponseHeader('Set-Cookie') || jqXHR.getResponseHeader('Your-Custom-Header');
+
+				// console.log(tokenHeader);
+				const isLoggedIn = checkIfTokenExist();
+				if(!isLoggedIn) {
+					document.cookie = `abittoken=${data.user.token}; expires=${getFormattedExpirationDate()}; path=/`;
+				}
+
+				$("#registerLoginBtn").closest("li").hide();
+			
 				if(!isLogin && userType.toLowerCase() !== "creator") {
-					aBit_UTIL.displaySuccessDialog('Success!', "Thank you! Our team will reach out soon.");
+					$("#loginModal, #registerModal").modal("hide");
+					//aBit_UTIL.displaySuccessDialog('Success!', "Thank you! Our team will reach out soon.");
 				} else if(isLogin && userType.toLowerCase() !== "creator") {
 					let loggedInUserInfo = parseJwt(response.credential);
 					console.log(loggedInUserInfo);
@@ -596,35 +595,148 @@
 					$("#creatorSignupModal .creator-signup-step-1").hide();
 					$("#creatorSignupModal .creator-signup-step-2").show();
 				} else {
-					window.location.href = "creatordashboard.html";
+					window.location.href = `creatordashboard.html?id=${id}`;
 				}
+
+				let loggedInUserInfo = parseJwt(response.credential);
+				showProfileViewAfterSuccessfullLogin({...loggedInUserInfo, ...data.user});	
 			},
 			error: function (XMLHttpRequest, textStatus, errorThrown) {
 				aBit_UTIL.displayErrorDialog('ERROR!', "SOME ERORR");
 			}
 		});
 	}
+
+function checkIfTokenExist() {
+	let isTokenExist = true;
+	if(document.cookie.indexOf('abittoken=') === -1) {
+		isTokenExist = false;
+	}
+	return isTokenExist;
+}
+
+function getFormattedExpirationDate() {
+	// Get the current date
+	let currentDate = new Date();
+
+	// Calculate the expiration date by adding one day
+	let expirationDate = new Date(currentDate);
+	expirationDate.setDate(currentDate.getDate() + 2);
+
+	// Format the expiration date in the correct format for the cookie
+	const formattedExpirationDate = expirationDate.toUTCString();
+	return formattedExpirationDate;
+}
 	
-	function signOut() {
-		$.ajax({
-			url: "https://api-abit.onrender.com/user/logout",
-			type: 'POST',
-			data:  JSON.stringify({
-				'token': response.credential
-			}),
-			xhrFields: {
-				withCredentials: true
-			},
-			contentType: "application/json; charset=utf-8",
-			success: function (data, status, xhr) {
-				//aBit_UTIL.displaySuccessDialog('Success!', "Thank you! Our team will reach out soon.");
-			},
-			error: function (XMLHttpRequest, textStatus, errorThrown) {
-				aBit_UTIL.displayErrorDialog('ERROR!', "SOME ERORR");
-			}
-		});
-		//google.accounts.id.disableAutoSelect();
-  }
+let logOutUser = (elem) => {
+	const userInfo = JSON.parse(localStorage.getItem("userInfo"));
+
+	$.ajax({
+		url: "https://api-abit.onrender.com/v1/creator/logout", 
+		type: 'POST',
+		data: {
+			'email': `${userInfo.email}`
+		},
+		xhrFields: {
+			withCredentials: true
+		},
+		crossDomain: true,
+		success: function (data) {
+			google.accounts.id.initialize({
+				client_id: "280264346590-vjg6cqponliotfqn32pt2mna2jnqmmtu.apps.googleusercontent.com",
+			});
+			google.accounts.id.revoke(`${userInfo.email}`, done => {
+				console.log('consent revoked');
+				localStorage.removeItem("userInfo");
+				$("#userProfileTempl").remove();
+				$("#registerLoginBtn").closest("li").show();
+
+				//window.location.href = "index.html";
+			});
+			
+			aBit_UTIL.displaySuccessDialog('Success!', "Thank you! Our team will reach out soon.");
+		},
+		error: function (XMLHttpRequest, textStatus, errorThrown) {
+			aBit_UTIL.displayErrorDialog('ERROR!', "SOME ERORR");
+		}
+	});	
+}
+
+  const initCalendly = () => {
+	const userInfo = JSON.parse(localStorage.getItem("userInfo"));
+	console.log(userInfo);
+	Calendly.initPopupWidget({
+		url: "https://calendly.com/abit-tech/calendly-testing",	
+	});
+
+	$(".calendly-popup-close, .calendly-close-overlay").off("click").on("click", function() {
+		$(".creator-signup-step-2").hide();
+
+		window.location.href = `creatordashboard.html?id=${userInfo.id}`;
+		//.closePopupWidget();
+	})
+	//Calendly.closePopupWidget();
+	
+	return false;
+}
+
+const showProfileViewAfterSuccessfullLogin = (loggedInUserInfo) => {
+	debugger;
+	let {picture, name, profilePic, userType} = loggedInUserInfo;
+	const userProfileTempLength = $("#userProfileTempl").length;
+	if(userProfileTempLength === 0) {
+		let userProfileTempl = `<li class="nav-item dropdown pt-1 user-profile" id="userProfileTempl">
+									<a href="${(userType.toLowerCase() === "fan" ? "audiencedashboard.html" : "creatordashboard.html")}">
+										<img class="profile-img" src="${picture ?? profilePic}" alt="audience-profile-img" style="width: 32px; height: 32px; border-radius: 24px;">
+									</a>
+									<a class="nav-link dropdown-toggle border-0 d-inline" href="#" role="button" data-toggle="dropdown" aria-expanded="false" style="margin-top: -6px;">
+									
+									</a>
+									<div class="dropdown-menu" style="border-radius: 24px; width: 170px; height: 145px; padding: 20px 2px;">
+									<a class="dropdown-item" href="editcreatorprofile.html">Edit Profile</a>
+									<a class="dropdown-item" href="#">Account</a>
+									<a class="dropdown-item" href="#" onclick="logOutUser();">Logout</a>
+									</div>
+								</li>`;
+
+		$("#homePageNavbar ul").append(userProfileTempl);
+	}
+}
+
+const getUserProfileInfo = () => {
+    const userInfo = JSON.parse(localStorage.getItem("userInfo"));
+	const url = getProfileApiUrlBasedOnUserType(userInfo);
+
+	//https://api-abit.onrender.com/v1/fan/profile
+    $.ajax({
+        url: url, 
+        type: 'GET',
+        xhrFields: {
+               withCredentials: true
+            },
+        crossDomain: true,
+        success: function (data) {
+			$("#registerLoginBtn").closest("li").hide();
+
+			$(".signup-btn").removeClass("d-inline-flex").hide();
+			showProfileViewAfterSuccessfullLogin({...data.user, ...userInfo});
+
+            //showProfileViewAfterSuccessfullLogin(data.user);
+            aBit_UTIL.displaySuccessDialog('Success!', "Thank you! Our team will reach out soon.");
+        },
+        error: function (XMLHttpRequest, textStatus, errorThrown) {
+            aBit_UTIL.displayErrorDialog('ERROR!', "SOME ERORR");
+        }
+    });	
+}
+const getProfileApiUrlBasedOnUserType = ({id, userType}) => {
+	
+	const url = userType.toLowerCase() === "fan" 
+					? `https://api-abit.onrender.com/v1/fan/profile` 
+						: `https://api-abit.onrender.com/v1/${userType.toLowerCase()}/${id}`;
+
+	return url;
+}
 		
   </script>
 </html>

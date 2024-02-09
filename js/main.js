@@ -388,7 +388,7 @@
 
 	// import 
 
-
+	console.log("2");
 	let myPromise;
 
 
@@ -708,7 +708,7 @@
 	function registerUser(formElem) {
 
 	  $.ajax({
-	    url: "https://api-abit.onrender.com/v1/user/signupWithEmail",
+	    url: "https://api-abit.onrender.com/v1/fan/signupWithEmail",
 	    type: 'POST',
 	    data: JSON.stringify(this),
 	    contentType: "application/json; charset=utf-8",
@@ -731,16 +731,30 @@
 
 	function loginUser(formElem) {
 	  $.ajax({
-	    url: "https://api-abit.onrender.com/v1/user/loginWithEmail",
+	    url: "https://api-abit.onrender.com/v1/fan/loginWithEmail",
 	    type: 'POST',
 	    data: JSON.stringify(this),
 	    contentType: "application/json; charset=utf-8",
 	    success: function (data) {
-	      var validator = $(form).validate();
+	      debugger;
+	      var validator = $(formElem).validate();
 	      validator.resetForm();
 	      $(formElem)[0].reset();
 	      $(formElem).closest(".modal").hide();
 	      $('.modal-backdrop').remove();
+
+	      let userInfo = {userType: "FAN", isLogin : true};
+	      localStorage.setItem("userInfo",  JSON.stringify({...data.user, ...userInfo}));
+
+	      const isLoggedIn = checkIfTokenExist();
+				if(!isLoggedIn) {
+					document.cookie = `abittoken=${data.user.token}; expires=${getFormattedExpirationDate()}; path=/`;
+				}
+
+	      getUserProfileInfo();
+
+
+	    //  showProfileViewAfterSuccessfullLogin(data.user);
 
 	      aBit_UTIL.displaySuccessDialog('Success!', `'You are logged in successfully, ${this.name}! Welcome Back!`);
 
@@ -857,7 +871,7 @@
 	      position : 'top-right',     // bottom-left or bottom-right or bottom-center or top-left or top-right or top-center or mid-center or an object representing the left, right, top, bottom values to position the toast on page
 	      icon: icon
 	    });
-	  }
+	  },
 	};
 
 	function buySharesOfCreatorVideo(elem) {

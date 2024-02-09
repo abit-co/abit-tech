@@ -206,11 +206,11 @@
                         <!-- <div class="forecast-earning" style="padding: 0px 20px;">
                             <span class="circle"></span><span class="our-forecast"><i>Our Forecast</i></span>
                         </div> -->
-                        <div class="form-group mt-4 row" style="margin-left: 24px;">
+                        <!-- <div class="form-group mt-4 row" style="margin-left: 24px;">
                             <label for="video-count" class="video-count col-md-4 pl-0 col-6">Monthly Video Uploads:</label>
                             <input type="number" class="form-control col-md-3 col-4" id="video-count" value="1" step="1" min="0" required style="border: 1px solid #ced4da;">
                             <div class="invalid-feedback">Maximum 4 videos allowed.</div>
-                        </div>
+                        </div> -->
                     </div>
                     <!-- <div class="col-md-4 no-of-videos-upload">
                         <div class="form-group">
@@ -227,7 +227,7 @@
                     </div>
 
                     <div class="text-center pt-2" style="font-size: 12px; margin-top: -15px;">
-                        Avg. Video Earnings($) 
+                       VIEWS
                     </div>
 				</div>
               </div>
@@ -270,28 +270,42 @@
 
             var init = function () {  
                 function generateArray(start, end, step) {
-                    debugger;
                 const array = [];
                 for (var i = start; i <= end; i += step) {
-                    if(i == 20000) {
-                         i = convertIntoK(i)
+                    if(i === 2000000) {
+                        i = convertIntoMillion(i);
+                        array.push(i);
+                    } else if(i === 200000) {
+                        const convertedValueInK = convertIntoK(i);
+                        array.push(convertedValueInK);
+                    } else {
+                        array.push(i + "k");
                     }
-                    array.push("$" + i);
+                    console.log(array)
+                    // array.push(i);
                 }
-                return array;
+                    return array;
                 }
-                const startValue = 100;
-                const endValue = 20000;
-                const stepSize = 10;
+                const startValue = 200000;
+                const endValue = 2000000;
+                const stepSize = 500;
 
                 const resultArray = generateArray(startValue, endValue, stepSize);
+                debugger;
                 console.log(resultArray);              
 
 
                 function convertIntoK(value) {
                   //  if(value == 20000) {
-                        let valueInK = "20000".slice(0, -3) + 'k';
+                        let valueInK = "200000".slice(0, -3) + 'k';
                         return valueInK;
+                        //console.log(str2);
+                 //   }
+                }
+                function convertIntoMillion(value) {
+                  //  if(value == 20000) {
+                        let valueInM = "2000000".slice(0, -6) + 'M';
+                        return valueInM;
                         //console.log(str2);
                  //   }
                 }
@@ -299,28 +313,15 @@
                
                 var slider2 = new rSlider({
                     target: '#slider2',
-                    values:resultArray, //['$10', '$500', '$1000', '$1500', '$2000', '$2500', '$3000', '$3500',  '$4000', '$4500', '50000'],
+                    values: resultArray, 
                     range: false,
-                    set: ["$10000"],
+                    set: ["600k"],
                     tooltip: false,
                     labels: false,
                     scale: false,
                     onChange: function (vals, activePointer) {
 
                         console.log(vals);
-                        
-                    //     let activeSpan =  $('.rs-scale').find("span")[activePointer];
-                    //     $('.rs-scale').find("span").removeClass("activePointer");
-                    //     $('.rs-scale').find("span .rs-transparent-rectangle").remove();
-                    //   //  $(activeSpan).append(`<div class="rs-transparent-rectangle"></div>`);
-                    //     $(activeSpan).addClass("activePointer");
-                        // let pos;
-                        // if ($(window).width() < 460) {
-                        //     pos = ($(activeSpan).position().left) - 30;
-                        // } else {
-                        //     pos = ($(activeSpan).position().left + 25);
-                        // }
-                       // $(activeSpan).attr("data-earnings", 4.80);
                        
                        let pos;
 
@@ -345,10 +346,18 @@
                     },
                     onDrag: function() {
                         var valueInDollar = $('#slider2').val();
-                        var videosEarning = parseInt(valueInDollar.split("$")[1]); //* 1000;
-                        if(videosEarning == 20) {
+                        if(valueInDollar !== "2M") {
+                            var videosEarning = parseInt(valueInDollar.split("k")[0]); //* 1000;
+                            if(videosEarning == 200) {
                                 videosEarning = videosEarning * 1000;
+                            }
+
+                        } else if(valueInDollar === "2M") {
+                            var videosEarning = parseInt(valueInDollar.split("M")[0]); //* 1000;
+
+                            videosEarning = videosEarning * 1000000;
                         }
+                       
                         $(".videos-earning").html(videosEarning);
                     },
                     onMove: function() {
@@ -374,43 +383,25 @@
 
             window.onload = init;
 
-            var videoCountInput = document.getElementById('video-count');
-                videoCountInput.addEventListener('keyup', function () {
-                    calculateEarnings();
-             });
-
             function calculateEarnings() {
-               // validateVideoCount();
-                var valueInDollar = $('#slider2').val();
+                var views = parseInt($('#slider2').val());
+                var percentage = 0.0024 //parseFloat($('#ownershipPercentage').val()) / 100;
+                var earningsPerView = 0.005 //parseFloat($('#earningsPerView').val());
+                var audienceEarnings = ((views * earningsPerView) * percentage).toFixed(4);
 
-                var videosEarning = parseInt(valueInDollar.split("$")[1]); //* 1000;
-               if(videosEarning == 20) {
-                    videosEarning = videosEarning * 1000;
-               }
-               
+                $('.result-with-text').html(`<div class="total-earning">$${audienceEarnings}</div><span>Monthly aBit Payouts.</span><div class="videos-earnings">${formatNumberAbbreviation(views)}</div>`);
 
-
-              //  var adRevenue = parseFloat(document.getElementById('ad-revenue').value);
-                var videoCount = parseInt(document.getElementById('video-count').value);
-
-                if (videoCount <= 4) {
-                    var earnings = (videosEarning * videoCount * 3).toFixed(0);
-                    earnings = seperateNumerWithComma(earnings);
-                    $('.result-with-text').html(`<div class="total-earning">$${earnings}</div><span>Monthly aBit Payouts.</span><div class="videos-earnings">$${seperateNumerWithComma(videosEarning)}</div>`);
-
-                  //  document.getElementById('earnings').textContent = 'Creator Earnings: $' + earnings;
+               // $('#audienceEarnings').val(audienceEarnings.toFixed(2));
+            }
+            function formatNumberAbbreviation(number) {
+                if (number >= 1e6) {
+                    return (number / 1e6).toLocaleString(undefined, { minimumFractionDigits: 0, maximumFractionDigits: 2 }) + 'M';
+                } else if (number >= 1e3) {
+                    return (number / 1e3).toLocaleString(undefined, { minimumFractionDigits: 0, maximumFractionDigits: 2 }) + 'k';
                 } else {
-                    var earnings = (videosEarning * 4 * 3).toFixed(0);
-                    $('.result-with-text').html(`<div class="total-earning">$${parseFloat(earnings).toFixed(0)}</div><span>Monthly aBit Payouts.</span><div class="videos-earnings">$${seperateNumerWithComma(videosEarning)}</div>`);
+                    return number.toLocaleString();
                 }
             }
-            function seperateNumerWithComma(num) {
-               // let n = 234234234;
-
-                   num = Number(parseFloat(num).toFixed(0))
-                    let str = num.toLocaleString("en-US");       
-                    return str;
-                }
         })();
     </script>
 </body>

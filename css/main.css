@@ -12679,6 +12679,10 @@ body {
 	font-weight: 400;
 	line-height: normal;
 	text-transform: capitalize;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+	height: 48px;
 }
 
 .fr-section-1 .heading .name {
@@ -12750,7 +12754,7 @@ body {
 	background-image: url(../svg/Fractionalize/fr-section-2-bg.svg);
 }
 
-.fr-section-2 .description {
+.fr-section-2 .left-portion .description {
 	font-family: "Gloria Hallelujah";
 	font-style: normal;
 	font-weight: 400;
@@ -12833,6 +12837,41 @@ body {
 	letter-spacing: 0.48px;
 }
 
+.fr-section-6 {
+	background-image: url(../img/fr-section-6-bg.png);
+	min-height: 768px;
+}
+
+.fr-section-6 .how-to-step-carousel {
+	margin-top: 32px;
+}
+
+.fr-section-6 .upper-portion {
+	display: flex;
+	flex-direction: row;
+	position: relative;
+	top: 75px;
+	left: -20%;
+}
+
+.fr-section-6 .upper-portion .description {
+	color: #000;
+	text-align: center;
+	font-family: "Gloria Hallelujah";
+	font-size: 32px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: 125.471%;
+	width: 262px;
+	height: 130.794px;
+	transform: rotate(-7.159deg);
+}
+
+.fr-section-6 .upper-portion .arrow-img-1 {
+	position: relative;
+	top: 10px;
+}
+
 .fr-section-4 {
 	height: 818px;
 	padding-top: 98px;
@@ -12850,10 +12889,11 @@ body {
 }
 
 .fr-section-3 {
-	min-height: 900px;
 	padding-top: 125px;
 	border-top: 1px solid #000;
 	border-bottom: 1px solid #000;
+	height: 100%;
+	padding-bottom: 100px;
 }
 
 .fr-section-3 .heading {
@@ -12898,6 +12938,10 @@ body {
 
 .fr-section-3 .ownership-certification-accordian-body img {
 	margin-top: 10px;
+	width: 197px;
+	height: 116px;
+	border: 1px solid #dee2e6;
+	padding: 4px;
 }
 
 .fr-section-3 .box-wrapper .sub-heading {
@@ -12924,7 +12968,7 @@ body {
 	padding-top: 102px;
 }
 
-.fr-section-2 .heading {
+.fr-section-2 .left-portion .heading {
 	color: #000;
 	text-align: center;
 	font-family: Reckless Neue;
@@ -12933,6 +12977,39 @@ body {
 	font-weight: 400;
 	line-height: normal;
 	width: 176px;
+}
+
+.fr-section-2 .custom-blur-token-info {
+	height: 76px;
+	bottom: 26px;
+	top: auto;
+	left: 40px;
+	width: 100%;
+	display: flex;
+	align-items: flex-end;
+	flex-direction: row;
+}
+
+.fr-section-2 .custom-blur-token-info .token-info-content {
+	width: 100%;
+}
+
+.fr-section-2 .custom-blur-token-info .token-info-content .heading {
+	color: #FFF;
+	font-family: Inter;
+	font-size: 12px;
+	font-style: normal;
+	font-weight: 500;
+	line-height: normal;
+}
+
+.fr-section-2 .custom-blur-token-info .token-info-content .description {
+	color: #FFF;
+	font-family: Inter;
+	font-size: 16px;
+	font-style: normal;
+	font-weight: 700;
+	line-height: normal;
 }
 
 .fr-section-2 .heading .play-trailer-text {
@@ -13150,7 +13227,7 @@ body {
 		width: 100%;
 	}
 
-	.fr-section-2 .description {
+	.fr-section-2 .left-portion .description {
 		font-size: 16px;
 		padding: 18px;
 	}
@@ -13166,6 +13243,17 @@ body {
 }
 .cursor-poitner {
 	cursor: pointer;
+}
+
+.purple-circle {
+	border: 1px solid #b497ea;
+	width: 20px;
+	height: 20px;
+	display: inline-flex;
+	border-radius: 50%;
+	background-color: #b497ea;
+	position: relative;
+	top: 5px;
 }
 
 .rs-container * {
@@ -13376,6 +13464,11 @@ span.activePointer::before {
 /* 
     CONGRATULATION MODAL CSS GOES HERE
 */
+@media (min-width: 576px) {
+	#congratsModal .modal-dialog {
+		max-width: 633px;
+	}
+}
 #congratsModal .modal-title {
 	font-family: "Reckless Neue";
 	font-style: normal;
@@ -13393,6 +13486,7 @@ span.activePointer::before {
 	border-radius: 24px;
 	background: #FFF;
 	box-shadow: 4px 7px 12px 0px rgba(0, 0, 0, 0.1), -4px 0px 12px 0px rgba(0, 0, 0, 0.1);
+	height: 777px;
 }
 
 #congratsModal .congrats-content .creator-img {
@@ -13401,7 +13495,7 @@ span.activePointer::before {
 }
 
 #congratsModal .congrats-content .audience-img {
-	left: 48%;
+	left: 45%;
 	top: 35%;
 }
 

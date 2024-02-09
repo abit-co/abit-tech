@@ -5,6 +5,140 @@
 	<link rel="stylesheet" type="text/css" href="css/main.css">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="shortcut icon" href="svg/favicon.svg" type="image/x-icon">
+	<style>
+		.forecast-earning .circle {
+			position: absolute;
+			width: 20px;
+			height: 20px;
+			background: rgba(118, 76, 194, 0.49);
+			border-radius: 50%;
+		}
+		.forecast-earning .our-forecast {
+			margin-left: 25px;
+			font-family: 'Inter';
+			font-style: normal;
+			font-weight: 400;
+			font-size: 16px;
+			line-height: 140.5%;
+			color: #565656;
+		}
+		.forecast-description {
+			font-family: 'Inter';
+			font-style: normal;
+			font-weight: 400;
+			font-size: 14px;
+			line-height: 148.5%;
+			color: #565656;
+			width: 600px; 
+			/* padding: 0px 20px; */
+
+		 }
+		 .result-with-text .total-earning {
+			font-family: 'Inter';
+			font-style: normal;
+			font-weight: 500;
+			font-size: 24px;
+			line-height: 29px;
+			text-transform: capitalize;
+			color: #764CC2;
+			position: relative;
+			left: 15px;
+		 }
+		 .video-count {
+			font-family: 'Inter';
+			font-style: normal;
+			font-size: 12px;
+			/* line-height: 140.5%; */
+			color: #565656;
+			width: 60%;
+			font-weight: 600;
+			margin-top: 11px;
+
+		 }
+		 input::-webkit-inner-spin-button { 
+			display: none;
+		 }
+
+		 #video-count {
+			width: 60%;
+			height: 24px;
+			position: relative;
+			top: 8px;
+			left: -20px;
+		 }
+		 .videos-earnings {
+			font-family: 'Inter';
+			font-style: normal;
+			font-weight: 500;
+			font-size: 13px;
+			line-height: 29px;
+			text-transform: capitalize;
+			/* color: #764CC2; */
+			position: absolute;
+			left: 40px;
+		 }
+		 .cr-common-section.cr-tool .card-header button {
+			font-size: 22px;
+		 }
+
+		 @media only screen and (max-width: 900px) { 
+			.cstm-collapse {
+				height: 100%;
+				min-height: 520px;
+			}
+			.forecast-description {
+				width: 100%;
+				font-size: 12px;
+			}
+			.forecast-earning {
+				padding: 0 16px;
+			} 
+			.no-of-videos-upload {
+				width: 90%;
+				margin: 0 16px;
+			}
+			.forecast-earning .circlecast-earning .our-forecast { 
+				width: 16px;
+				height: 16px;
+			}
+			.forecast-earning .circlecast-earning .our-forecast {
+				position: relative;
+				top: -6px;
+				font-size: 12px;
+			}
+			.rs-transparent-rectangle {
+				width: 162px;
+				left: -72px;
+			}
+			.cr-common-section.cr-tool .card-header button {
+				font-size: 18px;
+				position: relative;
+				left: 6px;
+			}
+			.result-with-text {
+				
+				width: 200px; 
+			}
+			.result-with-text .total-earning {
+				font-size: 16px;
+				text-align: center;
+				width: 120px;
+				left: 0;
+			}
+			.videos-earnings {
+				font-size: 12px;
+				width: 100px;
+				text-align: center;
+				left: 8px;
+			}
+			.result-with-text span {
+				margin-left: 15px;
+			}
+			span.activePointer::before {
+				left: 3px !important;
+			}
+		 }
+	</style>
 </head>
 <body>
 	<header style="height: 67px;">
@@ -14,7 +148,14 @@
 			<!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
 				<span class="navbar-toggler-icon"></span>
 			</button> -->
-			<div class="expand navbar-expand" id="navbarTogglerDemo02">
+			<div class="expand navbar-expand" id="navbarWithLogin">
+				<ul class="navbar-nav ml-auto mt-lg-0 ">
+					<li>
+						<button class="btn abit-outline-purple my-2 my-sm-0" id="registerLoginBtn" data-toggle="modal" data-target="#registerModal">Login / Signup</button>
+					</li>
+				</ul>
+			</div>
+			<div class="expand navbar-expand" id="navbarTogglerDemo02" style="display: none;">
 				<ul class="navbar-nav mt-2 mt-lg-0 ">
 					<li class="nav-item pt-1">
 						<img class="profile-img" src="svg/icons/icon-wallet.svg" alt="audience-profile-img" style="height: 28px; width: 28px; margin-top: 2px;">
@@ -22,18 +163,18 @@
 					<li class="nav-item pt-1">
 						<img class="profile-img" src="svg/icons/icon-notification.svg" alt="audience-profile-img" style="height: 28px; width: 28px; margin-top: 2px;">
 					</li>
-					<li class="nav-item dropdown pt-1">
+					<li class="nav-item dropdown pt-1" id="userProfileTempl">
 						<a href="creatordashboard.html">
-							<img class="profile-img" src="svg/icons/user-profile-pic.svg" alt="audience-profile-img" style="width: 32px; height: 32px;">
+							<img class="user-profile-pic" src="svg/icons/user-profile-pic.svg" alt="audience-profile-img" style="width: 32px; height: 32px; border-radius: 24px;">
 						</a>
 						<a class="nav-link dropdown-toggle border-0 d-inline" href="#" role="button" data-toggle="dropdown" aria-expanded="false" style="margin-top: -6px;">
 						</a>
 						<div class="dropdown-menu" style="border-radius: 24px; width: 170px; height: 145px; padding: 20px 2px;">
 						  <a class="dropdown-item" href="editcreatorprofile.html">Edit Profile</a>
 						  <a class="dropdown-item" href="#">Account</a>
-						  <a class="dropdown-item" href="#">Logout</a>
+						  <a class="dropdown-item" href="#" onclick="logOutUser();">Logout</a>
 						</div>
-					  </li>
+					</li>
 	
 					</ul>
 				<!-- <button class="btn abit-outline-purple my-2 my-sm-0" data-toggle="modal" data-target="#registerModal">Login / Signup</button> -->
@@ -48,21 +189,21 @@
 					<div class="col-md-6"> <!-- px-0 removing it as of now-->
 						<div class="creator-bio d-inline-flex">
 							<div class="creator-profile-img">
-								<img src="svg/icons/profile-pic.svg" alt="creator profile image">
+								<img src="svg/icons/profile-pic.svg" alt="creator profile image" style="width: 63px; height: 63px; border-radius: 50%; border: 4px solid #fff;">
 							</div>
 							<div class="heading pl-2">
-								<span class="name">DAN MACE</span>
+								<span class="user-name">DAN MACE</span>
 								<div class="profile">Creator</div>
 							</div>
 						</div>
 						<div class="creator-tag-line">
-							Earn with Dan Mace by becoming a co-owner.
+							Earn with <span class="user-name">Dan Mace</span> by becoming a co-owner.
 						</div>
 						<div class="description">
 							Invest in his upcoming video <strong class="text-decoration-underline">‘The Sound of Silence’</strong> and get a share in the ownership and revenue.
 						</div>
 						<div class="cta-group">
-							<button type="button" class="btn neo-primary-btn abit-black abit-bg-yellow d-inline-flex cstm-btn-props-1" data-toggle="modal" data-target="#paymentInfoModal">Buy Now</button>
+							<button type="button" class="btn neo-primary-btn abit-black abit-bg-yellow d-inline-flex cstm-btn-props-1 buy-now-token-btn" data-toggle="modal" data-target="#paymentInfoModal">Buy Now</button>
 							<a href="fractionalize.html#fr-section-3"><button type="button"  class="btn neo-primary-btn abit-white abit-transparent-btn d-inline-flex border border-white cstm-btn-props-2 ml-2" data-dismiss="modal" style="
 							 box-shadow: 2px 4px #433d40, 2px 4px 0 1px #FFFFFF">View Trailer</button></a>						
 						</div>
@@ -97,6 +238,22 @@
 						<div class="col-md-4">
 							<div class="img-wrapperr">
 								<img src="svg/Fractionalize/fr-img-7.svg">
+								<div class="bottom-token-info custom-blur-token-info">
+									<ul class="list-group list-group-horizontal token-info-content">
+										<li class="list-group-item border-0">
+											<p class="mb-1 heading">Co-owner</p>
+											<p class="description">#34</p>
+										</li>
+										<li class="list-group-item border-0 px-0">
+											<p class="mb-1 heading">Ownership</p>
+											<p class="description">0.24%</p>
+										</li>
+										<li class="list-group-item border-0 px-0">
+											<p class="mb-1 heading">Earnings</p>
+											<p class="description">$12.17</p>
+										</li>
+										</ul>
+								</div>
 							</div>
 						</div>
 						<div class="col-md-8">
@@ -154,7 +311,7 @@
 					</div>
 					<div class="row">
 						<div class="cstm-btn-props-buynow">
-							<button type="button" class="btn neo-primary-btn abit-white abit-bg-purple d-inline-flex" data-toggle="modal" data-target="#paymentInfoModal">Buy Now</button>
+							<button type="button" class="btn neo-primary-btn abit-white abit-bg-purple d-inline-flex buy-now-token-btn" data-toggle="modal" data-target="#paymentInfoModal">Buy Now</button>
 						</div>
 					</div>
 			</div>
@@ -197,22 +354,22 @@
 											  <button class="btn p-0 shadow-none" data-toggle="collapse" data-target="#collapseOne1f" aria-expanded="true" aria-controls="collapseOne">
 												View ownership certification
 											  </button>
-											  <img src="svg/icons/plus-circle-icon.svg" alt="plusicon" class="float-right plus-icon toggle-icon  d-none">
-											  <img src="svg/icons/minus-icon.svg" alt="minuscon" class="float-right minus-icon toggle-icon">
+											  <img src="svg/icons/plus-circle-icon.svg" alt="plusicon" class="float-right plus-icon toggle-icon">
+											  <img src="svg/icons/minus-icon.svg" alt="minuscon" class="float-right minus-icon toggle-icon d-none">
 			
 											</h5>
 										  </div>
 									  
-										  <div id="collapseOne1" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion1">
+										  <div id="collapseOne1" class="collapse" aria-labelledby="headingOne" data-parent="#accordion1">
 											<div class="card-body pt-0 ownership-certification-accordian-body">
 												<div class="row">
 													<div class="col-md-3">
-														<img src="img/empty-rectangle.png" alt="pdf">
+														<img src="img/pdf-preview.png" alt="pdf">
 													</div>
 													<div class="col-md-9 border-left">
 														<div class="description">
 															Just like any other official partnership, your stake in Dan’s video is legally certified. Take a long long look at it, not everyone gets the chance :)
-															<p class="abit-purple text-decoration-underline sub-description">VIEW PDF</p>
+															<a href="aBit-Co-ownership-Agreement.pdf"><p class="abit-purple text-decoration-underline sub-description">VIEW PDF</p></a>
 														</div>
 													</div>
 												</div>
@@ -223,17 +380,35 @@
 										  <div class="card-header text-left" id="headingTwo">
 											<h5 class="mb-0">
 											  <button class="btn collapsed p-0 shadow-none" data-toggle="collapse" data-target="#collapseTwo1f" aria-expanded="false" aria-controls="collapseTwo">
-												How much revenue will I make?
+												Forcast your earnings
 											  </button>
-											  <img src="svg/icons/plus-circle-icon.svg" alt="plusicon" class="float-right plus-icon toggle-icon">
-											  <img src="svg/icons/minus-icon.svg" alt="minuscon" class="float-right minus-icon d-none toggle-icon">
+											  <img src="svg/icons/plus-circle-icon.svg" alt="plusicon" class="float-right plus-icon d-none toggle-icon">
+											  <img src="svg/icons/minus-icon.svg" alt="minuscon" class="float-right minus-icon  toggle-icon">
 			
 											</h5>
 										  </div>
-										  <div id="collapseTwo1" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion1">
+										  <div id="collapseTwo1" class="collapse show" aria-labelledby="headingTwo" data-parent="#accordion1">
+											
 											<div class="card-body pt-0">
-												Bingo! Unlike Patreon, aBit is an investment platform. For the first time ever, your audience isn't simply consuming content. Instead, they'll own a share of your video and expect returns too. This creates a community that is truly invested in your growth.
-											</div>
+												<div class="row">
+													<div class="col-md-7">
+														<div class="forecast-description" >The more it views, the more you earn.</div>
+														<div class="forecast-description" >Explore potential earnings for this new video by Dan Mace.</div>
+														<div class="forecast-description">Use the slider to see how much you could earn. </div>
+														<div class="forecast-label pt-2">
+															<span class="purple-circle"></span>
+															<span class="text"><i>Our Forecast</i></span>
+														</div> 
+													</div>
+												</div>
+												<div class="earning-tool" style="margin-top: 120px;">
+													<div class="result-with-text"></div>
+													<div class="slider-container" style="width: 80%; margin: 0 auto;">
+														<input type="text" id="slider2" class="slider" />
+													</div>
+													<div class="text-center pt-2" style="font-size: 12px; margin-top: -15px;">VIEWS</div>
+												</div>
+												</div>
 										  </div>
 										</div>
 									  </div>
@@ -268,6 +443,47 @@
 				</div>
 			</div>
 		</section>
+		<section class="fr-section-6">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-6">
+						<div class="upper-portion">
+							<div class="description">
+								“From Fan to Co-owner in five easy steps..”
+							</div>
+							<img class="arrow-img-1" src="svg/Fractionalize/arrow-icon-1.svg">
+						</div>
+					</div>
+					<div class="col-md-10 offset-md-1">
+						<div id="carouselControls" class="carousel slide how-to-step-carousel" data-ride="carousel">
+							<div class="carousel-inner">
+							  <div class="carousel-item active">
+								<img src="img/step-1.png" class="d-block" alt="...">
+							  </div>
+							  <div class="carousel-item">
+								<img src="img/step-2.png" class="d-block" alt="...">
+							  </div>
+							  <div class="carousel-item">
+								<img src="img/step-3.png" class="d-block" alt="...">
+							  </div>
+							  <div class="carousel-item">
+								<img src="img/step-4.png" class="d-block" alt="...">
+							  </div>
+							  <div class="carousel-item">
+								<img src="img/step-5.png" class="d-block" alt="...">
+							  </div>
+							</div>
+						   <button class="carousel-control-prev" type="button" data-target="#carouselControls" data-slide="prev" style="left: -11%;">
+								<img src="svg/prev-icon.svg" alt="">
+							</button>
+							<button class="carousel-control-next" type="button" data-target="#carouselControls" data-slide="next" style="right: -5%;">
+								<img src="svg/next-icon.svg" alt="">
+							</button>
+						  </div>
+					</div>
+				</div>
+			</div>
+		</section>
 
 		<section class="fr-section-7">
 			<div class="container">
@@ -280,7 +496,7 @@
 					<div class="col-md-6">
 						<div class="right-portion">
 							<h3 class="heading">And lastly,</br> become a <i>co-owner now! </i></h3>
-							<button type="button" class="btn neo-primary-btn abit-white abit-transparent-btn d-inline-flex border border-white buy-now-additional-prop mt-2 showWaitListModal" data-toggle="modal" data-target="#paymentInfoModal">Buy Now</button>
+							<button type="button" class="btn neo-primary-btn abit-white abit-transparent-btn d-inline-flex border border-white buy-now-additional-prop mt-2 showWaitListModal buy-now-token-btn" data-toggle="modal" data-target="#paymentInfoModal">Buy Now</button>
 						</div>
 					</div>
 				</div>
@@ -307,6 +523,7 @@
 	
 	<div w3-include-html="login.html"></div>
 	<div w3-include-html="register.html"></div>
+	<div w3-include-html="modals/creatorSignupModal.html"></div>
 	<div w3-include-html="modals/congratsModal.html"></div> 
 	<div w3-include-html="modals/paymentInfoModal.html"></div> 
 	<div w3-include-html="modals/perksModal.html"></div> 
@@ -315,27 +532,443 @@
 	<!-- Scripts -->
 	
 	<script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
+
+
 	
 	
 
-	<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+	<!-- <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script> -->
 	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous"></script>
 	
-	<script src="js/loadExtLibrary.js"></script>
+	<!-- <script src="js/loadExtLibrary.js"></script> -->
+	<script src="https://accounts.google.com/gsi/client" async></script>
+
 	<!-- <script src="js/waitlistModal.js"></script> -->
 	<script src="js/main.js"></script> 
 
 	<script>
 
-		$(function() {
-			// $(".cstm-btn-props-2").click(function() {
-			// 	debugger
-			// 	$('html, body').animate({
-			// 		scrollTop: $(".fr-section-2").offset().top
-			// 	}, 2000);
-			// });
-		})
+
+let isUserLoggedIn = checkIfTokenExist();
+
+$(function() {
+	if(isUserLoggedIn) getUserProfileInfo(isUserLoggedIn);
+});
+
+
+	let USER_CONSTANT = {type: "USER", isLogin : false};
+	//  let {loggedUserType, isLogin} = USER_CONSTANT;
+	
+		debugger;
+      $(function () {
+		debugger
+setTimeout(function() {
+	if(!isUserLoggedIn) {
+        google.accounts.id.initialize({
+          client_id: "280264346590-vjg6cqponliotfqn32pt2mna2jnqmmtu.apps.googleusercontent.com",
+          callback: handleCredentialResponse,
+		  auto_select: true,
+		  itp_support: true,
+		  use_fedcm_for_prompt: false,
+		  cancel_on_tap_outside: false,
+		  shape: "circle",
+		  select_by: 'auto',
+        });
+		setTimeout(function() {
+			google.accounts.id.renderButton(
+          document.getElementById("creatorLoginBtn"),
+          { 
+			theme: "outline",
+		  	 size: "large",
+			 shape: "circle",
+			 width: "352px",
+			 text: "signup_with",
+			 click_listener: function() {
+				onGoogleBtnClickHandler({userType: "CREATOR", isLogin : true} );
+			 }
+		}  // customization attributes
+		);
+		google.accounts.id.renderButton(
+          document.getElementById("creatorSignupBtn"),
+          { 
+			theme: "outline",
+		  	 size: "large",
+			 shape: "circle",
+			 width: "352px",
+			 text: "signup_with",
+			 click_listener: function() {
+				onGoogleBtnClickHandler({userType: "CREATOR", isLogin : false} );
+			 }
+		}  // customization attributes
+		);
+		google.accounts.id.renderButton(
+          document.getElementById("userLoginBtn"),
+          { 
+			theme: "outline",
+		  	 size: "large",
+			 shape: "circle",
+			 width: "352px",
+			 text: "continue_with",
+			 click_listener: function() {
+				onGoogleBtnClickHandler({userType: "FAN", isLogin : true} );
+			 }
+		}  // customization attributes
+        );
+		google.accounts.id.renderButton(
+          document.getElementById("userSignupBtn"),
+          { 
+			theme: "outline",
+		  	 size: "large",
+			 shape: "circle",
+			 width: "352px",
+			 text: "signup_with",
+			 click_listener: function() {
+				onGoogleBtnClickHandler({userType: "FAN", isLogin : false} );
+			 }
+		}  // customization attributes
+        );
+		}, 200)
+       }
+	}, 500)
+		//google.accounts.id.prompt(); // also display the One Tap dialog
+      })
+
+	  function onGoogleBtnClickHandler(USER_CONSTANT_OBJ) {
+		Object.assign(USER_CONSTANT, USER_CONSTANT_OBJ);
+	  }
+	  function handleCredentialResponse(response) {
+		debugger;
+
+        console.log("Encoded JWT ID token: " + response.credential);
+		let loggedInUserInfo = parseJwt(response.credential);
+		console.log(loggedInUserInfo);
+		registerOrLoginViaGoogle(response, USER_CONSTANT);
+      }
+	  function parseJwt (token) {
+		var base64Url = token.split('.')[1];
+		var base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
+		var jsonPayload = decodeURIComponent(window.atob(base64).split('').map(function(c) {
+			return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
+		}).join(''));
+
+		return JSON.parse(jsonPayload);
+	}
+function registerOrLoginViaGoogle(response, USER_CONSTANT) {
+	let {userType, isLogin} = USER_CONSTANT;
+	$.ajax({
+		url: `https://api-abit.onrender.com/v1/${userType.toLowerCase()}/loginOrSignupWithGoogle`,
+		type: 'POST',
+		data:  JSON.stringify({
+			'token': response.credential
+		}),
+		xhrFields: {
+			withCredentials: true
+		},
+		contentType: "application/json; charset=utf-8",
+		success: function (data, status, jqXHR) {
+			
+			debugger
+			const {id, email} = data?.user;
+			data.user = {...data?.user, ...USER_CONSTANT}
+			localStorage.setItem("userInfo",  JSON.stringify(data?.user));
+			// const tokenHeader = jqXHR.getResponseHeader('Set-Cookie') || jqXHR.getResponseHeader('Your-Custom-Header');
+
+			// console.log(tokenHeader);
+			const isLoggedIn = checkIfTokenExist();
+			if(!isLoggedIn) {
+				document.cookie = `abittoken=${data.user.token}; expires=${getFormattedExpirationDate()}; path=/`;
+			}
+			$("#registerLoginBtn").closest("li").hide();
+			
+			if(!isLogin && userType.toLowerCase() !== "creator") {
+				//aBit_UTIL.displaySuccessDialog('Success!', "Thank you! Our team will reach out soon.");
+				$("#loginModal, #registerModal").modal("hide");
+
+			} else if(isLogin && userType.toLowerCase() !== "creator") {
+				let loggedInUserInfo = parseJwt(response.credential);
+				console.log(loggedInUserInfo);
+			} else if(!isLogin && userType.toLowerCase() === "creator") {
+				$("#loginModal, #registerModal").modal("hide");
+				$("#creatorSignupModal").modal("show");
+				$("#creatorSignupModal .creator-signup-step-1").hide();
+				$("#creatorSignupModal .creator-signup-step-2").show();
+				$("#registerLoginBtn").closest("li").hide();
+			} else {
+				window.location.href = `creatordashboard.html?id=${id}`;
+			}
+
+			let loggedInUserInfo = parseJwt(response.credential);
+			showProfileViewAfterSuccessfullLogin({...loggedInUserInfo, ...data.user});	
+		},
+		error: function (XMLHttpRequest, textStatus, errorThrown) {
+			aBit_UTIL.displayErrorDialog('ERROR!', "SOME ERORR");
+		}
+	});
+}
+function getFormattedExpirationDate() {
+	// Get the current date
+	let currentDate = new Date();
+
+	// Calculate the expiration date by adding one day
+	let expirationDate = new Date(currentDate);
+	expirationDate.setDate(currentDate.getDate() + 2);
+
+	// Format the expiration date in the correct format for the cookie
+	const formattedExpirationDate = expirationDate.toUTCString();
+	return formattedExpirationDate;
+}
+
+const getUserProfileInfo = () => {
+	const userInfo = JSON.parse(localStorage.getItem("userInfo"));
+	const {id, userType} = userInfo;
+	const url = getProfileApiUrlBasedOnUserType(userInfo);
+
+	$.ajax({
+		url: url, 
+		type: 'GET',
+		xhrFields: {
+			withCredentials: true
+			},
+		crossDomain: true,
+		success: function (data) {
+			// REMINDER the response should come data.user
+			showProfileViewAfterSuccessfullLogin({...data.user, ...userInfo});
+			aBit_UTIL.displaySuccessDialog('Success!', "Thank you! Our team will reach out soon.");
+		},
+		error: function (XMLHttpRequest, textStatus, errorThrown) {
+			aBit_UTIL.displayErrorDialog('ERROR!', "SOME ERORR");
+		}
+	});	
+}
+const getProfileApiUrlBasedOnUserType = ({id, userType}) => {
+	
+	const url = userType.toLowerCase() === "fan" 
+					? `https://api-abit.onrender.com/v1/fan/profile` 
+						: `https://api-abit.onrender.com/v1/${userType.toLowerCase()}/${id}`;
+
+	return url;
+}
+const showProfileViewAfterSuccessfullLogin = (loggedInUserInfo) => {
+	debugger;
+	let {picture, name} = loggedInUserInfo;
+	$("#navbarWithLogin").hide();
+	$("#navbarTogglerDemo02").show();
+	$("#userProfileTempl .user-profile-pic").attr("src", picture || "svg/icons/profile-pic.svg") ;
+	if(picture === "") {
+		$("#userProfileTempl .user-profile-pic").css("border", "2px solid #000");
+	}
+
+	performAdditionalOperationsBasedOnUserType(loggedInUserInfo);
+
+	updateProfileCardViewAsPerLoggedInUser(loggedInUserInfo);
+}
+const updateProfileCardViewAsPerLoggedInUser = (loggedInUserInfo) => {
+	const {picture, name, userType} = loggedInUserInfo;
+	if(picture === "") {
+		$(".creator-bio .creator-profile-img img").css("border", "0");
+	}
+
+	if(userType.toLowerCase() === "creator") {
+		$(".creator-bio .user-name, .user-name").text(name);
+		$(".creator-bio .creator-profile-img img").attr("src", picture || "svg/icons/profile-pic.svg");
+	} else {
+		$(".creator-bio .creator-profile-img img").css("border", "0");
+	}
+}
+
+const performAdditionalOperationsBasedOnUserType = (loggedInUserInfo) => {
+	const {
+		userType
+	} = loggedInUserInfo;
+
+	if(userType.toLowerCase() === "creator") {
+		$(".buy-now-token-btn").prop("disabled", true);
+	}
+}
+
+function checkIfTokenExist() {
+	let isTokenExist = true;
+	if(document.cookie.indexOf('abittoken=') === -1) {
+		isTokenExist = false;
+	}
+	return isTokenExist;
+}
+
+let logOutUser = (elem) => {
+	const userInfo = JSON.parse(localStorage.getItem("userInfo"));
+	$.ajax({
+		url: "https://api-abit.onrender.com/v1/creator/logout", 
+		type: 'POST',
+		data: {
+			'email': `${userInfo.email}`
+		},
+		xhrFields: {
+			withCredentials: true
+		},
+		crossDomain: true,
+		success: function (data) {
+			google.accounts.id.initialize({
+				client_id: "280264346590-vjg6cqponliotfqn32pt2mna2jnqmmtu.apps.googleusercontent.com",
+			});
+			google.accounts.id.revoke(`${userInfo.email}`, done => {
+				console.log('consent revoked');
+				localStorage.removeItem("userInfo");
+				document.cookie = "abittoken=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/";
+
+				$("#userProfileTempl").remove();
+				$("#navbarTogglerDemo02").hide();
+				$("#navbarWithLogin").show();
+				location.reload();
+
+				//window.location.href = "index.html";
+			});
+			
+			aBit_UTIL.displaySuccessDialog('Success!', "Thank you! Our team will reach out soon.");
+		},
+		error: function (XMLHttpRequest, textStatus, errorThrown) {
+			aBit_UTIL.displayErrorDialog('ERROR!', "SOME ERORR");
+		}
+	});	
+}
+
+'use strict';
+
+var init = function () {  
+	function generateArray(start, end, step) {
+	const array = [];
+	for (var i = start; i <= end; i += step) {
+		if(i === 2000000) {
+			i = convertIntoMillion(i);
+			array.push(i);
+		} else if(i === 200000) {
+			const convertedValueInK = convertIntoK(i);
+			array.push(convertedValueInK);
+		} else {
+			array.push(i + "k");
+		}
+		//console.log(array)
+		// array.push(i);
+	}
+		return array;
+	}
+	const startValue = 200000;
+	const endValue = 2000000;
+	const stepSize = 3000;
+
+	const resultArray = generateArray(startValue, endValue, stepSize);
+	//debugger;
+	//console.log(resultArray);              
+
+
+	function convertIntoK(value) {
+	  //  if(value == 20000) {
+			let valueInK = "200000".slice(0, -3) + 'k';
+			return valueInK;
+			//console.log(str2);
+	 //   }
+	}
+	function convertIntoMillion(value) {
+	  //  if(value == 20000) {
+			let valueInM = "2000000".slice(0, -6) + 'M';
+			return valueInM;
+			//console.log(str2);
+	 //   }
+	}
+
+   
+	var slider2 = new rSlider({
+		target: '#slider2',
+		values: resultArray, 
+		range: false,
+		set: ["1070000k"],
+		tooltip: false,
+		labels: false,
+		scale: false,
+		onChange: function (vals, activePointer) {
+
+			console.log(vals);
+		   
+		   let pos;
+
+		   if ($(window).width() <= 390) {
+				pos = ($(".rs-pointer").position().left) - 15;
+			 } else if(($(window).width() > 390) && ($(window).width() < 500)) {
+				pos = ($(".rs-pointer").position().left) - 8;
+			 } else if(($(window).width() >= 768) && ($(window).width() < 991)) {
+				pos = ($(".rs-pointer").position().left) + 20;
+			 }
+				else {
+				pos = ($(".rs-pointer").position().left) + 38;
+			}
+		   $('.result-with-text').css({
+				'position': 'relative',
+				'left':  pos, //($(activeSpan).position().left + 25 ),
+				'top': '-100px'
+			})
+			calculateEarnings();
+			
+			//calculateAudienceEarnings(activeSpan);
+		},
+		onDrag: function() {
+			var valueInDollar = $('#slider2').val();
+			if(valueInDollar !== "2M") {
+				var videosEarning = parseInt(valueInDollar.split("k")[0]); //* 1000;
+				if(videosEarning == 200) {
+					videosEarning = videosEarning * 1000;
+				}
+
+			} else if(valueInDollar === "2M") {
+				var videosEarning = parseInt(valueInDollar.split("M")[0]); //* 1000;
+
+				videosEarning = videosEarning * 1000000;
+			}
+		   
+			$(".videos-earning").html(videosEarning);
+		},
+		onMove: function() {
+			let pos;
+
+			if ($(window).width() < 460) {
+				pos = ($(".rs-pointer").position().left) - 8;
+			} else {
+				pos = ($(".rs-pointer").position().left) + 38;
+			}
+			$('.result-with-text').css({
+				'position': 'relative',
+				'left':  pos, //($(activeSpan).position().left + 25 ),
+				'top': '-100px'
+			})
+			calculateEarnings();
+		}
+	});
+	
+   let x =  slider2.getValue();
+   console.log(x)
+};
+
+window.onload = init;
+
+function calculateEarnings() {
+	var views = parseInt($('#slider2').val());
+	var percentage = 0.0024 //parseFloat($('#ownershipPercentage').val()) / 100;
+	var earningsPerView = 0.005 //parseFloat($('#earningsPerView').val());
+	var audienceEarnings = ((views * earningsPerView) * percentage).toFixed(2);
+
+	$('.result-with-text').html(`<div class="total-earning">$${audienceEarnings}</div><span>Monthly aBit Payouts.</span><div class="videos-earnings">${formatNumberAbbreviation(views)}</div>`);
+
+   // $('#audienceEarnings').val(audienceEarnings.toFixed(2));
+}
+function formatNumberAbbreviation(number) {
+	if (number >= 1e6) {
+		return (number / 1e6).toLocaleString(undefined, { minimumFractionDigits: 0, maximumFractionDigits: 2 }) + 'M';
+	} else if (number >= 1e3) {
+		return (number / 1e3).toLocaleString(undefined, { minimumFractionDigits: 0, maximumFractionDigits: 2 }) + 'k';
+	} else {
+		return number.toLocaleString();
+	}
+}
+
 		
 	  </script>
 </body>
