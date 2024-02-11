@@ -455,6 +455,8 @@
 </body>
 <script>
 	let isUserLoggedIn = checkIfTokenExist();
+	//const BASE_URL = `https://api-abit.azurewebsites.net`;
+	const BASE_URL = `https://api-abit.onrender.com`;
 
 	$(function() {
 		//isUserLoggedIn = checkIfTokenExist();
@@ -558,7 +560,7 @@
 	function registerOrLoginViaGoogle(response, USER_CONSTANT) {
 		let {userType, isLogin} = USER_CONSTANT;
 		$.ajax({
-			url: `https://api-abit.onrender.com/v1/${userType.toLowerCase()}/loginOrSignupWithGoogle`,
+			url: `${BASE_URL}/v1/${userType.toLowerCase()}/loginOrSignupWithGoogle`,
 			type: 'POST',
 			data:  JSON.stringify({
 				'token': response.credential
@@ -579,6 +581,7 @@
 				const isLoggedIn = checkIfTokenExist();
 				if(!isLoggedIn) {
 					document.cookie = `abittoken=${data.user.token}; expires=${getFormattedExpirationDate()}; path=/`;
+					isUserLoggedIn = true;
 				}
 
 				$("#registerLoginBtn").closest("li").hide();
@@ -632,7 +635,7 @@ let logOutUser = (elem) => {
 	const userInfo = JSON.parse(localStorage.getItem("userInfo"));
 
 	$.ajax({
-		url: "https://api-abit.onrender.com/v1/creator/logout", 
+		url: `${BASE_URL}/v1/creator/logout`, 
 		type: 'POST',
 		data: {
 			'email': `${userInfo.email}`
@@ -647,9 +650,11 @@ let logOutUser = (elem) => {
 			});
 			google.accounts.id.revoke(`${userInfo.email}`, done => {
 				console.log('consent revoked');
+				document.cookie = "abittoken=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/";
 				localStorage.removeItem("userInfo");
 				$("#userProfileTempl").remove();
 				$("#registerLoginBtn").closest("li").show();
+				location.reload();
 
 				//window.location.href = "index.html";
 			});
@@ -687,7 +692,7 @@ const showProfileViewAfterSuccessfullLogin = (loggedInUserInfo) => {
 	if(userProfileTempLength === 0) {
 		let userProfileTempl = `<li class="nav-item dropdown pt-1 user-profile" id="userProfileTempl">
 									<a href="${(userType.toLowerCase() === "fan" ? "audiencedashboard.html" : "creatordashboard.html")}">
-										<img class="profile-img" src="${picture ?? profilePic}" alt="audience-profile-img" style="width: 32px; height: 32px; border-radius: 24px;">
+										<img class="profile-img" src="${picture || "svg/icons/profile-pic.svg"}" alt="audience-profile-img" style="width: 32px; height: 32px; border-radius: 24px;">
 									</a>
 									<a class="nav-link dropdown-toggle border-0 d-inline" href="#" role="button" data-toggle="dropdown" aria-expanded="false" style="margin-top: -6px;">
 									
@@ -701,6 +706,9 @@ const showProfileViewAfterSuccessfullLogin = (loggedInUserInfo) => {
 
 		$("#homePageNavbar ul").append(userProfileTempl);
 	}
+
+	$(".signup-btn").removeClass("d-inline-flex").hide();
+
 }
 
 const getUserProfileInfo = () => {
@@ -718,7 +726,6 @@ const getUserProfileInfo = () => {
         success: function (data) {
 			$("#registerLoginBtn").closest("li").hide();
 
-			$(".signup-btn").removeClass("d-inline-flex").hide();
 			showProfileViewAfterSuccessfullLogin({...data.user, ...userInfo});
 
             //showProfileViewAfterSuccessfullLogin(data.user);
@@ -732,8 +739,8 @@ const getUserProfileInfo = () => {
 const getProfileApiUrlBasedOnUserType = ({id, userType}) => {
 	
 	const url = userType.toLowerCase() === "fan" 
-					? `https://api-abit.onrender.com/v1/fan/profile` 
-						: `https://api-abit.onrender.com/v1/${userType.toLowerCase()}/${id}`;
+					? `${BASE_URL}/v1/fan/profile` 
+						: `${BASE_URL}/v1/${userType.toLowerCase()}/${id}`;
 
 	return url;
 }

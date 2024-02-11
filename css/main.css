@@ -10530,6 +10530,8 @@ h6 {
 	background: url(../img/section-1-bg.png) left top repeat-x;
 	height: 1380px;
 	background-repeat: repeat;
+	z-index: -1;
+	position: relative;
 }
 
 .home-section-1 .text-heading {
@@ -12357,7 +12359,7 @@ body {
 	backdrop-filter: blur(25px) !important;
 	border-radius: 12px;
 	margin: 0 auto;
-	left: 19px;
+	left: 34px;
 	height: 53px;
 }
 
@@ -13254,6 +13256,10 @@ body {
 	background-color: #b497ea;
 	position: relative;
 	top: 5px;
+}
+
+.trailer-video-embed-code iframe {
+	border-radius: 24px;
 }
 
 .rs-container * {

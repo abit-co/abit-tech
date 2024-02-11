@@ -35,7 +35,7 @@
 			<!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
 				<span class="navbar-toggler-icon"></span>
 			</button> -->
-			<div class="expand navbar-expand" id="navbarTogglerDemo02">
+			<div class="expand navbar-expand" id="creatorPageNavbar">
 				<ul class="navbar-nav ml-auto mt-lg-0 ">
 				<li class="nav-item active">
 					<a class="nav-link nav-item-creator border-0 pr-0 text" href="crearningtool.html" >aBitGains </a>
@@ -44,7 +44,7 @@
 					<a class="nav-link nav-item-creator border-0 text" href="creatorpage.html" style="text-decoration-color: #b497ea;">Are you a creator? <span class="sr-only">(current)</span></a>
 				</li>
 				<li>
-					<button class="btn abit-outline-purple my-2 my-sm-0" data-toggle="modal" data-target="#creatorSignupModal">Login / Signup</button>
+					<button class="btn abit-outline-purple my-2 my-sm-0" id="registerLoginBtn" data-toggle="modal" data-target="#creatorSignupModal">Login / Signup</button>
 				</li>			
 				</ul>
 				<!-- <button class="btn abit-outline-purple my-2 my-sm-0" data-toggle="modal" data-target="#registerModal">Login / Signup</button> -->
@@ -242,7 +242,7 @@
 				<div class="col-md-5">
 					<div class="right-wrapper">
 						<h3 class="heading">As co-owners, your audience can <i>invest</i> in your videos, and <i>earn</i> when the video earns.</h3>
-						<button type="submit" class="btn neo-primary-btn abit-white abit-bg-purple cstm-btn-additional-prop mt-4 showWaitListModal" data-toggle="modal" data-target="#creatorSignupModal">Sign me up!</button>
+						<button type="submit" class="btn neo-primary-btn abit-white abit-bg-purple cstm-btn-additional-prop mt-4 showWaitListModal signup-btn" data-toggle="modal" data-target="#creatorSignupModal">Sign me up!</button>
 						<div id="accordionn" class="mt-4 cstm-accordian">
 							<div class="card mb-5 cstm-card" style="width: 344px; box-shadow: 2px 4px #e6e6e6, 2px 4px 0 1px #000000;">
 							  <div class="card-header text-left" id="headingOne1">
@@ -421,7 +421,7 @@
 					<div class="schedule-meet-wrapper">
                         <h3 class="heading"><i>Only</i> aBit is left!</h3>
 						<p class="description">Between you and the creator journey you deserve.</p>
-						<button type="button" class="btn neo-primary-btn abit-white abit-transparent-btn d-inline-flex border border-white join-now-additional-prop mt-2 showWaitListModal" data-toggle="modal" data-target="#creatorSignupModal">Join the Waitlist!</button>
+						<button type="button" class="btn neo-primary-btn abit-white abit-transparent-btn d-inline-flex border border-white join-now-additional-prop mt-2 showWaitListModal signup-btn" data-toggle="modal" data-target="#creatorSignupModal">Join the Waitlist!</button>
 					</div>
 				</div>
 			</div>
@@ -453,16 +453,17 @@
 
 
 	<!-- Scripts -->
-	<script src="js/loadExtLibrary.js"></script>
+	<!-- <script src="js/loadExtLibrary.js"></script> -->
 	<script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
 	
-	
+	<script src="https://accounts.google.com/gsi/client" async></script>
 
-	<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+
 	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous"></script>
 	<!-- <script src="js/carousel.js"></script>  -->
 	<!-- <script src="js/header.js"></script>-->
+
 	<script>
 		function shiftLeft() {
     const boxes = document.querySelectorAll(".box");
@@ -520,11 +521,20 @@ $(".showWaitListModal").off("click").on("click", function() {
 	
 	<script src="js/detects.js"></script>
 	<script src="js/another-file.js"></script>
+	<script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+
 
 <script>
-	 let USER_CONSTANT = {type: "USER", isLogin : false};
+	let isUserLoggedIn = checkIfTokenExist();
+	const BASE_URL = `https://api-abit.onrender.com`;
+
+	$(function() {
+		if(isUserLoggedIn) getUserProfileInfo(isUserLoggedIn);
+	})
+
+	let USER_CONSTANT = {type: "USER", isLogin : false};
 	//  let {loggedUserType, isLogin} = USER_CONSTANT;
-	 
+	 if(!isUserLoggedIn) {
       window.onload = function () {
         google.accounts.id.initialize({
           client_id: "280264346590-vjg6cqponliotfqn32pt2mna2jnqmmtu.apps.googleusercontent.com",
@@ -572,7 +582,7 @@ $(".showWaitListModal").off("click").on("click", function() {
 			 width: "352px",
 			 text: "continue_with",
 			 click_listener: function() {
-				onGoogleBtnClickHandler({userType: "USER", isLogin : true} );
+				onGoogleBtnClickHandler({userType: "FAN", isLogin : true} );
 			 }
 		}  // customization attributes
         );
@@ -585,7 +595,7 @@ $(".showWaitListModal").off("click").on("click", function() {
 			 width: "352px",
 			 text: "signup_with",
 			 click_listener: function() {
-				onGoogleBtnClickHandler({userType: "USER", isLogin : false} );
+				onGoogleBtnClickHandler({userType: "FAN", isLogin : false} );
 			 }
 		}  // customization attributes
         );
@@ -593,6 +603,7 @@ $(".showWaitListModal").off("click").on("click", function() {
        
 		//google.accounts.id.prompt(); // also display the One Tap dialog
       }
+	}
 	  function onGoogleBtnClickHandler(USER_CONSTANT_OBJ) {
 		Object.assign(USER_CONSTANT, USER_CONSTANT_OBJ);
 	  }
@@ -627,7 +638,21 @@ $(".showWaitListModal").off("click").on("click", function() {
 			},
 			contentType: "application/json; charset=utf-8",
 			success: function (data, status, xhr) {
+				const {id, email} = data?.user;
+				data.user = {...data?.user, ...USER_CONSTANT}
+				localStorage.setItem("userInfo",  JSON.stringify(data?.user));
+		
+				const isLoggedIn = checkIfTokenExist();
+				if(!isLoggedIn) {
+					document.cookie = `abittoken=${data.user.token}; expires=${getFormattedExpirationDate()}; path=/`;
+					isUserLoggedIn = true;
+				}
+
+				$("#registerLoginBtn").closest("li").hide();
+
 				if(!isLogin && userType.toLowerCase() !== "creator") {
+					$("#loginModal, #registerModal").modal("hide");
+
 					aBit_UTIL.displaySuccessDialog('Success!', "Thank you! Our team will reach out soon.");
 				} else if(isLogin && userType.toLowerCase() !== "creator") {
 					let loggedInUserInfo = parseJwt(response.credential);
@@ -640,12 +665,148 @@ $(".showWaitListModal").off("click").on("click", function() {
 				} else {
 					window.location.href = "creatordashboard.html";
 				}
+
+				let loggedInUserInfo = parseJwt(response.credential);
+				showProfileViewAfterSuccessfullLogin({...loggedInUserInfo, ...data.user});	
 			},
 			error: function (XMLHttpRequest, textStatus, errorThrown) {
 				aBit_UTIL.displayErrorDialog('ERROR!', "SOME ERORR");
 			}
 		});
 	}
+	const showProfileViewAfterSuccessfullLogin = (loggedInUserInfo) => {
+		debugger;
+		let {picture, name, profilePic, userType} = loggedInUserInfo;
+		const userProfileTempLength = $("#userProfileTempl").length;
+		if(userProfileTempLength === 0) {
+			let userProfileTempl = `<li class="nav-item dropdown pt-1 user-profile" id="userProfileTempl">
+										<a href="${(userType.toLowerCase() === "fan" ? "audiencedashboard.html" : "creatordashboard.html")}">
+											<img class="profile-img" src="${picture || "svg/icons/profile-pic.svg"}" alt="audience-profile-img" style="width: 32px; height: 32px; border-radius: 24px;">
+										</a>
+										<a class="nav-link dropdown-toggle border-0 d-inline" href="#" role="button" data-toggle="dropdown" aria-expanded="false" style="margin-top: -6px;">
+										
+										</a>
+										<div class="dropdown-menu" style="border-radius: 24px; width: 170px; height: 145px; padding: 20px 2px;">
+										<a class="dropdown-item" href="editcreatorprofile.html">Edit Profile</a>
+										<a class="dropdown-item" href="#">Account</a>
+										<a class="dropdown-item" href="#" onclick="logOutUser();">Logout</a>
+										</div>
+									</li>`;
+
+			$("#creatorPageNavbar ul").append(userProfileTempl);
+		}
+
+		$(".signup-btn").hide();
+
+}
+
+function checkIfTokenExist() {
+	let isTokenExist = true;
+	if(document.cookie.indexOf('abittoken=') === -1) {
+		isTokenExist = false;
+	}
+	return isTokenExist;
+}
+function getFormattedExpirationDate() {
+	// Get the current date
+	let currentDate = new Date();
+
+	// Calculate the expiration date by adding one day
+	let expirationDate = new Date(currentDate);
+	expirationDate.setDate(currentDate.getDate() + 2);
+
+	// Format the expiration date in the correct format for the cookie
+	const formattedExpirationDate = expirationDate.toUTCString();
+	return formattedExpirationDate;
+}
+
+let logOutUser = (elem) => {
+	const userInfo = JSON.parse(localStorage.getItem("userInfo"));
+
+	$.ajax({
+		url: `${BASE_URL}/v1/creator/logout`, 
+		type: 'POST',
+		data: {
+			'email': `${userInfo.email}`
+		},
+		xhrFields: {
+			withCredentials: true
+		},
+		crossDomain: true,
+		success: function (data) {
+			google.accounts.id.initialize({
+				client_id: "280264346590-vjg6cqponliotfqn32pt2mna2jnqmmtu.apps.googleusercontent.com",
+			});
+			google.accounts.id.revoke(`${userInfo.email}`, done => {
+				console.log('consent revoked');
+				document.cookie = "abittoken=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/";
+				localStorage.removeItem("userInfo");
+				$("#userProfileTempl").remove();
+				$("#registerLoginBtn").closest("li").show();
+				location.reload();
+
+				//window.location.href = "index.html";
+			});
+			
+			aBit_UTIL.displaySuccessDialog('Success!', "Thank you! Our team will reach out soon.");
+		},
+		error: function (XMLHttpRequest, textStatus, errorThrown) {
+			aBit_UTIL.displayErrorDialog('ERROR!', "SOME ERORR");
+		}
+	});	
+}
+
+  const initCalendly = () => {
+	debugger;
+	const userInfo = JSON.parse(localStorage.getItem("userInfo"));
+	console.log(userInfo);
+	Calendly.initPopupWidget({
+		url: "https://calendly.com/abit-tech/calendly-testing",	
+	});
+
+	$(".calendly-popup-close, .calendly-close-overlay").off("click").on("click", function() {
+		$(".creator-signup-step-2").hide();
+
+		window.location.href = `creatordashboard.html?id=${userInfo.id}`;
+		//.closePopupWidget();
+	})
+	//Calendly.closePopupWidget();
+	
+	return false;
+}
+const getUserProfileInfo = () => {
+    const userInfo = JSON.parse(localStorage.getItem("userInfo"));
+	const url = getProfileApiUrlBasedOnUserType(userInfo);
+
+	//https://api-abit.onrender.com/v1/fan/profile
+    $.ajax({
+        url: url, 
+        type: 'GET',
+        xhrFields: {
+               withCredentials: true
+            },
+        crossDomain: true,
+        success: function (data) {
+			$("#registerLoginBtn").closest("li").hide();
+
+			showProfileViewAfterSuccessfullLogin({...data.user, ...userInfo});
+
+            //showProfileViewAfterSuccessfullLogin(data.user);
+            aBit_UTIL.displaySuccessDialog('Success!', "Thank you! Our team will reach out soon.");
+        },
+        error: function (XMLHttpRequest, textStatus, errorThrown) {
+            aBit_UTIL.displayErrorDialog('ERROR!', "SOME ERORR");
+        }
+    });	
+}
+const getProfileApiUrlBasedOnUserType = ({id, userType}) => {
+	
+	const url = userType.toLowerCase() === "fan" 
+					? `${BASE_URL}/v1/fan/profile` 
+						: `${BASE_URL}/v1/${userType.toLowerCase()}/${id}`;
+
+	return url;
+}
 </script>
 	
 </body>

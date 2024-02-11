@@ -473,9 +473,9 @@ $(function() {
       let email = $(this).closest(".modal-content").find("#waitListEmail");
 			  saveEmailInfo(email);
 			});
-      $(".buySharesOfVideo").off("click").on("click", function() {
-        buySharesOfCreatorVideo(this);
-      });
+      // $(".buySharesOfVideo").off("click").on("click", function() {
+      //   buySharesOfCreatorVideo(this);
+      // });
       $(".close").off("click").on("click", function() {
         if($(this).closest("#congratsModal").length === 1) {
          // redirectOnCloseOfCongratsModal();
@@ -876,15 +876,3 @@ $(function(){
     });
   },
 };
-
-function buySharesOfCreatorVideo(elem) {
-  debugger;
-  $(elem).closest("#paymentInfoModal").modal("hide");
-    redirectOnCloseOfCongratsModal();
-
-
-}
-function redirectOnCloseOfCongratsModal() {
-  sessionStorage.setItem("isPurchashedSuccessfull", true);
-  window.location.href = "audiencedashboard.html";
-}
