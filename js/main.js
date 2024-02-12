@@ -95,7 +95,7 @@
 
 		RS.prototype.createSlider = function () {
 			this.slider = createElement('div', this.cls.container);
-			this.slider.innerHTML = '<div class="rs-bg"></div>';
+			this.slider.innerHTML = '<div class="rs-bg"></div><div class="rs-shadow"></div>';
 			this.selected = createElement('div', this.cls.selected);
 			this.pointerL = createElement('div', this.cls.pointer, ['dir', 'left']);
 			this.scale = createElement('div', this.cls.scale);

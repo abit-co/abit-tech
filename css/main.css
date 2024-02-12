@@ -12660,6 +12660,22 @@ body {
 		margin-left: -61px;
 	}
 }
+.viewPartiallyUploadedDetailOfVideo::before {
+	content: "Your Video is being uploaded";
+	color: #fff;
+	font-size: 14px;
+	z-index: 999;
+	position: absolute;
+	width: 140px;
+	margin: 0 auto;
+	left: 32%;
+	top: 40%;
+	text-align: center;
+	/* font-weight: bold; */
+	font-family: "Reckless Neue";
+	font-style: italic;
+}
+
 .fr-section-1 {
 	min-height: 806px;
 	height: 100%;
@@ -13307,13 +13323,13 @@ body {
 	transition: all 0.2s linear;
 	-webkit-appearance: none;
 	appearance: none;
-	width: 30px;
-	height: 30px;
+	width: 39px;
+	height: 39px;
 	background: #764CC2;
 	border-radius: 50%;
 	cursor: pointer;
 	position: relative;
-	top: -7px;
+	top: -13px;
 }
 
 .rs-container.disabled .rs-pointer {
@@ -13413,7 +13429,7 @@ span.activePointer::before {
 	background-color: #B4AEAE;
 	content: "";
 	height: 70px;
-	left: 13px;
+	left: 18px;
 	position: absolute;
 	top: -66px;
 	width: 1px;
@@ -13486,6 +13502,8 @@ span.activePointer::before {
 	width: 371px;
 	margin: 0 auto;
 	height: 85px;
+	position: relative;
+	left: 15px;
 }
 
 #congratsModal .modal-content {
@@ -13495,13 +13513,19 @@ span.activePointer::before {
 	height: 777px;
 }
 
+#congratsModal .certifiation-preview {
+	width: 197px;
+	height: 116px;
+	border: 1px solid #dee2e6;
+}
+
 #congratsModal .congrats-content .creator-img {
-	left: 30%;
+	left: 34%;
 	top: 35%;
 }
 
 #congratsModal .congrats-content .audience-img {
-	left: 45%;
+	left: 49%;
 	top: 35%;
 }
 
@@ -14217,6 +14241,12 @@ ul.navbar-nav li a.text {
 
 .edit-fields-wrapper {
 	padding: 50px;
+}
+
+.upload-profile-image {
+	left: 30px;
+	bottom: 0;
+	color: #ffffff;
 }
 
 /**

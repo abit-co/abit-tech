@@ -21,7 +21,7 @@
 							<img class="profile-img" src="svg/icons/icon-notification.svg" alt="audience-profile-img" style="height: 28px; width: 28px; margin-top: 2px;">
 						</li>
 						<li class="nav-item dropdown pt-1" id="userProfileTempl">
-							<a href="audiencedahshboard.html">
+							<a href="#">
 								<img class="user-profile-pic" src="svg/icons/fan-profile-pic.svg" alt="audience-profile-img" data-toggle="modal" data-target="#shareVideoModal" style="width: 32px; height: 32px; border-radius: 50%;" >
 							</a>
 							<a class="nav-link dropdown-toggle border-0 d-inline" href="#" role="button" data-toggle="dropdown" aria-expanded="false" style="margin-top: -6px;"></a>
@@ -472,11 +472,10 @@
 
 	<script>
 	
-	//const BASE_URL = `https://api-abit.azurewebsites.net`;
-	const BASE_URL = `https://api-abit.onrender.com`;
+	const BASE_URL = `https://api-abit.azurewebsites.net`;
+	//const BASE_URL = `https://api-abit.onrender.com`;
 
 	$(function() {
-		debugger
 		if(sessionStorage.getItem("isPurchashedSuccessfull") === "true") {
 			loadCongratsModalWhenPurchasedSucessfull();
 		}

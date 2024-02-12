@@ -526,7 +526,9 @@ $(".showWaitListModal").off("click").on("click", function() {
 
 <script>
 	let isUserLoggedIn = checkIfTokenExist();
-	const BASE_URL = `https://api-abit.onrender.com`;
+	//const BASE_URL = `https://api-abit.onrender.com`;
+	const BASE_URL = `https://api-abit.azurewebsites.net`;
+
 
 	$(function() {
 		if(isUserLoggedIn) getUserProfileInfo(isUserLoggedIn);

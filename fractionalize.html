@@ -42,7 +42,7 @@
 			text-transform: capitalize;
 			color: #764CC2;
 			position: relative;
-			left: 15px;
+			left: 30px;
 		 }
 		 .video-count {
 			font-family: 'Inter';
@@ -75,7 +75,7 @@
 			text-transform: capitalize;
 			/* color: #764CC2; */
 			position: absolute;
-			left: 40px;
+			left: 50px;
 		 }
 		 .cr-common-section.cr-tool .card-header button {
 			font-size: 22px;
@@ -129,7 +129,7 @@
 				font-size: 12px;
 				width: 100px;
 				text-align: center;
-				left: 8px;
+				left: 50px;
 			}
 			.result-with-text span {
 				margin-left: 15px;
@@ -137,6 +137,17 @@
 			span.activePointer::before {
 				left: 3px !important;
 			}
+		 }
+		 .slider-container .rs-container .rs-shadow {
+			background-color: #B497EA;
+			border: 1.5px solid #B497EA;
+			height: 30px;
+			left: 30%;
+			position: absolute;
+			top: -9px;
+			width: 40%;
+			border-radius: 3px;
+			OPACITY: 0.6;
 		 }
 	</style>
 </head>
@@ -243,16 +254,16 @@
 								<div class="bottom-token-info custom-blur-token-info">
 									<ul class="list-group list-group-horizontal token-info-content">
 										<li class="list-group-item border-0">
-											<p class="mb-1 heading">Co-owner</p>
-											<p class="description">#34</p>
+											<p class="mb-1 heading">Shares</p>
+											<p class="description" id="totalShares">#34</p>
 										</li>
 										<li class="list-group-item border-0 px-0">
-											<p class="mb-1 heading">Ownership</p>
-											<p class="description">0.24%</p>
+											<p class="mb-1 heading">Offered</p>
+											<p class="description" id="adRevenueShare">0.24%</p>
 										</li>
 										<li class="list-group-item border-0 px-0">
-											<p class="mb-1 heading">Earnings</p>
-											<p class="description">$12.17</p>
+											<p class="mb-1 heading">Raised</p>
+											<p class="description" id="fundRaised">$12.17</p>
 										</li>
 										</ul>
 								</div>
@@ -553,8 +564,9 @@
 
 
 let isUserLoggedIn = checkIfTokenExist();
-//const BASE_URL = `https://api-abit.azurewebsites.net`;
-const BASE_URL = `https://api-abit.onrender.com`;
+let isBuyNowCliked = false;
+const BASE_URL = `https://api-abit.azurewebsites.net`;
+//const BASE_URL = `https://api-abit.onrender.com`;
 
 $(function() {
 	if(isUserLoggedIn) getUserProfileInfo(isUserLoggedIn);
@@ -685,6 +697,11 @@ function registerOrLoginViaGoogle(response, USER_CONSTANT) {
 				isUserLoggedIn = true;
 			}
 			$("#registerLoginBtn").closest("li").hide();
+
+			if(isUserLoggedIn && userType.toLowerCase() !== "creator" && isBuyNowCliked) {
+				$("#paymentInfoModal").modal("show").css("overflow", "auto");
+				//$(".buy-now-token-btn").trigger("click");
+			}
 			
 			if(!isLogin && userType.toLowerCase() !== "creator") {
 				//aBit_UTIL.displaySuccessDialog('Success!', "Thank you! Our team will reach out soon.");
@@ -786,6 +803,8 @@ const updateProfileCardViewAsPerLoggedInUser = (loggedInUserInfo) => {
 	else {
 		$(".creator-bio .creator-profile-img img").css("border", "0");
 	}
+
+	
 }
 
 const performAdditionalOperationsBasedOnUserType = (loggedInUserInfo) => {
@@ -852,6 +871,7 @@ const openModalBasedOnLogin = () => {
 
 	if(!isUserLoggedIn)  {
 		$(".buy-now-token-btn").attr("data-target", "#registerModal");
+		isBuyNowCliked = true;
 	} else {
 		$(".buy-now-token-btn").attr("data-target", "#paymentInfoModal");
 
@@ -875,9 +895,16 @@ const getVideosDetail = () => {
 		crossDomain: true,
 		success: function (data) {
 			console.log(data);
-			const { link } = data.video;
+			const { link, totalShares, adRevenueShare, desiredFund } = data.video;
 			//
 			updateProfileCardViewAsPerLoggedInUser({...data.creator, ...{userType: "CREATOR"}, ...data.video});
+
+
+			$("#totalShares").text(totalShares);
+			$("#adRevenueShare").text(adRevenueShare);
+			$("#fundRaised").text(desiredFund >= 10000 ? convertIntoK(desiredFund) : desiredFund);
+
+
 			fetchEmbedCodeViaYouTubeUrl(link);
 
 			
@@ -888,6 +915,13 @@ const getVideosDetail = () => {
 		}
 	})
 }
+function convertIntoK(value) {
+    //  if(value == 20000) {
+          let valueInK = value.toString().slice(0, -3) + 'k';
+          return valueInK;
+          //console.log(str2);
+   //   }
+  }
 
 const getSearchParamsByName = (searchParamName) => {
     let params = new URLSearchParams(window.location.search);

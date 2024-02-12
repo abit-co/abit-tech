@@ -78,20 +78,14 @@ define(function () { 'use strict';
   function buildTokenCardForUploadedVideos(response) {
       const userInfo = JSON.parse(localStorage.getItem("userInfo"));
       const {
-          picture, name
+          picture, name, userType
       } = userInfo;
 
-      let templ = `<div class="col-6 col-lg-3 col-sm-6 col-md-3 upload-videos-plus-icon mb-4">
-                    <div class="about-creators" data-toggle="modal" data-target="#shareVideoModal">      
-                        <img class="d-block slider-image search-img-icon" src="svg/creatordash/add-token.svg" alt="First slide" style="height: 295px;
-                        position: relative;
-                        top: 10px;
-                        cursor: pointer;">
-                    </div>
-                </div>`;
-      response.forEach(function (videoInfo) {
+      let templ = ``;
+      response.forEach(function (videoInfo, index) {
           console.log(videoInfo);
           const { totalShares, adRevenueShare, desiredFund, title, _id} = videoInfo;
+
           templ += `<div class="col-6 col-lg-3 col-sm-6 col-md-3">
                     <div class="about-creators pb-3 viewDetailOfVideo" vid="${_id}">
                         <img class="d-block slider-image" src="svg/common/Token 11.svg" alt="First slide">
@@ -120,15 +114,21 @@ define(function () { 'use strict';
                         </div>
                     </div>
                 </div>`;
-              });
+             
+          });
       
       $("#uploadedVideos").append(templ);	
-      bindEventOnEachToken();
+      bindEventOnEachToken(userType);
   }
-  function bindEventOnEachToken() {
+  function bindEventOnEachToken(userType) {
       $(".viewDetailOfVideo").off("click").on("click", function() {
+          debugger;
           const vid = $(this).attr("vid");
-          window.location.href = `fractionalize.html?vid=${vid}`;
+          $(`#${userType.toLowerCase()}TokenMoreInfoModal`).modal("show");
+          $(`#${userType.toLowerCase()}TokenMoreInfoModal`).find("#viewLandingPage").attr("href", `fractionalize.html?vid=${vid}`);
+         // window.location.href = `fractionalize.html?vid=${vid}`;
+
+         getUploadedVideoDetailByVideoId(vid);
       });
   }
 
@@ -139,6 +139,28 @@ define(function () { 'use strict';
             //console.log(str2);
      //   }
     }
+
+  function getUploadedVideoDetailByVideoId(vid) {
+      const userInfo = JSON.parse(localStorage.getItem("userInfo"));
+
+      $.ajax({
+          url: `${BASE_URL}/v1/collections/stats/${vid}`, 
+          type: 'GET',
+          xhrFields: {
+                  withCredentials: true
+              },
+          crossDomain: true,
+          //data:  JSON.stringify(payloadOptions),
+          //contentType: "application/json; charset=utf-8",
+          success: function (data) {
+              console.log("Video Info", data);
+              aBit_UTIL.displaySuccessDialog('Success!', "Thank you! Our team will reach out soon.");
+          },
+          error: function (XMLHttpRequest, textStatus, errorThrown) {
+              aBit_UTIL.displayErrorDialog('ERROR!', "SOME ERORR");
+          }
+      });
+  }
   function getAllApprovedVideos() {
       //const payloadOptions = getPayLoadOptions();
       const userInfo = JSON.parse(localStorage.getItem("userInfo"));
