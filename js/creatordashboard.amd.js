@@ -108,7 +108,7 @@ define(function () { 'use strict';
                                 </li>
                                 <li class="list-group-item border-0 px-0">
                                     <p class="mb-1">Raised</p>
-                                    <p>$ ${convertIntoK(desiredFund)}</p>
+                                    <p>$${convertIntoK(desiredFund)}</p>
                                 </li>
                                 </ul>
                         </div>
@@ -122,7 +122,6 @@ define(function () { 'use strict';
   }
   function bindEventOnEachToken(userType) {
       $(".viewDetailOfVideo").off("click").on("click", function() {
-          debugger;
           const vid = $(this).attr("vid");
           $(`#${userType.toLowerCase()}TokenMoreInfoModal`).modal("show");
           $(`#${userType.toLowerCase()}TokenMoreInfoModal`).find("#viewLandingPage").attr("href", `fractionalize.html?vid=${vid}`);

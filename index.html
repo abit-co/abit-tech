@@ -541,8 +541,6 @@
 	  }
 
 	  function handleCredentialResponse(response) {
-		debugger;
-
         console.log("Encoded JWT ID token: " + response.credential);
 		let loggedInUserInfo = parseJwt(response.credential);
 		console.log(loggedInUserInfo);
@@ -571,7 +569,6 @@
 			contentType: "application/json; charset=utf-8",
 			success: function (data, status, jqXHR) {
 				
-				debugger
 				const {id, email} = data?.user;
 				data.user = {...data?.user, ...USER_CONSTANT}
 				localStorage.setItem("userInfo",  JSON.stringify(data?.user));
@@ -686,7 +683,6 @@ let logOutUser = (elem) => {
 }
 
 const showProfileViewAfterSuccessfullLogin = (loggedInUserInfo) => {
-	debugger;
 	let {picture, name, profilePic, userType} = loggedInUserInfo;
 	const userProfileTempLength = $("#userProfileTempl").length;
 	if(userProfileTempLength === 0) {

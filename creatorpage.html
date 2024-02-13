@@ -611,8 +611,6 @@ $(".showWaitListModal").off("click").on("click", function() {
 	  }
 
 	  function handleCredentialResponse(response) {
-		debugger;
-
         console.log("Encoded JWT ID token: " + response.credential);
 		let loggedInUserInfo = parseJwt(response.credential);
 		console.log(loggedInUserInfo);
@@ -677,7 +675,6 @@ $(".showWaitListModal").off("click").on("click", function() {
 		});
 	}
 	const showProfileViewAfterSuccessfullLogin = (loggedInUserInfo) => {
-		debugger;
 		let {picture, name, profilePic, userType} = loggedInUserInfo;
 		const userProfileTempLength = $("#userProfileTempl").length;
 		if(userProfileTempLength === 0) {
@@ -759,7 +756,6 @@ let logOutUser = (elem) => {
 }
 
   const initCalendly = () => {
-	debugger;
 	const userInfo = JSON.parse(localStorage.getItem("userInfo"));
 	console.log(userInfo);
 	Calendly.initPopupWidget({
