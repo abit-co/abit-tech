@@ -77,6 +77,7 @@
       });
   };
   function buildTokenCardForUploadedVideos(response) {
+      debugger;
       const userInfo = JSON.parse(localStorage.getItem("userInfo"));
       const {
           picture, name, userType
@@ -104,11 +105,11 @@
                                     <p>${totalShares}</p>
                                 </li>
                                 <li class="list-group-item border-0 px-0">
-                                    <p class="mb-1">Offered</p>
+                                    <p class="mb-1">Offering</p>
                                     <p>${adRevenueShare}%</p>
                                 </li>
                                 <li class="list-group-item border-0 px-0">
-                                    <p class="mb-1">Raised</p>
+                                    <p class="mb-1">Raising</p>
                                     <p>$${convertIntoK(desiredFund)}</p>
                                 </li>
                                 </ul>
@@ -124,11 +125,10 @@
   function bindEventOnEachToken(userType) {
       $(".viewDetailOfVideo").off("click").on("click", function() {
           const vid = $(this).attr("vid");
-          $(`#${userType.toLowerCase()}TokenMoreInfoModal`).modal("show");
-          $(`#${userType.toLowerCase()}TokenMoreInfoModal`).find("#viewLandingPage").attr("href", `fractionalize.html?vid=${vid}`);
+          
          // window.location.href = `fractionalize.html?vid=${vid}`;
 
-         getUploadedVideoDetailByVideoId(vid);
+         getUploadedVideoDetailByVideoId(vid, userType) ;
       });
   }
 
@@ -140,11 +140,11 @@
      //   }
     }
 
-  function getUploadedVideoDetailByVideoId(vid) {
+  function getUploadedVideoDetailByVideoId(vid, userType) {
       const userInfo = JSON.parse(localStorage.getItem("userInfo"));
 
       $.ajax({
-          url: `${BASE_URL}/v1/collections/stats/${vid}`, 
+          url: `${BASE_URL}/v1/videos/stats/${vid}`, 
           type: 'GET',
           xhrFields: {
                   withCredentials: true
@@ -152,8 +152,11 @@
           crossDomain: true,
           //data:  JSON.stringify(payloadOptions),
           //contentType: "application/json; charset=utf-8",
-          success: function (data) {
-              console.log("Video Info", data);
+          success: function (res) {
+             // console.log("Video Info", res?.data);
+             $(`#${userType.toLowerCase()}TokenMoreInfoModal`).modal("show");
+             $(`#${userType.toLowerCase()}TokenMoreInfoModal`).find("#viewLandingPage").attr("href", `fractionalize.html?vid=${vid}`);
+              displayStatsOfToken(res.data);
               aBit_UTIL.displaySuccessDialog('Success!', "Thank you! Our team will reach out soon.");
           },
           error: function (XMLHttpRequest, textStatus, errorThrown) {
@@ -161,6 +164,45 @@
           }
       });
   }
+
+  const displayStatsOfToken = (tokenInfo) => {
+      console.log("ddd",tokenInfo);
+      const {
+  		ad_revenue, co_owner_earnings, earning_per_co_owner, views:performanceViews
+  	} = tokenInfo.stats.performance;
+      const {
+  		ad_revenue_share, funds_raised, new_buyers, repetitive_buyers, shares_sold
+  	} = tokenInfo.stats.raised;
+
+  	// const {
+  	// 	earnings, invested, ownership, video_revenue, views:statViews
+  	// } = tokenInfo?.stats;
+      debugger;
+  	const {
+  		title, totalShares, totalAmountRaised, adRevenueShare
+  	} = tokenInfo.video;
+
+      // Raised Tab
+  	$("#shareSold, #totalSharesSold").text(shares_sold);
+  	$("#repetitiveBuyers").text(repetitive_buyers);
+  	$("#adRevernShare").text(ad_revenue_share);
+  	$("#newBuyers").text(new_buyers);
+  	$("#fundRaised").text(funds_raised);
+
+      // Performance Tab
+      $("#views").text(performanceViews);
+  	$("#adRevenue").text(ad_revenue);
+  	$("#coOwnerEarning").text(co_owner_earnings);
+  	$("#earningPerCoOwners").text(earning_per_co_owner);
+
+      $("#statsVideoTitle").text(title);
+      $("#creatorShares").text(totalShares);
+  	$("#creatorOffered").text(`${adRevenueShare}%`);
+  	$("#creatorRaised").text(`$${totalAmountRaised}`);
+
+
+
+  };
   function getAllApprovedVideos() {
       //const payloadOptions = getPayLoadOptions();
       const userInfo = JSON.parse(localStorage.getItem("userInfo"));

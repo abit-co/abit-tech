@@ -708,6 +708,7 @@ const showProfileViewAfterSuccessfullLogin = (loggedInUserInfo) => {
 }
 
 const getUserProfileInfo = () => {
+	debugger;
     const userInfo = JSON.parse(localStorage.getItem("userInfo"));
 	const url = getProfileApiUrlBasedOnUserType(userInfo);
 

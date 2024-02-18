@@ -258,11 +258,11 @@
 											<p class="description" id="totalShares">#34</p>
 										</li>
 										<li class="list-group-item border-0 px-0">
-											<p class="mb-1 heading">Offered</p>
+											<p class="mb-1 heading">Offering</p>
 											<p class="description" id="adRevenueShare">0.24%</p>
 										</li>
 										<li class="list-group-item border-0 px-0">
-											<p class="mb-1 heading">Raised</p>
+											<p class="mb-1 heading">Raising</p>
 											<p class="description" id="fundRaised">$12.17</p>
 										</li>
 										</ul>
@@ -891,15 +891,23 @@ const getVideosDetail = () => {
 		crossDomain: true,
 		success: function (data) {
 			console.log(data);
-			const { link, totalShares, adRevenueShare, desiredFund } = data.video;
+			const { link, totalShares, adRevenueShare, desiredFund, sharePrice} = data.video;
 			//
 			updateProfileCardViewAsPerLoggedInUser({...data.creator, ...{userType: "CREATOR"}, ...data.video});
 
 
 			$("#totalShares").text(totalShares);
-			$("#adRevenueShare").text(adRevenueShare);
-			$("#fundRaised").text(desiredFund >= 10000 ? convertIntoK(desiredFund) : desiredFund);
+			$("#adRevenueShare").text(`${adRevenueShare}%`);
+			$("#fundRaised").text(desiredFund >= 10000 ? `$${convertIntoK(desiredFund)}` : `$${desiredFund}`);
+			$(".ops-amount").text(`$${Math.ceil(sharePrice)}`);
 
+			const totalCost = `${Math.ceil(sharePrice) + 2}`;
+			$(".total-cost").text(`$${totalCost}`);
+
+			let ownerShipPerShare = (adRevenueShare / totalShares);
+			$(".percentage-ops").text(`${ownerShipPerShare.toFixed(2)}%`);
+
+			
 
 			fetchEmbedCodeViaYouTubeUrl(link);
 
