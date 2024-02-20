@@ -623,12 +623,12 @@ const buildTokenCardForMyPurchashedVideos = (response) => {
                                     <p>#${co_owner_no}</p>
                                 </li>
                                 <li class="list-group-item border-0 px-0">
-                                    <p class="mb-1">Offered</p>
+                                    <p class="mb-1">Ownership</p>
                                     <p>${ownership}%</p>
                                 </li>
                                 <li class="list-group-item border-0 px-0">
-                                    <p class="mb-1">Raised</p>
-                                    <p>$${earnings}</p>
+                                    <p class="mb-1">Earnings</p>
+                                    <p>$${earnings.toFixed(2)}</p>
                                 </li>
                                 </ul>
                         </div>
@@ -678,7 +678,7 @@ const displayStatsOfToken = (videoInfo) => {
 		name, picture
 	} = videoInfo.video.creator;
 
-	$("#earnings, #earningPercentage").text(`$${earnings}`);
+	$("#earnings, #earningPercentage").text(`$${earnings.toFixed(2)}`);
 	$("#invested").text(invested);
 	$("#ownership, #ownershipPercentage").text(`${ownership}%`);
 	$("#video_revenue").text(video_revenue);

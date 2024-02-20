@@ -565,6 +565,7 @@
 
 let isUserLoggedIn = checkIfTokenExist();
 let isBuyNowCliked = false;
+let globalUsedObject = {ownerShipPerShare: 0.024}
 const BASE_URL = `https://api-abit.azurewebsites.net`;
 //const BASE_URL = `https://api-abit.onrender.com`;
 
@@ -697,6 +698,7 @@ function registerOrLoginViaGoogle(response, USER_CONSTANT) {
 
 			if(isUserLoggedIn && userType.toLowerCase() !== "creator" && isBuyNowCliked) {
 				$("#paymentInfoModal").modal("show").css("overflow", "auto");
+				openModalBasedOnLogin();
 				//$(".buy-now-token-btn").trigger("click");
 			}
 			
@@ -906,6 +908,10 @@ const getVideosDetail = () => {
 
 			let ownerShipPerShare = (adRevenueShare / totalShares);
 			$(".percentage-ops").text(`${ownerShipPerShare.toFixed(2)}%`);
+
+			globalUsedObject.ownerShipPerShare = ownerShipPerShare.toFixed(2);
+
+
 
 			
 
@@ -1128,8 +1134,9 @@ var init = function () {
 window.onload = init;
 
 function calculateEarnings() {
+	debugger;
 	var views = parseInt($('#slider2').val());
-	var percentage = 0.0024 //parseFloat($('#ownershipPercentage').val()) / 100;
+	var percentage = globalUsedObject.ownerShipPerShare / 100; //0.0024 //parseFloat($('#ownershipPercentage').val()) / 100;
 	var earningsPerView = 0.005 //parseFloat($('#earningsPerView').val());
 	var audienceEarnings = ((views * earningsPerView) * percentage).toFixed(2);
 
